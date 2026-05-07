@@ -255,6 +255,11 @@
 				cursor: pointer;
 			}
 
+			tr.selected {
+				background: #2a3f6f;
+				outline: 1px solid #f5c542;
+			}
+
 			tr.easy td:first-child {
 				border-left: 3px solid #4caf50;
 			}
@@ -2738,6 +2743,114 @@
 				},
 			};
 
+			const encounters = [
+				// === EASY (d1-30) ===
+				{ d: 1, name: "Chèvres", count: "2d6", cr: "0", diff: "easy", type: "beast", desc: "Un troupeau de chèvres sauvages broute paisiblement.", creatures: ["Goat"] },
+				{ d: 2, name: "Chèvres", count: "3d6", cr: "0", diff: "easy", type: "beast", desc: "Un grand troupeau de chèvres sur un affleurement rocheux.", creatures: ["Goat"] },
+				{ d: 3, name: "Aigles", count: "1d4", cr: "0", diff: "easy", type: "beast", desc: "Des aigles tournent haut dans le ciel, à l'affût.", creatures: ["Eagle"] },
+				{ d: 4, name: "Aigles", count: "2d4", cr: "0", diff: "easy", type: "beast", desc: "Une volée d'aigles plonge sur une proie.", creatures: ["Eagle"] },
+				{ d: 5, name: "Faucons", count: "2d6", cr: "0", diff: "easy", type: "beast", desc: "Des faucons chassent en formation serrée.", creatures: ["Hawk"] },
+				{ d: 6, name: "Hyènes", count: "2d4", cr: "0", diff: "easy", type: "beast", desc: "Des hyènes rôdent autour d'une carcasse.", creatures: ["Hyena"] },
+				{ d: 7, name: "Hyènes", count: "3d4", cr: "0", diff: "easy", type: "beast", desc: "Une meute de hyènes défend son territoire.", creatures: ["Hyena"] },
+				{ d: 8, name: "Vautours", count: "2d6", cr: "0", diff: "easy", type: "beast", desc: "Des vautours planent au-dessus d'une charogne.", creatures: ["Vulture"] },
+				{ d: 9, name: "Faucons de sang", count: "2d6", cr: "1/8", diff: "easy", type: "beast", desc: "Des faucons de sang agressifs fondent sur les intrus.", creatures: ["Blood Hawk"] },
+				{ d: 10, name: "Faucons de sang", count: "3d6", cr: "1/8", diff: "easy", type: "beast", desc: "Un grand groupe de faucons de sang protège leur nid.", creatures: ["Blood Hawk"] },
+				{ d: 11, name: "Stirges", count: "3d6", cr: "1/8", diff: "easy", type: "beast", desc: "Un essaim de stirges émerge d'une crevasse rocheuse.", creatures: ["Stirge"] },
+				{ d: 12, name: "Stirges", count: "4d6", cr: "1/8", diff: "easy", type: "beast", desc: "Des stirges affamées attaquent tout être vivant.", creatures: ["Stirge"] },
+				{ d: 13, name: "Kobolds", count: "3d6", cr: "1/8", diff: "easy", type: "humanoid", desc: "Une patrouille de kobolds surveille leurs pièges.", creatures: ["Kobold"] },
+				{ d: 14, name: "Kobolds", count: "4d6", cr: "1/8", diff: "easy", type: "humanoid", desc: "Un groupe de kobolds tend une embuscade depuis les rochers.", creatures: ["Kobold"] },
+				{ d: 15, name: "Serpents venimeux", count: "2d4", cr: "1/8", diff: "easy", type: "beast", desc: "Des serpents venimeux se réchauffent sur les pierres plates.", creatures: ["Poisonous Snake"] },
+				{ d: 16, name: "Loups", count: "2d4", cr: "1/4", diff: "easy", type: "beast", desc: "Une meute de loups chasse en silence.", creatures: ["Wolf"] },
+				{ d: 17, name: "Loups", count: "3d4", cr: "1/4", diff: "easy", type: "beast", desc: "Des loups affamés rôdent, attirés par l'odeur du sang.", creatures: ["Wolf"] },
+				{ d: 18, name: "Grandes chauves-souris", count: "2d6", cr: "1/4", diff: "easy", type: "beast", desc: "Des chauves-souris géantes sortent d'une grotte au crépuscule.", creatures: ["Giant Bat"] },
+				{ d: 19, name: "Araignées-loups géantes", count: "1d4", cr: "1/4", diff: "easy", type: "beast", desc: "Des araignées-loups géantes surgissent de leurs terriers.", creatures: ["Giant Wolf Spider"] },
+				{ d: 20, name: "Sangliers", count: "1d4", cr: "1/4", diff: "easy", type: "beast", desc: "Des sangliers fouillent le sol, nerveux et agressifs.", creatures: ["Boar"] },
+				{ d: 21, name: "Élans", count: "2d4", cr: "1/4", diff: "easy", type: "beast", desc: "Un groupe d'élans traverse le plateau au grand galop.", creatures: ["Elk"] },
+				{ d: 22, name: "Chèvres géantes", count: "1d6", cr: "1/2", diff: "easy", type: "beast", desc: "Des chèvres géantes bondissent de rocher en rocher.", creatures: ["Giant Goat"] },
+				{ d: 23, name: "Chèvres géantes", count: "2d4", cr: "1/2", diff: "easy", type: "beast", desc: "Un troupeau de chèvres géantes défend son territoire.", creatures: ["Giant Goat"] },
+				{ d: 24, name: "Worgs", count: "1d4", cr: "1/2", diff: "easy", type: "monstrosity", desc: "Des worgs rôdent, cherchant des proies faciles.", creatures: ["Worg"] },
+				{ d: 25, name: "Gnolls", count: "2d4", cr: "1/2", diff: "easy", type: "humanoid", desc: "Une patrouille de gnolls ricane en fouillant les environs.", creatures: ["Gnoll"] },
+				{ d: 26, name: "Orcs", count: "2d4", cr: "1/2", diff: "easy", type: "humanoid", desc: "Un groupe d'orcs cherche du butin sur le plateau.", creatures: ["Orc"] },
+				{ d: 27, name: "Hobgobelins", count: "2d4", cr: "1/2", diff: "easy", type: "humanoid", desc: "Une patrouille de hobgobelins disciplinés marche en formation.", creatures: ["Hobgoblin"] },
+				{ d: 28, name: "Cockatrices", count: "1d4", cr: "1/2", diff: "easy", type: "monstrosity", desc: "Des cockatrices picorent des insectes entre les rochers.", creatures: ["Cockatrice"] },
+				{ d: 29, name: "Gnolls & Worgs", count: "1d4", cr: "1/2", diff: "easy", type: "humanoid", desc: "Des gnolls accompagnent des worgs en patrouille.", creatures: ["Gnoll", "Worg"] },
+				{ d: 30, name: "Kobolds & Loups", count: "2d4", cr: "1/4", diff: "easy", type: "humanoid", desc: "Des kobolds accompagnés de loups dressés montent la garde.", creatures: ["Kobold", "Wolf"] },
+
+				// === MEDIUM (d31-80) ===
+				{ d: 31, name: "Lions", count: "1d3", cr: "1", diff: "medium", type: "beast", desc: "Des lions au repos s'étirent paresseusement avant de chasser.", creatures: ["Lion"] },
+				{ d: 32, name: "Lions", count: "1d4", cr: "1", diff: "medium", type: "beast", desc: "Une fierté de lions défend son territoire avec agressivité.", creatures: ["Lion"] },
+				{ d: 33, name: "Hyènes géantes", count: "1d4", cr: "1", diff: "medium", type: "beast", desc: "Des hyènes géantes rôdent, attirées par l'odeur du sang.", creatures: ["Giant Hyena"] },
+				{ d: 34, name: "Aigles géants", count: "1d4", cr: "1", diff: "medium", type: "beast", desc: "Des aigles géants tournent en cercles menaçants.", creatures: ["Giant Eagle"] },
+				{ d: 35, name: "Aigles géants", count: "2d4", cr: "1", diff: "medium", type: "beast", desc: "Une paire d'aigles géants défend son nid en altitude.", creatures: ["Giant Eagle"] },
+				{ d: 36, name: "Loups sanguinaires", count: "1d4", cr: "1", diff: "medium", type: "beast", desc: "Des loups sanguinaires chassent en meute serrée.", creatures: ["Dire Wolf"] },
+				{ d: 37, name: "Loups sanguinaires", count: "2d4", cr: "1", diff: "medium", type: "beast", desc: "Une grande meute de loups sanguinaires encercle ses proies.", creatures: ["Dire Wolf"] },
+				{ d: 38, name: "Ours bruns", count: "1d2", cr: "1", diff: "medium", type: "beast", desc: "Un ours brun marque son territoire en griffant les arbres.", creatures: ["Brown Bear"] },
+				{ d: 39, name: "Ours bruns", count: "1d3", cr: "1", diff: "medium", type: "beast", desc: "Une ourse accompagnée de ses petits charge sans avertissement.", creatures: ["Brown Bear"] },
+				{ d: 40, name: "Tigres", count: "1d2", cr: "1", diff: "medium", type: "beast", desc: "Un tigre traque silencieusement depuis les hautes herbes.", creatures: ["Tiger"] },
+				{ d: 41, name: "Harpies", count: "1d4", cr: "1", diff: "medium", type: "monstrosity", desc: "Des harpies chantent leur mélodie envoûtante depuis les falaises.", creatures: ["Harpy"] },
+				{ d: 42, name: "Harpies", count: "2d4", cr: "1", diff: "medium", type: "monstrosity", desc: "Un groupe de harpies fond sur les voyageurs distraits.", creatures: ["Harpy"] },
+				{ d: 43, name: "Hippogriffes", count: "1d4", cr: "1", diff: "medium", type: "monstrosity", desc: "Des hippogriffes plongent depuis les hauteurs en quête de proies.", creatures: ["Hippogriff"] },
+				{ d: 44, name: "Bugbears", count: "1d4", cr: "1", diff: "medium", type: "humanoid", desc: "Des bugbears surgissent d'une embuscade avec de grands gourdins.", creatures: ["Bugbear"] },
+				{ d: 45, name: "Bugbears", count: "2d4", cr: "1", diff: "medium", type: "humanoid", desc: "Une bande de bugbears pillards attaque depuis les rochers.", creatures: ["Bugbear"] },
+				{ d: 46, name: "Aurochs", count: "1d4", cr: "2", diff: "medium", type: "beast", desc: "Des aurochs imposants chargent tout ce qui approche trop près.", creatures: ["Aurochs"] },
+				{ d: 47, name: "Wapitis géants", count: "1d3", cr: "2", diff: "medium", type: "beast", desc: "Des wapitis géants aux bois immenses traversent le plateau.", creatures: ["Giant Elk"] },
+				{ d: 48, name: "Tigres à dents de sabre", count: "1d2", cr: "2", diff: "medium", type: "beast", desc: "Un tigre à dents de sabre traque ses proies avec patience.", creatures: ["Saber-Toothed Tiger"] },
+				{ d: 49, name: "Sangliers géants", count: "1d3", cr: "2", diff: "medium", type: "beast", desc: "Des sangliers géants labourent la terre en grognant férocement.", creatures: ["Giant Boar"] },
+				{ d: 50, name: "Griffons", count: "1d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Des griffons en chasse survolent le plateau à grande vitesse.", creatures: ["Griffon"] },
+				{ d: 51, name: "Griffons", count: "2d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Une meute de griffons affamés attaque depuis les airs.", creatures: ["Griffon"] },
+				{ d: 52, name: "Pérytons", count: "1d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Des pérytons aux bois menaçants fondent du ciel en silence.", creatures: ["Peryton"] },
+				{ d: 53, name: "Ankheg", count: "1d2", cr: "2", diff: "medium", type: "monstrosity", desc: "Un ankheg jaillit du sol, crachant son acide.", creatures: ["Ankheg"] },
+				{ d: 54, name: "Ankhegs", count: "1d3", cr: "2", diff: "medium", type: "monstrosity", desc: "Plusieurs ankhegs surgissent simultanément du sol.", creatures: ["Ankheg"] },
+				{ d: 55, name: "Centaures", count: "1d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Une patrouille de centaures barre le passage, lance en main.", creatures: ["Centaur"] },
+				{ d: 56, name: "Centaures", count: "2d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Un groupe de centaures défend leur territoire ancestral.", creatures: ["Centaur"] },
+				{ d: 57, name: "Gricks", count: "1d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Des gricks rampent hors de leurs tunnels rocheux.", creatures: ["Grick"] },
+				{ d: 58, name: "Loups sanguinaires & Orcs", count: "1d4", cr: "1", diff: "medium", type: "humanoid", desc: "Des orcs chevauchent des loups sanguinaires en raid.", creatures: ["Dire Wolf", "Orc"] },
+				{ d: 59, name: "Hobgobelins & Worgs", count: "2d4", cr: "1/2", diff: "medium", type: "humanoid", desc: "Une escouade de hobgobelins montée sur des worgs patrouille.", creatures: ["Hobgoblin", "Worg"] },
+				{ d: 60, name: "Bugbears & Gnolls", count: "1d4", cr: "1", diff: "medium", type: "humanoid", desc: "Une bande mixte de bugbears et gnolls rôde pour piller.", creatures: ["Bugbear", "Gnoll"] },
+				{ d: 61, name: "Lions & Hyènes", count: "1d3", cr: "1", diff: "medium", type: "beast", desc: "Des lions et des hyènes se disputent une carcasse.", creatures: ["Lion", "Hyena"] },
+				{ d: 62, name: "Harpies & Stirges", count: "1d4", cr: "1", diff: "medium", type: "monstrosity", desc: "Des harpies accompagnées de nuées de stirges attaquent.", creatures: ["Harpy", "Stirge"] },
+				{ d: 63, name: "Ours brun & Loups", count: "1d2", cr: "1", diff: "medium", type: "beast", desc: "Un ours brun imposant suivi d'une meute de loups.", creatures: ["Brown Bear", "Wolf"] },
+				{ d: 64, name: "Griffons & Harpies", count: "1d3", cr: "2", diff: "medium", type: "monstrosity", desc: "Griffons et harpies s'affrontent — les aventuriers sont pris en sandwich.", creatures: ["Griffon", "Harpy"] },
+				{ d: 65, name: "Centaures & Aigles géants", count: "1d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Des centaures coordonnent une attaque avec des aigles géants.", creatures: ["Centaur", "Giant Eagle"] },
+				{ d: 66, name: "Pérytons & Hippogriffes", count: "1d3", cr: "2", diff: "medium", type: "monstrosity", desc: "Un duel aérien entre pérytons et hippogriffes menace les voyageurs.", creatures: ["Peryton", "Hippogriff"] },
+				{ d: 67, name: "Tigre à dents de sabre & Loups sanguinaires", count: "1d2", cr: "2", diff: "medium", type: "beast", desc: "Un tigre à dents de sabre chasse en meute avec des loups sanguinaires.", creatures: ["Saber-Toothed Tiger", "Dire Wolf"] },
+				{ d: 68, name: "Aurochs & Sangliers géants", count: "1d3", cr: "2", diff: "medium", type: "beast", desc: "Des aurochs et sangliers géants s'affolent, chargeant tout sur leur passage.", creatures: ["Aurochs", "Giant Boar"] },
+				{ d: 69, name: "Gricks & Ankhegs", count: "1d3", cr: "2", diff: "medium", type: "monstrosity", desc: "Des gricks et ankhegs émergent ensemble du sol rocailleux.", creatures: ["Grick", "Ankheg"] },
+				{ d: 70, name: "Wapiti géant & Loups sanguinaires", count: "1d2", cr: "2", diff: "medium", type: "beast", desc: "Un wapiti géant traqué par une meute de loups sanguinaires.", creatures: ["Giant Elk", "Dire Wolf"] },
+				{ d: 71, name: "Orcs & Bugbears", count: "2d4", cr: "1", diff: "medium", type: "humanoid", desc: "Une troupe mêlée d'orcs et bugbears monte un camp de pillards.", creatures: ["Orc", "Bugbear"] },
+				{ d: 72, name: "Hobgobelins & Cockatrices", count: "1d4", cr: "1/2", diff: "medium", type: "humanoid", desc: "Des hobgobelins utilisent des cockatrices enchaînées comme armes.", creatures: ["Hobgoblin", "Cockatrice"] },
+				{ d: 73, name: "Gnolls & Hyènes géantes", count: "1d4", cr: "1", diff: "medium", type: "humanoid", desc: "Des gnolls galoppent aux côtés de hyènes géantes en attaque.", creatures: ["Gnoll", "Giant Hyena"] },
+				{ d: 74, name: "Kobolds & Ankhegs", count: "2d4", cr: "1/8", diff: "medium", type: "humanoid", desc: "Des kobolds ont apprivoisé des ankhegs pour défendre leur caverne.", creatures: ["Kobold", "Ankheg"] },
+				{ d: 75, name: "Worgs & Loups sanguinaires", count: "1d4", cr: "1", diff: "medium", type: "monstrosity", desc: "Un mélange de worgs et loups sanguinaires traque une proie.", creatures: ["Worg", "Dire Wolf"] },
+				{ d: 76, name: "Hippogriffes & Aigles géants", count: "1d3", cr: "1", diff: "medium", type: "monstrosity", desc: "Hippogriffes et aigles géants se disputent un territoire aérien.", creatures: ["Hippogriff", "Giant Eagle"] },
+				{ d: 77, name: "Centaures & Bugbears", count: "1d4", cr: "2", diff: "medium", type: "humanoid", desc: "Une alliance brutale de centaures et bugbears contrôle le passage.", creatures: ["Centaur", "Bugbear"] },
+				{ d: 78, name: "Griffons & Pérytons", count: "1d4", cr: "2", diff: "medium", type: "monstrosity", desc: "Des griffons et pérytons patrouillent ensemble au-dessus du plateau.", creatures: ["Griffon", "Peryton"] },
+				{ d: 79, name: "Tigres & Lions", count: "1d3", cr: "1", diff: "medium", type: "beast", desc: "Tigres et lions se partagent un territoire, hostiles aux intrus.", creatures: ["Tiger", "Lion"] },
+				{ d: 80, name: "Sangliers géants & Gricks", count: "1d3", cr: "2", diff: "medium", type: "monstrosity", desc: "Des sangliers géants affolés fuient des gricks qui les traquent.", creatures: ["Giant Boar", "Grick"] },
+
+				// === HARD (d81-100) ===
+				{ d: 81, name: "Basilics", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Des basilics laissent derrière eux des statues de pierre gelées.", creatures: ["Basilisk"] },
+				{ d: 82, name: "Manticores", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Des manticores lancent leurs piques depuis les airs.", creatures: ["Manticore"] },
+				{ d: 83, name: "Owlbears", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Des owlbears grognent et chargent avec une fureur aveugle.", creatures: ["Owlbear"] },
+				{ d: 84, name: "Araignées de phase", count: "1d3", cr: "3", diff: "hard", type: "monstrosity", desc: "Des araignées de phase clignotent entre les plans en chassant.", creatures: ["Phase Spider"] },
+				{ d: 85, name: "Leucrottas", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Des leucrottas imitent des voix humaines pour attirer leurs proies.", creatures: ["Leucrotta"] },
+				{ d: 86, name: "Bêtes déplaçantes", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Des bêtes déplaçantes apparaissent toujours à un endroit inattendu.", creatures: ["Displacer Beast"] },
+				{ d: 87, name: "Vétérans", count: "1d4", cr: "3", diff: "hard", type: "humanoid", desc: "Des mercenaires aguerris campent, méfiants envers tout inconnu.", creatures: ["Veteran"] },
+				{ d: 88, name: "Loups-garous", count: "1d3", cr: "3", diff: "hard", type: "humanoid", desc: "Sous la pleine lune, des loups-garous rôdent sur le plateau.", creatures: ["Werewolf"] },
+				{ d: 89, name: "Manticore & Harpies", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Une manticore commande un groupe de harpies serviles.", creatures: ["Manticore", "Harpy"] },
+				{ d: 90, name: "Owlbear & Loups sanguinaires", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Un owlbear enragé poursuivi par des loups sanguinaires sème le chaos.", creatures: ["Owlbear", "Dire Wolf"] },
+				{ d: 91, name: "Basilic & Gricks", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Un basilic protège un gîte de gricks pétrifiés.", creatures: ["Basilisk", "Grick"] },
+				{ d: 92, name: "Bête déplaçante & Griffons", count: "1d2", cr: "3", diff: "hard", type: "monstrosity", desc: "Une bête déplaçante coordonne une attaque avec des griffons.", creatures: ["Displacer Beast", "Griffon"] },
+				{ d: 93, name: "Vétérans & Bugbears", count: "1d4", cr: "3", diff: "hard", type: "humanoid", desc: "Des vétérans corrompus commandent une bande de bugbears.", creatures: ["Veteran", "Bugbear"] },
+				{ d: 94, name: "Loups-garous & Loups", count: "1d3", cr: "3", diff: "hard", type: "humanoid", desc: "Des loups-garous mènent une meute de loups ordinaires.", creatures: ["Werewolf", "Wolf"] },
+				{ d: 95, name: "Bulette", count: "1", cr: "5", diff: "hard", type: "monstrosity", desc: "Le sol tremble — une bulette surgit des profondeurs.", creatures: ["Bulette"] },
+				{ d: 96, name: "Gorgone", count: "1", cr: "5", diff: "hard", type: "monstrosity", desc: "Une gorgone souffle son gaz pétrifiant depuis les rochers.", creatures: ["Gorgon"] },
+				{ d: 97, name: "Tricératops", count: "1d2", cr: "5", diff: "hard", type: "beast", desc: "Un tricératops en rut charge aveuglément tout obstacle.", creatures: ["Triceratops"] },
+				{ d: 98, name: "Chimère", count: "1", cr: "6", diff: "hard", type: "monstrosity", desc: "Une chimère ravage le plateau, brûlant tout sur son passage.", creatures: ["Chimera"] },
+				{ d: 99, name: "Bulette & Ankhegs", count: "1", cr: "5", diff: "hard", type: "monstrosity", desc: "Une bulette sème la panique, suivie d'ankhegs qui profitent du chaos.", creatures: ["Bulette", "Ankheg"] },
+				{ d: 100, name: "Chimère & Manticore", count: "1", cr: "6", diff: "hard", type: "monstrosity", desc: "La chimère et la manticore s'affrontent — les aventuriers sont au milieu.", creatures: ["Chimera", "Manticore"] },
+			];
+
 			// Traductions complètes des 50 créatures
 			const creatureNamesFR = {
 				Goat: "Chèvre",
@@ -3351,6 +3464,16 @@
 					},
 				},
 			};
+
+			const speedMap = { walk: "marche", fly: "vol", swim: "nage", climb: "escalade", burrow: "fouissement" };
+			const abMap = { str: "FOR", dex: "DEX", con: "CON", int: "INT", wis: "SAG", cha: "CHA" };
+			const skillMap = { athletics: "Athlétisme", acrobatics: "Acrobaties", stealth: "Discrétion", perception: "Perception", insight: "Perspicacité", persuasion: "Persuasion", deception: "Tromperie", intimidation: "Intimidation", investigation: "Investigation", history: "Histoire", arcana: "Arcanes", nature: "Nature", religion: "Religion", medicine: "Médecine", survival: "Survie", "animal handling": "Dressage", performance: "Représentation", "sleight of hand": "Escamotage" };
+			const sizeMap = { Tiny: "Très petite", Small: "Petite", Medium: "Moyenne", Large: "Grande", Huge: "Très grande", Gargantuan: "Gigantesque" };
+			const typeMap = { beast: "bête", monstrosity: "monstruosité", humanoid: "humanoïde", undead: "mort-vivant", fiend: "fiélon", celestial: "céleste", dragon: "dragon", elemental: "élémentaire", fey: "fée", giant: "géant", plant: "plante", construct: "artificiel", ooze: "vase", aberration: "aberration" };
+			const alignMap = { unaligned: "sans alignement", "lawful good": "loyal bon", "neutral good": "neutre bon", "chaotic good": "chaotique bon", "lawful neutral": "loyal neutre", neutral: "neutre", "chaotic neutral": "chaotique neutre", "lawful evil": "loyal mauvais", "neutral evil": "neutre mauvais", "chaotic evil": "chaotique mauvais", "any alignment": "tout alignement", "any non-good alignment": "tout alignement non-bon", "any chaotic alignment": "tout alignement chaotique", "any evil alignment": "tout alignement mauvais" };
+			const dmgMap = { bludgeoning: "contondants", piercing: "perforants", slashing: "tranchants", fire: "feu", cold: "froid", lightning: "foudre", thunder: "tonnerre", acid: "acide", poison: "poison", necrotic: "nécrotiques", radiant: "radieux", psychic: "psychiques", force: "force" };
+			const condMap = { blinded: "aveuglé", charmed: "charmé", deafened: "assourdi", frightened: "effrayé", grappled: "agrippé", incapacitated: "neutralisé", invisible: "invisible", paralyzed: "paralysé", petrified: "pétrifié", poisoned: "empoisonné", prone: "à terre", restrained: "entravé", stunned: "étourdi", unconscious: "inconscient", exhaustion: "épuisement" };
+
 			function translateDmg(list) {
 				return list.map((d) => dmgMap[d] || d);
 			}
@@ -3394,6 +3517,40 @@
 
 			function translateLanguages(langs) {
 				return langs.map((l) => langMap[l] || l);
+			}
+
+			function formatMod(score) {
+				const mod = Math.floor((score - 10) / 2);
+				return (mod >= 0 ? "+" : "") + mod;
+			}
+
+			function translateCreatureText(creatureName) {
+				const base = statblocks[creatureName];
+				if (!base) return null;
+				const t = creatureTranslations[creatureName];
+				if (!t) return base;
+
+				const s = Object.assign({}, base);
+				s.name = creatureNamesFR[creatureName] || base.name;
+
+				s.traits = base.traits.map((tr) => ({
+					name: (t.traits && t.traits[tr.name]) || tr.name,
+					entries: (t.traitEntries && t.traitEntries[tr.name]) || tr.entries,
+				}));
+
+				s.actions = base.actions.map((a) => ({
+					name: (t.actions && t.actions[a.name]) || a.name,
+					entries: (t.actionEntries && t.actionEntries[a.name]) || a.entries,
+				}));
+
+				if (base.reactions) {
+					s.reactions = base.reactions.map((r) => ({
+						name: (t.reactions && t.reactions[r.name]) || r.name,
+						entries: (t.reactionEntries && t.reactionEntries[r.name]) || r.entries,
+					}));
+				}
+
+				return s;
 			}
 
 			function renderStatblock(creatureName) {
@@ -3511,8 +3668,18 @@
 				return html;
 			}
 
-			function rollD100() {
-				const roll = Math.floor(Math.random() * 100) + 1;
+			function rollDice(formula) {
+				const m = formula.match(/^(\d+)d(\d+)$/);
+				if (!m) return parseInt(formula) || 1;
+				const [, count, sides] = m;
+				let total = 0;
+				for (let i = 0; i < parseInt(count); i++) {
+					total += Math.floor(Math.random() * parseInt(sides)) + 1;
+				}
+				return total;
+			}
+
+			function selectEncounter(roll) {
 				const enc = encounters.find((e) => e.d === roll);
 				const card = document.getElementById("resultCard");
 				const count = rollDice(enc.count);
@@ -3521,15 +3688,25 @@
 				document.getElementById("resultRoll").textContent = "d100 : " + roll;
 				document.getElementById("resultEncounter").innerHTML = `<span class="${diffClass}">${count}</span> x ${enc.name}`;
 				document.getElementById("resultDesc").textContent = enc.desc;
-				document.getElementById("resultMeta").innerHTML = `<span><b>Type :</b> <span class="tag tag-${enc.type}">${enc.type}</span></span>` + `<span><b>CR :</b> ${enc.cr}</span>` + `<span><b>Difficulte :</b> <span class="${diffClass}">${enc.diff.toUpperCase()}</span></span>`;
+				document.getElementById("resultMeta").innerHTML = `<span><b>Type :</b> <span class="tag tag-${enc.type}">${enc.type}</span></span>` + `<span><b>CR :</b> ${enc.cr}</span>` + `<span><b>Difficulté :</b> <span class="${diffClass}">${enc.diff.toUpperCase()}</span></span>`;
 
-				// Render statblocks
 				const container = document.getElementById("statblockContainer");
 				const uniqueCreatures = [...new Set(enc.creatures)];
 				container.innerHTML = uniqueCreatures.map((c) => renderStatblock(c)).join("");
 
+				document.querySelectorAll("#tableBody tr").forEach((r) => r.classList.remove("selected"));
+				const rows = document.querySelectorAll("#tableBody tr");
+				rows.forEach((r) => {
+					if (r.dataset.roll == roll) r.classList.add("selected");
+				});
+
 				card.className = "result-card show";
 				card.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+
+			function rollD100() {
+				const roll = Math.floor(Math.random() * 100) + 1;
+				selectEncounter(roll);
 			}
 
 			// Build table
@@ -3537,7 +3714,9 @@
 			encounters.forEach((enc) => {
 				const tr = document.createElement("tr");
 				tr.className = enc.diff;
+				tr.dataset.roll = enc.d;
 				tr.innerHTML = "<td>" + String(enc.d).padStart(2, "0") + "</td>" + "<td><b>" + enc.name + "</b></td>" + "<td>" + enc.count + "</td>" + '<td><span class="tag tag-' + enc.type + '">' + enc.type + "</span></td>" + "<td>" + enc.cr + "</td>" + '<td><span class="tag tag-' + enc.diff + '">' + enc.diff + "</span></td>" + "<td>" + enc.desc + "</td>";
+				tr.addEventListener("click", () => selectEncounter(enc.d));
 				tbody.appendChild(tr);
 			});
 		</script>
