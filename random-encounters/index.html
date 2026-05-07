@@ -1,0 +1,3545 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Table de rencontres - Plateau Montagneux (PJ Niv.4)</title>
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				background: #1a1a2e;
+				color: #e0e0e0;
+				padding: 20px;
+				min-height: 100vh;
+			}
+
+			h1 {
+				text-align: center;
+				font-size: 1.8rem;
+				margin-bottom: 8px;
+				color: #f5c542;
+				text-shadow: 0 0 10px rgba(245, 197, 66, 0.3);
+			}
+
+			.subtitle {
+				text-align: center;
+				color: #aaa;
+				margin-bottom: 30px;
+				font-size: 0.9rem;
+			}
+
+			.roll-section {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+
+			.roll-btn {
+				background: linear-gradient(135deg, #f5c542, #d4a017);
+				color: #1a1a2e;
+				border: none;
+				padding: 16px 40px;
+				font-size: 1.3rem;
+				font-weight: bold;
+				border-radius: 8px;
+				cursor: pointer;
+				transition:
+					transform 0.1s,
+					box-shadow 0.2s;
+				box-shadow: 0 4px 15px rgba(245, 197, 66, 0.3);
+			}
+
+			.roll-btn:hover {
+				transform: scale(1.05);
+				box-shadow: 0 6px 20px rgba(245, 197, 66, 0.5);
+			}
+			.roll-btn:active {
+				transform: scale(0.95);
+			}
+
+			.result-card {
+				max-width: 700px;
+				margin: 20px auto;
+				padding: 20px;
+				border-radius: 10px;
+				background: #16213e;
+				border: 2px solid #f5c542;
+				display: none;
+			}
+
+			.result-card.show {
+				display: block;
+				animation: fadeIn 0.3s ease;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			.result-roll {
+				font-size: 2rem;
+				font-weight: bold;
+				color: #f5c542;
+				text-align: center;
+			}
+			.result-encounter {
+				font-size: 1.2rem;
+				font-weight: bold;
+				margin: 10px 0;
+				text-align: center;
+			}
+			.result-desc {
+				color: #bbb;
+				text-align: center;
+				font-style: italic;
+				margin-bottom: 15px;
+			}
+			.result-meta {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				flex-wrap: wrap;
+				margin-bottom: 20px;
+			}
+			.result-meta span {
+				font-size: 0.85rem;
+			}
+
+			/* Statblock styling */
+			.statblock-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+				justify-content: center;
+				margin-top: 20px;
+			}
+
+			.statblock {
+				background: #fdf1dc;
+				color: #333;
+				border: 2px solid #922610;
+				border-radius: 0;
+				padding: 15px 20px;
+				max-width: 420px;
+				width: 100%;
+				font-family: "Noto Serif", "Times New Roman", serif;
+				font-size: 0.82rem;
+				line-height: 1.4;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+			}
+
+			.statblock .name {
+				font-size: 1.3rem;
+				font-weight: bold;
+				color: #922610;
+				margin-bottom: 2px;
+				font-family: "Libre Baskerville", "Georgia", serif;
+			}
+
+			.statblock .type-line {
+				font-style: italic;
+				color: #555;
+				margin-bottom: 8px;
+				font-size: 0.8rem;
+			}
+
+			.statblock .separator {
+				background: linear-gradient(to right, #922610, #c9612e, #922610);
+				height: 3px;
+				margin: 8px 0;
+				border: none;
+			}
+
+			.statblock .stat-row {
+				display: flex;
+				justify-content: space-between;
+				margin: 4px 0;
+			}
+
+			.statblock .stat-row .label {
+				color: #922610;
+				font-weight: bold;
+			}
+
+			.statblock .abilities {
+				display: grid;
+				grid-template-columns: repeat(6, 1fr);
+				text-align: center;
+				margin: 8px 0;
+				gap: 4px;
+			}
+
+			.statblock .abilities .ab-label {
+				font-weight: bold;
+				color: #922610;
+				font-size: 0.75rem;
+			}
+			.statblock .abilities .ab-val {
+				font-size: 0.8rem;
+			}
+
+			.statblock .section-title {
+				font-weight: bold;
+				color: #922610;
+				font-size: 0.85rem;
+				margin-top: 8px;
+				margin-bottom: 4px;
+				border-bottom: 1px solid #922610;
+				padding-bottom: 2px;
+			}
+
+			.statblock .trait {
+				margin-bottom: 6px;
+			}
+			.statblock .trait .trait-name {
+				font-weight: bold;
+				font-style: italic;
+			}
+			.statblock .trait .trait-text {
+			}
+
+			.statblock .cr-line {
+				margin-top: 4px;
+			}
+
+			/* Table section */
+			.table-section {
+				max-width: 1100px;
+				margin: 40px auto 0;
+			}
+			.table-section h2 {
+				color: #f5c542;
+				margin-bottom: 15px;
+				font-size: 1.3rem;
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 0.82rem;
+			}
+
+			thead {
+				position: sticky;
+				top: 0;
+				z-index: 10;
+			}
+			th {
+				background: #0f3460;
+				color: #f5c542;
+				padding: 10px 6px;
+				text-align: left;
+				border-bottom: 2px solid #f5c542;
+			}
+
+			td {
+				padding: 7px 6px;
+				border-bottom: 1px solid #2a2a4a;
+				vertical-align: top;
+			}
+
+			tr:hover {
+				background: #1f3a5f;
+				cursor: pointer;
+			}
+
+			tr.easy td:first-child {
+				border-left: 3px solid #4caf50;
+			}
+			tr.medium td:first-child {
+				border-left: 3px solid #ff9800;
+			}
+			tr.hard td:first-child {
+				border-left: 3px solid #f44336;
+			}
+
+			.tag {
+				display: inline-block;
+				padding: 2px 6px;
+				border-radius: 4px;
+				font-size: 0.7rem;
+				font-weight: bold;
+			}
+
+			.tag-beast {
+				background: #1b5e20;
+				color: #a5d6a7;
+			}
+			.tag-monstrosity {
+				background: #4a148c;
+				color: #ce93d8;
+			}
+			.tag-humanoid {
+				background: #b71c1c;
+				color: #ef9a9a;
+			}
+			.tag-easy {
+				background: #1b5e20;
+				color: #a5d6a7;
+			}
+			.tag-medium {
+				background: #e65100;
+				color: #ffcc80;
+			}
+			.tag-hard {
+				background: #b71c1c;
+				color: #ef9a9a;
+			}
+
+			.diff-easy {
+				color: #4caf50;
+			}
+			.diff-medium {
+				color: #ff9800;
+			}
+			.diff-hard {
+				color: #f44336;
+			}
+
+			@media (max-width: 768px) {
+				table {
+					font-size: 0.72rem;
+				}
+				td,
+				th {
+					padding: 5px 3px;
+				}
+				h1 {
+					font-size: 1.4rem;
+				}
+				.statblock {
+					max-width: 100%;
+					padding: 10px 12px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Table de Rencontres Aleatoires</h1>
+		<p class="subtitle">Plateau Montagneux - 4 PJ Niveau 4 - d100</p>
+
+		<div class="roll-section">
+			<button class="roll-btn" onclick="rollD100()">Lancer le d100</button>
+			<div class="result-card" id="resultCard">
+				<div class="result-roll" id="resultRoll"></div>
+				<div class="result-encounter" id="resultEncounter"></div>
+				<div class="result-desc" id="resultDesc"></div>
+				<div class="result-meta" id="resultMeta"></div>
+				<div class="statblock-container" id="statblockContainer"></div>
+			</div>
+		</div>
+
+		<div class="table-section">
+			<h2>Table complete (d100)</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>d100</th>
+						<th>Rencontre</th>
+						<th>Nombre</th>
+						<th>Type</th>
+						<th>CR</th>
+						<th>Diff.</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody"></tbody>
+			</table>
+		</div>
+
+		<script>
+			const statblocks = {
+				Goat: {
+					name: "Goat",
+					size: "Medium",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 10,
+					acType: "",
+					hp: 4,
+					hpFormula: "1d8",
+					speed: {
+						walk: 40,
+					},
+					str: 12,
+					dex: 10,
+					con: 11,
+					int: 2,
+					wis: 10,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "0",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 (1d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.",
+						},
+						{
+							name: "Sure-Footed",
+							entries: "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
+						},
+					],
+					actions: [
+						{
+							name: "Ram",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+				Eagle: {
+					name: "Eagle",
+					size: "Small",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 3,
+					hpFormula: "1d6",
+					speed: {
+						walk: 10,
+						fly: 60,
+					},
+					str: 6,
+					dex: 15,
+					con: 10,
+					int: 2,
+					wis: 14,
+					cha: 7,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "0",
+					traits: [
+						{
+							name: "Keen Sight",
+							entries: "The eagle has advantage on Wisdom (Perception) checks that rely on sight.",
+						},
+					],
+					actions: [
+						{
+							name: "Talons",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Hawk: {
+					name: "Hawk",
+					size: "Tiny",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "",
+					hp: 1,
+					hpFormula: "1d4 - 1",
+					speed: {
+						walk: 10,
+						fly: 60,
+					},
+					str: 5,
+					dex: 16,
+					con: 8,
+					int: 2,
+					wis: 14,
+					cha: 6,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "0",
+					traits: [
+						{
+							name: "Keen Sight",
+							entries: "The hawk has advantage on Wisdom (Perception) checks that rely on sight.",
+						},
+					],
+					actions: [
+						{
+							name: "Talons",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Hyena: {
+					name: "Hyena",
+					size: "Medium",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "",
+					hp: 5,
+					hpFormula: "1d8 + 1",
+					speed: {
+						walk: 50,
+					},
+					str: 11,
+					dex: 13,
+					con: 12,
+					int: 2,
+					wis: 12,
+					cha: 5,
+					saves: {},
+					skills: {
+						perception: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "0",
+					traits: [
+						{
+							name: "Pack Tactics",
+							entries: "The hyena has advantage on an attack roll against a creature if at least one of the hyena's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Vulture: {
+					name: "Vulture",
+					size: "Medium",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 10,
+					acType: "",
+					hp: 5,
+					hpFormula: "1d8 + 1",
+					speed: {
+						walk: 10,
+						fly: 50,
+					},
+					str: 7,
+					dex: 10,
+					con: 13,
+					int: 2,
+					wis: 12,
+					cha: 4,
+					saves: {},
+					skills: {
+						perception: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "0",
+					traits: [
+						{
+							name: "Keen Sight and Smell",
+							entries: "The vulture has advantage on Wisdom (Perception) checks that rely on sight or smell.",
+						},
+						{
+							name: "Pack Tactics",
+							entries: "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Blood Hawk": {
+					name: "Blood Hawk",
+					size: "Small",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 7,
+					hpFormula: "2d6",
+					speed: {
+						walk: 10,
+						fly: 60,
+					},
+					str: 6,
+					dex: 14,
+					con: 10,
+					int: 3,
+					wis: 14,
+					cha: 5,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1/8",
+					traits: [
+						{
+							name: "Keen Sight",
+							entries: "The hawk has advantage on Wisdom (Perception) checks that rely on sight.",
+						},
+						{
+							name: "Pack Tactics",
+							entries: "The hawk has advantage on an attack roll against a creature if at least one of the hawk's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Stirge: {
+					name: "Stirge",
+					size: "Tiny",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 14,
+					acType: "natural armor",
+					hp: 2,
+					hpFormula: "1d4",
+					speed: {
+						walk: 10,
+						fly: 40,
+					},
+					str: 4,
+					dex: 16,
+					con: 11,
+					int: 2,
+					wis: 8,
+					cha: 6,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "1/8",
+					traits: [],
+					actions: [
+						{
+							name: "Blood Drain",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn't attack. Instead, at the start of each of the stirge's turns, the target loses 5 (1d4 + 3) hit points due to blood loss. The stirge can detach itself by spending 5 feet of its movement. It does so after it drains 10 hit points of blood from the target or the target dies. A creature, including the target, can use its action to detach the stirge.",
+						},
+					],
+					reactions: [],
+				},
+				Wolf: {
+					name: "Wolf",
+					size: "Medium",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "natural armor",
+					hp: 11,
+					hpFormula: "2d8 + 2",
+					speed: {
+						walk: 40,
+					},
+					str: 12,
+					dex: 15,
+					con: 12,
+					int: 3,
+					wis: 12,
+					cha: 6,
+					saves: {},
+					skills: {
+						perception: "+3",
+						stealth: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1/4",
+					traits: [
+						{
+							name: "Keen Hearing and Smell",
+							entries: "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+						},
+						{
+							name: "Pack Tactics",
+							entries: "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Bat": {
+					name: "Giant Bat",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "",
+					hp: 22,
+					hpFormula: "4d10",
+					speed: {
+						walk: 10,
+						fly: 60,
+					},
+					str: 15,
+					dex: 16,
+					con: 11,
+					int: 2,
+					wis: 12,
+					cha: 6,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["blindsight 60 ft."],
+					languages: [],
+					cr: "1/4",
+					traits: [
+						{
+							name: "Echolocation",
+							entries: "The bat can't use its blindsight while deafened.",
+						},
+						{
+							name: "Keen Hearing",
+							entries: "The bat has advantage on Wisdom (Perception) checks that rely on hearing.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Kobold: {
+					name: "Kobold",
+					size: "Small",
+					type: "humanoid",
+					alignment: "lawful evil",
+					ac: 12,
+					acType: "",
+					hp: 5,
+					hpFormula: "2d6 - 2",
+					speed: {
+						walk: 30,
+					},
+					str: 7,
+					dex: 15,
+					con: 9,
+					int: 8,
+					wis: 7,
+					cha: 8,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Common", "Draconic"],
+					cr: "1/8",
+					traits: [
+						{
+							name: "Sunlight Sensitivity",
+							entries: "While in sunlight, the kobold has disadvantage on attack rolls, as well as on Wisdom (Perception) checks that rely on sight.",
+						},
+						{
+							name: "Pack Tactics",
+							entries: "The kobold has advantage on an attack roll against a creature if at least one of the kobold's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Dagger",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+						},
+						{
+							name: "Sling",
+							entries: "Ranged Weapon Attack: +4 to hit, range 30/120 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Poisonous Snake": {
+					name: "Poisonous Snake",
+					size: "Tiny",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "",
+					hp: 2,
+					hpFormula: "1d4",
+					speed: {
+						walk: 30,
+						swim: 30,
+					},
+					str: 2,
+					dex: 16,
+					con: 11,
+					int: 1,
+					wis: 10,
+					cha: 3,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["blindsight 10 ft."],
+					languages: [],
+					cr: "1/8",
+					traits: [],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Wolf Spider": {
+					name: "Giant Wolf Spider",
+					size: "Medium",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "",
+					hp: 11,
+					hpFormula: "2d8 + 2",
+					speed: {
+						walk: 40,
+						climb: 40,
+					},
+					str: 12,
+					dex: 16,
+					con: 13,
+					int: 3,
+					wis: 12,
+					cha: 4,
+					saves: {},
+					skills: {
+						perception: "+3",
+						stealth: "+7",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["blindsight 10 ft.", "darkvision 60 ft."],
+					languages: [],
+					cr: "1/4",
+					traits: [
+						{
+							name: "Spider Climb",
+							entries: "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+						},
+						{
+							name: "Web Sense",
+							entries: "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web.",
+						},
+						{
+							name: "Web Walker",
+							entries: "The spider ignores movement restrictions caused by webbing.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6 + 1) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 (2d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+						},
+					],
+					reactions: [],
+				},
+				Boar: {
+					name: "Boar",
+					size: "Medium",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "natural armor",
+					hp: 11,
+					hpFormula: "2d8 + 2",
+					speed: {
+						walk: 40,
+					},
+					str: 13,
+					dex: 11,
+					con: 12,
+					int: 2,
+					wis: 9,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1/4",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+						},
+						{
+							name: "Relentless (Recharges after a Short or Long Rest)",
+							entries: "If the boar takes 7 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
+						},
+					],
+					actions: [
+						{
+							name: "Tusk",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Elk: {
+					name: "Elk",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 10,
+					acType: "",
+					hp: 13,
+					hpFormula: "2d10 + 2",
+					speed: {
+						walk: 50,
+					},
+					str: 16,
+					dex: 10,
+					con: 12,
+					int: 2,
+					wis: 10,
+					cha: 6,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1/4",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+						},
+					],
+					actions: [
+						{
+							name: "Ram",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
+						},
+						{
+							name: "Hooves",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one prone creature. Hit: 8 (2d4 + 3) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Goat": {
+					name: "Giant Goat",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "natural armor",
+					hp: 19,
+					hpFormula: "3d10 + 3",
+					speed: {
+						walk: 40,
+					},
+					str: 17,
+					dex: 11,
+					con: 12,
+					int: 3,
+					wis: 12,
+					cha: 6,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1/2",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 5 (2d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+						},
+						{
+							name: "Sure-Footed",
+							entries: "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone.",
+						},
+					],
+					actions: [
+						{
+							name: "Ram",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+				Worg: {
+					name: "Worg",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "neutral evil",
+					ac: 13,
+					acType: "natural armor",
+					hp: 26,
+					hpFormula: "4d10 + 4",
+					speed: {
+						walk: 50,
+					},
+					str: 16,
+					dex: 13,
+					con: 13,
+					int: 7,
+					wis: 11,
+					cha: 8,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Goblin", "Worg"],
+					cr: "1/2",
+					traits: [
+						{
+							name: "Keen Hearing and Smell",
+							entries: "The worg has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+						},
+					],
+					reactions: [],
+				},
+				Gnoll: {
+					name: "Gnoll",
+					size: "Medium",
+					type: "humanoid",
+					alignment: "chaotic evil",
+					ac: 15,
+					acType: "hide armor, shield",
+					hp: 22,
+					hpFormula: "5d8",
+					speed: {
+						walk: 30,
+					},
+					str: 14,
+					dex: 12,
+					con: 11,
+					int: 6,
+					wis: 10,
+					cha: 7,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Gnoll"],
+					cr: "1/2",
+					traits: [
+						{
+							name: "Rampage",
+							entries: "When the gnoll reduces a creature to 0 hit points with a melee attack on its turn, the gnoll can take a bonus action to move up to half its speed and make a bite attack.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage.",
+						},
+						{
+							name: "Spear",
+							entries: "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one target. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.",
+						},
+						{
+							name: "Longbow",
+							entries: "Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Orc: {
+					name: "Orc",
+					size: "Medium",
+					type: "humanoid",
+					alignment: "chaotic evil",
+					ac: 13,
+					acType: "hide armor",
+					hp: 15,
+					hpFormula: "2d8 + 6",
+					speed: {
+						walk: 30,
+					},
+					str: 16,
+					dex: 12,
+					con: 16,
+					int: 7,
+					wis: 11,
+					cha: 10,
+					saves: {},
+					skills: {
+						intimidation: "+2",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Common", "Orc"],
+					cr: "1/2",
+					traits: [
+						{
+							name: "Aggressive",
+							entries: "As a bonus action, the orc can move up to its speed toward a hostile creature that it can see.",
+						},
+					],
+					actions: [
+						{
+							name: "Greataxe",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 9 (1d12 + 3) slashing damage.",
+						},
+						{
+							name: "Javelin",
+							entries: "Melee or Ranged Weapon Attack: +5 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Hobgoblin: {
+					name: "Hobgoblin",
+					size: "Medium",
+					type: "humanoid",
+					alignment: "lawful evil",
+					ac: 18,
+					acType: "chain mail, shield",
+					hp: 11,
+					hpFormula: "2d8 + 2",
+					speed: {
+						walk: 30,
+					},
+					str: 13,
+					dex: 12,
+					con: 12,
+					int: 10,
+					wis: 10,
+					cha: 9,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Common", "Goblin"],
+					cr: "1/2",
+					traits: [
+						{
+							name: "Martial Advantage",
+							entries: "Once per turn, the hobgoblin can deal an extra 7 (2d6) damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the hobgoblin that isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Longsword",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d8 + 1) slashing damage, or 6 (1d10 + 1) slashing damage if used with two hands.",
+						},
+						{
+							name: "Longbow",
+							entries: "Ranged Weapon Attack: +3 to hit, range 150/600 ft., one target. Hit: 5 (1d8 + 1) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Cockatrice: {
+					name: "Cockatrice",
+					size: "Small",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "",
+					hp: 27,
+					hpFormula: "6d6 + 6",
+					speed: {
+						walk: 20,
+						fly: 40,
+					},
+					str: 6,
+					dex: 12,
+					con: 12,
+					int: 2,
+					wis: 13,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "1/2",
+					traits: [],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 3 (1d4 + 1) piercing damage, and the target must succeed on a DC 11 Constitution saving throw against being magically petrified. On a failed save, the creature begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified for 24 hours.",
+						},
+					],
+					reactions: [],
+				},
+				Lion: {
+					name: "Lion",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 26,
+					hpFormula: "4d10 + 4",
+					speed: {
+						walk: 50,
+					},
+					str: 17,
+					dex: 15,
+					con: 13,
+					int: 3,
+					wis: 12,
+					cha: 8,
+					saves: {},
+					skills: {
+						perception: "+3",
+						stealth: "+6",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1",
+					traits: [
+						{
+							name: "Keen Smell",
+							entries: "The lion has advantage on Wisdom (Perception) checks that rely on smell.",
+						},
+						{
+							name: "Pack Tactics",
+							entries: "The lion has advantage on an attack roll against a creature if at least one of the lion's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+						{
+							name: "Pounce",
+							entries: "If the lion moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the lion can make one bite attack against it as a bonus action.",
+						},
+						{
+							name: "Running Leap",
+							entries: "With a 10-foot running start, the lion can long jump up to 25 feet.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
+						},
+						{
+							name: "Claw",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Hyena": {
+					name: "Giant Hyena",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 45,
+					hpFormula: "6d10 + 12",
+					speed: {
+						walk: 50,
+					},
+					str: 16,
+					dex: 14,
+					con: 14,
+					int: 2,
+					wis: 12,
+					cha: 7,
+					saves: {},
+					skills: {
+						perception: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1",
+					traits: [
+						{
+							name: "Rampage",
+							entries: "When the hyena reduces a creature to 0 hit points with a melee attack on its turn, the hyena can take a bonus action to move up to half its speed and make a bite attack.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Eagle": {
+					name: "Giant Eagle",
+					size: "Large",
+					type: "beast",
+					alignment: "neutral good",
+					ac: 13,
+					acType: "",
+					hp: 26,
+					hpFormula: "4d10 + 4",
+					speed: {
+						walk: 10,
+						fly: 80,
+					},
+					str: 16,
+					dex: 17,
+					con: 13,
+					int: 8,
+					wis: 14,
+					cha: 10,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["Giant Eagle", "understands Common and Auran but can't speak them"],
+					cr: "1",
+					traits: [
+						{
+							name: "Keen Sight",
+							entries: "The eagle has advantage on Wisdom (Perception) checks that rely on sight.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The eagle makes two attacks: one with its beak and one with its talons.",
+						},
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+						},
+						{
+							name: "Talons",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Dire Wolf": {
+					name: "Dire Wolf",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 14,
+					acType: "natural armor",
+					hp: 37,
+					hpFormula: "5d10 + 10",
+					speed: {
+						walk: 50,
+					},
+					str: 17,
+					dex: 15,
+					con: 15,
+					int: 3,
+					wis: 12,
+					cha: 7,
+					saves: {},
+					skills: {
+						perception: "+3",
+						stealth: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1",
+					traits: [
+						{
+							name: "Keen Hearing and Smell",
+							entries: "The wolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+						},
+						{
+							name: "Pack Tactics",
+							entries: "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't incapacitated.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+						},
+					],
+					reactions: [],
+				},
+				"Brown Bear": {
+					name: "Brown Bear",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "natural armor",
+					hp: 34,
+					hpFormula: "4d10 + 12",
+					speed: {
+						walk: 40,
+						climb: 30,
+					},
+					str: 19,
+					dex: 10,
+					con: 16,
+					int: 2,
+					wis: 13,
+					cha: 7,
+					saves: {},
+					skills: {
+						perception: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1",
+					traits: [
+						{
+							name: "Keen Smell",
+							entries: "The bear has advantage on Wisdom (Perception) checks that rely on smell.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The bear makes two attacks: one with its bite and one with its claws.",
+						},
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
+						},
+						{
+							name: "Claws",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Tiger: {
+					name: "Tiger",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 37,
+					hpFormula: "5d10 + 10",
+					speed: {
+						walk: 40,
+					},
+					str: 17,
+					dex: 15,
+					con: 14,
+					int: 3,
+					wis: 12,
+					cha: 8,
+					saves: {},
+					skills: {
+						perception: "+3",
+						stealth: "+6",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "1",
+					traits: [
+						{
+							name: "Keen Smell",
+							entries: "The tiger has advantage on Wisdom (Perception) checks that rely on smell.",
+						},
+						{
+							name: "Pounce",
+							entries: "If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.",
+						},
+						{
+							name: "Claw",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Harpy: {
+					name: "Harpy",
+					size: "Medium",
+					type: "monstrosity",
+					alignment: "chaotic evil",
+					ac: 11,
+					acType: "",
+					hp: 38,
+					hpFormula: "7d8 + 7",
+					speed: {
+						walk: 20,
+						fly: 40,
+					},
+					str: 12,
+					dex: 13,
+					con: 12,
+					int: 7,
+					wis: 10,
+					cha: 13,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["Common"],
+					cr: "1",
+					traits: [],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The harpy makes two attacks: one with its claws and one with its club.",
+						},
+						{
+							name: "Claws",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) slashing damage.",
+						},
+						{
+							name: "Club",
+							entries: "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.",
+						},
+						{
+							name: "Luring Song",
+							entries:
+								"The harpy sings a magical melody. Every humanoid and giant within 300 feet of the harpy that can hear the song must succeed on a DC 11 Wisdom saving throw or be charmed until the song ends. The harpy must take a bonus action on its subsequent turns to continue singing. It can stop singing at any time. The song ends if the harpy is incapacitated. While charmed by the harpy, a target is incapacitated and ignores the songs of other harpies. If the charmed target is more than 5 feet away from the harpy, the target must move on its turn toward the harpy by the most direct route. It doesn't avoid opportunity attacks, but before moving into damaging terrain, such as lava or a pit, and whenever it takes damage from a source other than the harpy, a target can repeat the saving throw. A creature can also repeat the saving throw at the end of each of its turns. If a creature's saving throw is successful, the effect ends on it. A target that successfully saves is immune to this harpy's song for the next 24 hours.",
+						},
+					],
+					reactions: [],
+				},
+				Hippogriff: {
+					name: "Hippogriff",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "",
+					hp: 19,
+					hpFormula: "3d10 + 3",
+					speed: {
+						walk: 40,
+						fly: 60,
+					},
+					str: 17,
+					dex: 13,
+					con: 13,
+					int: 2,
+					wis: 12,
+					cha: 8,
+					saves: {},
+					skills: {
+						perception: "+5",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "1",
+					traits: [
+						{
+							name: "Keen Sight",
+							entries: "The hippogriff has advantage on Wisdom (Perception) checks that rely on sight.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The hippogriff makes two attacks: one with its beak and one with its claws.",
+						},
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.",
+						},
+						{
+							name: "Claws",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Bugbear: {
+					name: "Bugbear",
+					size: "Medium",
+					type: "humanoid",
+					alignment: "chaotic evil",
+					ac: 16,
+					acType: "hide armor, shield",
+					hp: 27,
+					hpFormula: "5d8 + 5",
+					speed: {
+						walk: 30,
+					},
+					str: 15,
+					dex: 14,
+					con: 13,
+					int: 8,
+					wis: 11,
+					cha: 9,
+					saves: {},
+					skills: {
+						stealth: "+6",
+						survival: "+2",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Common", "Goblin"],
+					cr: "1",
+					traits: [
+						{
+							name: "Brute",
+							entries: "A melee weapon deals one extra die of its damage when the bugbear hits with it (included in the attack).",
+						},
+						{
+							name: "Surprise Attack",
+							entries: "If the bugbear surprises a creature and hits it with an attack during the first round of combat, the target takes an extra 7 (2d6) damage from the attack.",
+						},
+					],
+					actions: [
+						{
+							name: "Morningstar",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 11 (2d8 + 2) piercing damage.",
+						},
+						{
+							name: "Javelin",
+							entries: "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 30/120 ft., one target. Hit: 9 (2d6 + 2) piercing damage in melee or 5 (1d6 + 2) piercing damage at range.",
+						},
+					],
+					reactions: [],
+				},
+				Aurochs: {
+					name: "Aurochs",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 11,
+					acType: "natural armor",
+					hp: 38,
+					hpFormula: "4d10 + 16",
+					speed: {
+						walk: 50,
+					},
+					str: 20,
+					dex: 10,
+					con: 19,
+					int: 2,
+					wis: 12,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "2",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the aurochs moves at least 20 feet straight toward a target and then hits it with a gore attack on the same turn, the target takes an extra 9 (2d8) piercing damage. If the target is a creature, it must succeed on a DC 15 Strength saving throw or be knocked prone.",
+						},
+					],
+					actions: [
+						{
+							name: "Gore",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Elk": {
+					name: "Giant Elk",
+					size: "Huge",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 14,
+					acType: "natural armor",
+					hp: 42,
+					hpFormula: "5d12 + 10",
+					speed: {
+						walk: 60,
+					},
+					str: 19,
+					dex: 16,
+					con: 14,
+					int: 7,
+					wis: 14,
+					cha: 10,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["Giant Elk", "understands Common, Elvish, Sylvan but can't speak them"],
+					cr: "2",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 14 Strength saving throw or be knocked prone.",
+						},
+					],
+					actions: [
+						{
+							name: "Ram",
+							entries: "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
+						},
+						{
+							name: "Hooves",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one prone creature. Hit: 22 (4d8 + 4) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Saber-Toothed Tiger": {
+					name: "Saber-Toothed Tiger",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 52,
+					hpFormula: "7d10 + 14",
+					speed: {
+						walk: 40,
+					},
+					str: 18,
+					dex: 14,
+					con: 15,
+					int: 3,
+					wis: 12,
+					cha: 8,
+					saves: {},
+					skills: {
+						perception: "+3",
+						stealth: "+6",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "2",
+					traits: [
+						{
+							name: "Keen Smell",
+							entries: "The tiger has advantage on Wisdom (Perception) checks that rely on smell.",
+						},
+						{
+							name: "Pounce",
+							entries: "If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 10 (1d10 + 5) piercing damage.",
+						},
+						{
+							name: "Claw",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 12 (2d6 + 5) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Giant Boar": {
+					name: "Giant Boar",
+					size: "Large",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "natural armor",
+					hp: 42,
+					hpFormula: "5d10 + 15",
+					speed: {
+						walk: 40,
+					},
+					str: 17,
+					dex: 10,
+					con: 16,
+					int: 2,
+					wis: 7,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "2",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 7 (2d6) slashing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+						},
+						{
+							name: "Relentless (Recharges after a Short or Long Rest)",
+							entries: "If the boar takes 10 damage or less that would reduce it to 0 hit points, it is reduced to 1 hit point instead.",
+						},
+					],
+					actions: [
+						{
+							name: "Tusk",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Griffon: {
+					name: "Griffon",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 12,
+					acType: "",
+					hp: 59,
+					hpFormula: "7d10 + 21",
+					speed: {
+						walk: 30,
+						fly: 80,
+					},
+					str: 18,
+					dex: 15,
+					con: 16,
+					int: 2,
+					wis: 13,
+					cha: 8,
+					saves: {},
+					skills: {
+						perception: "+5",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "2",
+					traits: [
+						{
+							name: "Keen Sight",
+							entries: "The griffon has advantage on Wisdom (Perception) checks that rely on sight.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The griffon makes two attacks: one with its beak and one with its claws.",
+						},
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
+						},
+						{
+							name: "Claws",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Peryton: {
+					name: "Peryton",
+					size: "Medium",
+					type: "monstrosity",
+					alignment: "chaotic evil",
+					ac: 13,
+					acType: "natural armor",
+					hp: 33,
+					hpFormula: "6d8 + 6",
+					speed: {
+						walk: 20,
+						fly: 60,
+					},
+					str: 16,
+					dex: 12,
+					con: 13,
+					int: 9,
+					wis: 12,
+					cha: 10,
+					saves: {},
+					skills: {
+						perception: "+5",
+					},
+					damageResistances: ['{"resist":["bludgeoning","piercing","slashing"],"note":"from nonmagical attacks","cond":true}'],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["understands Common and Elvish but can't speak"],
+					cr: "2",
+					traits: [
+						{
+							name: "Dive Attack",
+							entries: "If the peryton is flying and dives at least 30 feet straight toward a target and then hits it with a melee weapon attack, the attack deals an extra 9 (2d8) damage to the target.",
+						},
+						{
+							name: "Flyby",
+							entries: "The peryton doesn't provoke an opportunity attack when it flies out of an enemy's reach.",
+						},
+						{
+							name: "Keen Sight and Smell",
+							entries: "The peryton has advantage on Wisdom (Perception) checks that rely on sight or smell.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The peryton makes one gore attack and one talon attack.",
+						},
+						{
+							name: "Gore",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
+						},
+						{
+							name: "Talons",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Ankheg: {
+					name: "Ankheg",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 14,
+					acType: "natural armor",
+					hp: 39,
+					hpFormula: "6d10 + 6",
+					speed: {
+						walk: 30,
+						burrow: 10,
+					},
+					str: 17,
+					dex: 11,
+					con: 13,
+					int: 1,
+					wis: 13,
+					cha: 6,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft.", "tremorsense 60 ft."],
+					languages: [],
+					cr: "2",
+					traits: [],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage plus 3 (1d6) acid damage. If the target is a Large or smaller creature, it is grappled (escape DC 13). Until this grapple ends, the ankheg can bite only the grappled creature and has advantage on attack rolls to do so.",
+						},
+						{
+							name: "Acid Spray (Recharge 6)",
+							entries: "The ankheg spits acid in a line that is 30 feet long and 5 feet wide, provided that it has no creature grappled. Each creature in that line must make a DC 13 Dexterity saving throw, taking 10 (3d6) acid damage on a failed save, or half as much damage on a successful one.",
+						},
+					],
+					reactions: [],
+				},
+				Centaur: {
+					name: "Centaur",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "neutral good",
+					ac: 12,
+					acType: "",
+					hp: 45,
+					hpFormula: "6d10 + 12",
+					speed: {
+						walk: 50,
+					},
+					str: 18,
+					dex: 14,
+					con: 14,
+					int: 9,
+					wis: 13,
+					cha: 11,
+					saves: {},
+					skills: {
+						athletics: "+6",
+						perception: "+3",
+						survival: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["Elvish", "Sylvan"],
+					cr: "2",
+					traits: [
+						{
+							name: "Charge",
+							entries: "If the centaur moves at least 30 feet straight toward a target and then hits it with a pike attack on the same turn, the target takes an extra 10 (3d6) piercing damage.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The centaur makes two attacks: one with its pike and one with its hooves or two with its longbow.",
+						},
+						{
+							name: "Pike",
+							entries: "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 9 (1d10 + 4) piercing damage.",
+						},
+						{
+							name: "Hooves",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
+						},
+						{
+							name: "Longbow",
+							entries: "Ranged Weapon Attack: +4 to hit, range 150/600 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Grick: {
+					name: "Grick",
+					size: "Medium",
+					type: "monstrosity",
+					alignment: "neutral",
+					ac: 14,
+					acType: "natural armor",
+					hp: 27,
+					hpFormula: "6d8",
+					speed: {
+						walk: 30,
+						climb: 30,
+					},
+					str: 14,
+					dex: 14,
+					con: 11,
+					int: 3,
+					wis: 14,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: ['{"resist":["bludgeoning","piercing","slashing"],"note":"from nonmagical attacks","cond":true}'],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "2",
+					traits: [
+						{
+							name: "Stone Camouflage",
+							entries: "The grick has advantage on Dexterity (Stealth) checks made to hide in rocky terrain.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The grick makes one attack with its tentacles. If that attack hits, the grick can make one beak attack against the same target.",
+						},
+						{
+							name: "Tentacles",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.",
+						},
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Basilisk: {
+					name: "Basilisk",
+					size: "Medium",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 15,
+					acType: "natural armor",
+					hp: 52,
+					hpFormula: "8d8 + 16",
+					speed: {
+						walk: 20,
+					},
+					str: 16,
+					dex: 8,
+					con: 15,
+					int: 2,
+					wis: 8,
+					cha: 7,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "3",
+					traits: [
+						{
+							name: "Petrifying Gaze",
+							entries: "If a creature starts its turn within 30 feet of the basilisk and the two of them can see each other, the basilisk can force the creature to make a DC 12 Constitution saving throw if the basilisk isn't incapacitated. On a failed save, the creature magically begins to turn to stone and is restrained. It must repeat the saving throw at the end of its next turn. On a success, the effect ends. On a failure, the creature is petrified until freed by the  greater restoration spell or other magic. A creature that isn't surprised can avert its eyes to avoid the saving throw at the start of its turn. If it does so, it can't see the basilisk until the start of its next turn, when it can avert its eyes again. If it looks at the basilisk in the meantime, it must immediately make the save. If the basilisk sees its reflection within 30 feet of it in bright light, it mistakes itself for a rival and targets itself with its gaze.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage plus 7 (2d6) poison damage.",
+						},
+					],
+					reactions: [],
+				},
+				Manticore: {
+					name: "Manticore",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "lawful evil",
+					ac: 14,
+					acType: "natural armor",
+					hp: 68,
+					hpFormula: "8d10 + 24",
+					speed: {
+						walk: 30,
+						fly: 50,
+					},
+					str: 17,
+					dex: 16,
+					con: 17,
+					int: 7,
+					wis: 12,
+					cha: 8,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Common"],
+					cr: "3",
+					traits: [
+						{
+							name: "Tail Spike Regrowth",
+							entries: "The manticore has twenty-four tail spikes. Used spikes regrow when the manticore finishes a long rest.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The manticore makes three attacks: one with its bite and two with its claws or three with its tail spikes.",
+						},
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
+						},
+						{
+							name: "Claw",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+						},
+						{
+							name: "Tail Spike",
+							entries: "Ranged Weapon Attack: +5 to hit, range 100/200 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Owlbear: {
+					name: "Owlbear",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "natural armor",
+					hp: 59,
+					hpFormula: "7d10 + 21",
+					speed: {
+						walk: 40,
+					},
+					str: 20,
+					dex: 12,
+					con: 17,
+					int: 3,
+					wis: 12,
+					cha: 7,
+					saves: {},
+					skills: {
+						perception: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "3",
+					traits: [
+						{
+							name: "Keen Sight and Smell",
+							entries: "The owlbear has advantage on Wisdom (Perception) checks that rely on sight or smell.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The owlbear makes two attacks: one with its beak and one with its claws.",
+						},
+						{
+							name: "Beak",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one creature. Hit: 10 (1d10 + 5) piercing damage.",
+						},
+						{
+							name: "Claws",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 14 (2d8 + 5) slashing damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Phase Spider": {
+					name: "Phase Spider",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "natural armor",
+					hp: 32,
+					hpFormula: "5d10 + 5",
+					speed: {
+						walk: 30,
+						climb: 30,
+					},
+					str: 15,
+					dex: 15,
+					con: 12,
+					int: 6,
+					wis: 10,
+					cha: 6,
+					saves: {},
+					skills: {
+						stealth: "+6",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "3",
+					traits: [
+						{
+							name: "Ethereal Jaunt",
+							entries: "As a bonus action, the spider can magically shift from the Material Plane to the Ethereal Plane, or vice versa.",
+						},
+						{
+							name: "Spider Climb",
+							entries: "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check.",
+						},
+						{
+							name: "Web Walker",
+							entries: "The spider ignores movement restrictions caused by webbing.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (1d10 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 18 (4d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+						},
+					],
+					reactions: [],
+				},
+				Leucrotta: {
+					name: "Leucrotta",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "chaotic evil",
+					ac: 14,
+					acType: "natural armor",
+					hp: 67,
+					hpFormula: "9d10 + 18",
+					speed: {
+						walk: 50,
+					},
+					str: 18,
+					dex: 14,
+					con: 15,
+					int: 9,
+					wis: 12,
+					cha: 6,
+					saves: {},
+					skills: {
+						deception: "+2",
+						perception: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["Abyssal", "Gnoll"],
+					cr: "3",
+					traits: [
+						{
+							name: "Keen Smell",
+							entries: "The leucrotta has advantage on Wisdom (Perception) checks that rely on smell.",
+						},
+						{
+							name: "Kicking Retreat",
+							entries: "If the leucrotta attacks with its hooves, it can take the Disengage action as a bonus action.",
+						},
+						{
+							name: "Mimicry",
+							entries: "The leucrotta can mimic animal sounds and humanoid voices. A creature that hears the sounds can tell they are imitations with a successful DC 14 Wisdom (Insight) check.",
+						},
+						{
+							name: "Rampage",
+							entries: "When the leucrotta reduces a creature to 0 hit points with a melee attack on its turn, it can take a bonus action to move up to half its speed and make an attack with its hooves.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The leucrotta makes two attacks: one with its bite and one with its hooves.",
+						},
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage. If the leucrotta scores a critical hit, it rolls the damage dice three times, instead of twice.",
+						},
+						{
+							name: "Hooves",
+							entries: "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+				"Displacer Beast": {
+					name: "Displacer Beast",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "lawful evil",
+					ac: 13,
+					acType: "natural armor",
+					hp: 85,
+					hpFormula: "10d10 + 30",
+					speed: {
+						walk: 40,
+					},
+					str: 18,
+					dex: 15,
+					con: 16,
+					int: 6,
+					wis: 12,
+					cha: 8,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "3",
+					traits: [
+						{
+							name: "Avoidance",
+							entries: "If the displacer beast is subjected to an effect that allows it to make a saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.",
+						},
+						{
+							name: "Displacement",
+							entries: "The displacer beast projects a magical illusion that makes it appear to be standing near its actual location, causing attack rolls against it to have disadvantage. If it is hit by an attack, this trait is disrupted until the end of its next turn. This trait is also disrupted while the displacer beast is incapacitated or has a speed of 0.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The displacer beast makes two attacks with its tentacles.",
+						},
+						{
+							name: "Tentacle",
+							entries: "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 7 (1d6 + 4) bludgeoning damage plus 3 (1d6) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Veteran: {
+					name: "Veteran",
+					size: "Medium",
+					type: "humanoid",
+					alignment: "any alignment",
+					ac: 17,
+					acType: "splint armor",
+					hp: 58,
+					hpFormula: "9d8 + 18",
+					speed: {
+						walk: 30,
+					},
+					str: 16,
+					dex: 13,
+					con: 14,
+					int: 10,
+					wis: 11,
+					cha: 10,
+					saves: {},
+					skills: {
+						athletics: "+5",
+						perception: "+2",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["any one language (usually Common)"],
+					cr: "3",
+					traits: [],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The veteran makes two longsword attacks. If it has a shortsword drawn, it can also make a shortsword attack.",
+						},
+						{
+							name: "Longsword",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage, or 8 (1d10 + 3) slashing damage if used with two hands.",
+						},
+						{
+							name: "Shortsword",
+							entries: "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+						},
+						{
+							name: "Heavy Crossbow",
+							entries: "Ranged Weapon Attack: +3 to hit, range 100/400 ft., one target. Hit: 6 (1d10 + 1) piercing damage.",
+						},
+					],
+					reactions: [],
+				},
+				Werewolf: {
+					name: "Werewolf",
+					size: "Medium",
+					type: "humanoid",
+					alignment: "chaotic evil",
+					ac: 11,
+					acType: "",
+					hp: 58,
+					hpFormula: "9d8 + 18",
+					speed: {
+						walk: 30,
+					},
+					str: 15,
+					dex: 13,
+					con: 14,
+					int: 10,
+					wis: 11,
+					cha: 10,
+					saves: {},
+					skills: {
+						perception: "+4",
+						stealth: "+3",
+					},
+					damageResistances: [],
+					damageImmunities: ['{"immune":["bludgeoning","piercing","slashing"],"note":"from nonmagical attacks that aren\'t silvered","cond":true}'],
+					conditionImmunities: [],
+					senses: [],
+					languages: ["Common (can't speak in wolf form)"],
+					cr: "3",
+					traits: [
+						{
+							name: "Shapechanger",
+							entries: "The werewolf can use its action to polymorph into a wolf-humanoid hybrid or into a wolf, or back into its true form, which is humanoid. Its statistics, other than its AC, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies.",
+						},
+						{
+							name: "Keen Hearing and Smell",
+							entries: "The werewolf has advantage on Wisdom (Perception) checks that rely on hearing or smell.",
+						},
+					],
+					actions: [
+						{
+							name: "Multiattack (Humanoid or Hybrid Form Only)",
+							entries: "The werewolf makes two attacks: two with its spear (humanoid form) or one with its bite and one with its claws (hybrid form).",
+						},
+						{
+							name: "Bite (Wolf or Hybrid Form Only)",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage. If the target is a humanoid, it must succeed on a DC 12 Constitution saving throw or be cursed with werewolf lycanthropy.",
+						},
+						{
+							name: "Claws (Hybrid Form Only)",
+							entries: "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (2d4 + 2) slashing damage.",
+						},
+						{
+							name: "Spear (Humanoid Form Only)",
+							entries: "Melee or Ranged Weapon Attack: +4 to hit, reach 5 ft. or range 20/60 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, or 6 (1d8 + 2) piercing damage if used with two hands to make a melee attack.",
+						},
+					],
+					reactions: [],
+				},
+				Bulette: {
+					name: "Bulette",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 17,
+					acType: "natural armor",
+					hp: 94,
+					hpFormula: "9d10 + 45",
+					speed: {
+						walk: 40,
+						burrow: 40,
+					},
+					str: 19,
+					dex: 11,
+					con: 21,
+					int: 2,
+					wis: 10,
+					cha: 5,
+					saves: {},
+					skills: {
+						perception: "+6",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft.", "tremorsense 60 ft."],
+					languages: [],
+					cr: "5",
+					traits: [
+						{
+							name: "Standing Leap",
+							entries: "The bulette's long jump is up to 30 feet and its high jump is up to 15 feet, with or without a running start.",
+						},
+					],
+					actions: [
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 30 (4d12 + 4) piercing damage.",
+						},
+						{
+							name: "Deadly Leap",
+							entries: "If the bulette jumps at least 15 feet as part of its movement, it can then use this action to land on its feet in a space that contains one or more other creatures. Each of those creatures must succeed on a DC 16 Strength or Dexterity saving throw (target's choice) or be knocked prone and take 14 (3d6 + 4) bludgeoning damage plus 14 (3d6 + 4) slashing damage. On a successful save, the creature takes only half the damage, isn't knocked prone, and is pushed 5 feet out of the bulette's space into an unoccupied space of the creature's choice. If no unoccupied space is within range, the creature instead falls prone in the bulette's space.",
+						},
+					],
+					reactions: [],
+				},
+				Gorgon: {
+					name: "Gorgon",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "unaligned",
+					ac: 19,
+					acType: "natural armor",
+					hp: 114,
+					hpFormula: "12d10 + 48",
+					speed: {
+						walk: 40,
+					},
+					str: 20,
+					dex: 11,
+					con: 18,
+					int: 2,
+					wis: 12,
+					cha: 7,
+					saves: {},
+					skills: {
+						perception: "+4",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: ["petrified"],
+					senses: ["darkvision 60 ft."],
+					languages: [],
+					cr: "5",
+					traits: [
+						{
+							name: "Trampling Charge",
+							entries: "If the gorgon moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 16 Strength saving throw or be knocked prone. If the target is prone, the gorgon can make one attack with its hooves against it as a bonus action.",
+						},
+					],
+					actions: [
+						{
+							name: "Gore",
+							entries: "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 18 (2d12 + 5) piercing damage.",
+						},
+						{
+							name: "Hooves",
+							entries: "Melee Weapon Attack: +8 to hit, reach 5 ft., one target. Hit: 16 (2d10 + 5) bludgeoning damage.",
+						},
+						{
+							name: "Petrifying Breath (Recharge 5)",
+							entries: "The gorgon exhales petrifying gas in a 30-foot cone. Each creature in that area must succeed on a DC 13 Constitution saving throw. On a failed save, a target begins to turn to stone and is restrained. The restrained target must repeat the saving throw at the end of its next turn. On a success, the effect ends on the target. On a failure, the target is petrified until freed by the  greater restoration spell or other magic.",
+						},
+					],
+					reactions: [],
+				},
+				Chimera: {
+					name: "Chimera",
+					size: "Large",
+					type: "monstrosity",
+					alignment: "chaotic evil",
+					ac: 14,
+					acType: "natural armor",
+					hp: 114,
+					hpFormula: "12d10 + 48",
+					speed: {
+						walk: 30,
+						fly: 60,
+					},
+					str: 19,
+					dex: 11,
+					con: 19,
+					int: 3,
+					wis: 14,
+					cha: 10,
+					saves: {},
+					skills: {
+						perception: "+8",
+					},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: ["darkvision 60 ft."],
+					languages: ["understands Draconic but can't speak"],
+					cr: "6",
+					traits: [],
+					actions: [
+						{
+							name: "Multiattack",
+							entries: "The chimera makes three attacks: one with its bite, one with its horns, and one with its claws. When its fire breath is available, it can use the breath in place of its bite or horns.",
+						},
+						{
+							name: "Bite",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) piercing damage.",
+						},
+						{
+							name: "Horns",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 10 (1d12 + 4) bludgeoning damage.",
+						},
+						{
+							name: "Claws",
+							entries: "Melee Weapon Attack: +7 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+						},
+						{
+							name: "Fire Breath (Recharge 5)",
+							entries: "The dragon head exhales fire in a 15-foot cone. Each creature in that area must make a DC 15 Dexterity saving throw, taking 31 (7d8) fire damage on a failed save, or half as much damage on a successful one.",
+						},
+					],
+					reactions: [],
+				},
+				Triceratops: {
+					name: "Triceratops",
+					size: "Huge",
+					type: "beast",
+					alignment: "unaligned",
+					ac: 13,
+					acType: "natural armor",
+					hp: 95,
+					hpFormula: "10d12 + 30",
+					speed: {
+						walk: 50,
+					},
+					str: 22,
+					dex: 9,
+					con: 17,
+					int: 2,
+					wis: 11,
+					cha: 5,
+					saves: {},
+					skills: {},
+					damageResistances: [],
+					damageImmunities: [],
+					conditionImmunities: [],
+					senses: [],
+					languages: [],
+					cr: "5",
+					traits: [
+						{
+							name: "Trampling Charge",
+							entries: "If the triceratops moves at least 20 feet straight toward a creature and then hits it with a gore attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the triceratops can make one stomp attack against it as a bonus action.",
+						},
+					],
+					actions: [
+						{
+							name: "Gore",
+							entries: "Melee Weapon Attack: +9 to hit, reach 5 ft., one target. Hit: 24 (4d8 + 6) piercing damage.",
+						},
+						{
+							name: "Stomp",
+							entries: "Melee Weapon Attack: +9 to hit, reach 5 ft., one prone creature. Hit: 22 (3d10 + 6) bludgeoning damage.",
+						},
+					],
+					reactions: [],
+				},
+			};
+
+			// Traductions complètes des 50 créatures
+			const creatureNamesFR = {
+				Goat: "Chèvre",
+				Eagle: "Aigle",
+				Hawk: "Faucon",
+				Hyena: "Hyène",
+				Vulture: "Vautour",
+				"Blood Hawk": "Faucon de sang",
+				Stirge: "Stirge",
+				Wolf: "Loup",
+				"Giant Bat": "Chauve-souris géante",
+				Kobold: "Kobold",
+				"Poisonous Snake": "Serpent venimeux",
+				"Giant Wolf Spider": "Araignée-loup géante",
+				Boar: "Sanglier",
+				Elk: "Élan",
+				"Giant Goat": "Chèvre géante",
+				Worg: "Worg",
+				Gnoll: "Gnoll",
+				Orc: "Orc",
+				Hobgoblin: "Hobgobelin",
+				Cockatrice: "Cockatrice",
+				Lion: "Lion",
+				"Giant Hyena": "Hyène géante",
+				"Giant Eagle": "Aigle géant",
+				"Dire Wolf": "Loup sanguinaire",
+				"Brown Bear": "Ours brun",
+				Tiger: "Tigre",
+				Harpy: "Harpie",
+				Hippogriff: "Hippogriffe",
+				Bugbear: "Bugbear",
+				Aurochs: "Aurochs",
+				"Giant Elk": "Wapiti géant",
+				"Saber-Toothed Tiger": "Tigre à dents de sabre",
+				"Giant Boar": "Sanglier géant",
+				Griffon: "Griffon",
+				Peryton: "Péryton",
+				Ankheg: "Ankheg",
+				Centaur: "Centaure",
+				Grick: "Grick",
+				Basilisk: "Basilic",
+				Manticore: "Manticore",
+				Owlbear: "Owlbear",
+				"Phase Spider": "Araignée de phase",
+				Leucrotta: "Leucrotta",
+				"Displacer Beast": "Bête déplaçante",
+				Veteran: "Vétéran",
+				Werewolf: "Loup-garou",
+				Bulette: "Bulette",
+				Gorgon: "Gorgon",
+				Chimera: "Chimère",
+				Triceratops: "Triceratops",
+			};
+
+			// Traductions par créature (nom de créature = clé principale)
+			const creatureTranslations = {
+				Goat: {
+					traits: {
+						Charge: "Charge",
+						"Sure-Footed": "Pied sûr",
+					},
+					traitEntries: {
+						Charge: "Si la chèvre se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une attaque de coup de bélier au même tour, la cible subit 2 (1d4) dégâts contondants supplémentaires. Si c'est une créature, elle doit réussir un jet de Force DD 10 ou être projetée à terre.",
+						"Sure-Footed": "La chèvre a un avantage aux jets de sauvegarde de Force et de Dextérité contre les effets qui la projetteraient à terre.",
+					},
+					actions: { Ram: "Coup de bélier" },
+					actionEntries: {
+						Ram: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une cible. Touché : 3 (1d4 + 1) dégâts contondants.",
+					},
+				},
+				Eagle: {
+					traits: { "Keen Sight": "Vue perçante" },
+					traitEntries: { "Keen Sight": "L'aigle a un avantage aux jets de Sagesse (Perception) basés sur la vue." },
+					actions: { Talons: "Serres" },
+					actionEntries: { Talons: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 4 (1d4 + 2) dégâts tranchants." },
+				},
+				Hawk: {
+					traits: { "Keen Sight": "Vue perçante" },
+					traitEntries: { "Keen Sight": "Le faucon a un avantage aux jets de Sagesse (Perception) basés sur la vue." },
+					actions: { Talons: "Serres" },
+					actionEntries: { Talons: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 1 dégât tranchant." },
+				},
+				Hyena: {
+					traits: { "Pack Tactics": "Tactique de meute" },
+					traitEntries: { "Pack Tactics": "L'hyène a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci." },
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +2 pour toucher, allonge 1,50 m, une cible. Touché : 3 (1d6) dégâts perforants." },
+				},
+				Vulture: {
+					traits: {
+						"Keen Sight and Smell": "Vue et odorat perçants",
+						"Pack Tactics": "Tactique de meute",
+					},
+					traitEntries: {
+						"Keen Sight and Smell": "Le vautour a un avantage aux jets de Sagesse (Perception) basés sur la vue ou l'odorat.",
+						"Pack Tactics": "Le vautour a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci.",
+					},
+					actions: { Beak: "Bec" },
+					actionEntries: { Beak: "Attaque d'arme au corps à corps : +2 pour toucher, allonge 1,50 m, une cible. Touché : 2 (1d4) dégâts perforants." },
+				},
+				"Blood Hawk": {
+					traits: {
+						"Keen Sight": "Vue perçante",
+						"Pack Tactics": "Tactique de meute",
+					},
+					traitEntries: {
+						"Keen Sight": "Le faucon de sang a un avantage aux jets de Sagesse (Perception) basés sur la vue.",
+						"Pack Tactics": "Le faucon de sang a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci.",
+					},
+					actions: { Beak: "Bec" },
+					actionEntries: { Beak: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 4 (1d4 + 2) dégâts perforants." },
+				},
+				Stirge: {
+					traits: {},
+					traitEntries: {},
+					actions: { "Blood Drain": "Drain de sang" },
+					actionEntries: { "Blood Drain": "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une créature. Touché : 5 (1d4 + 3) dégâts perforants, et la stirge se fixe sur la cible. Tant qu'elle est fixée, la stirge n'attaque pas. Au début de chaque tour de la stirge, la cible perd 5 (1d4 + 3) points de vie par perte de sang. La stirge peut se détacher en dépensant 1,50 m de déplacement. Elle le fait après avoir drainé 10 pv ou si la cible meurt. Une créature peut utiliser son action pour détacher la stirge." },
+				},
+				Wolf: {
+					traits: {
+						"Keen Hearing and Smell": "Ouïe et odorat perçants",
+						"Pack Tactics": "Tactique de meute",
+					},
+					traitEntries: {
+						"Keen Hearing and Smell": "Le loup a un avantage aux jets de Sagesse (Perception) basés sur l'ouïe ou l'odorat.",
+						"Pack Tactics": "Le loup a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 7 (2d4 + 2) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de Force DD 11 ou être projetée à terre." },
+				},
+				"Giant Bat": {
+					traits: {
+						Echolocation: "Écholocalisation",
+						"Keen Hearing": "Ouïe perçante",
+					},
+					traitEntries: {
+						Echolocation: "La chauve-souris ne peut pas utiliser sa vision aveugle si elle est assourdie.",
+						"Keen Hearing": "La chauve-souris géante a un avantage aux jets de Sagesse (Perception) basés sur l'ouïe.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une créature. Touché : 5 (1d6 + 2) dégâts perforants." },
+				},
+				Kobold: {
+					traits: {
+						"Pack Tactics": "Tactique de meute",
+						"Sunlight Sensitivity": "Sensibilité à la lumière du soleil",
+					},
+					traitEntries: {
+						"Pack Tactics": "Le kobold a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci.",
+						"Sunlight Sensitivity": "Dans la lumière du soleil, le kobold a un désavantage aux jets d'attaque et aux tests de Sagesse (Perception) basés sur la vue.",
+					},
+					actions: { Dagger: "Dague", Sling: "Fronde" },
+					actionEntries: {
+						Dagger: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 4 (1d4 + 2) dégâts perforants.",
+						Sling: "Attaque d'arme à distance : +4 pour toucher, portée 9/36 m, une cible. Touché : 4 (1d4 + 2) dégâts contondants.",
+					},
+				},
+				"Poisonous Snake": {
+					traits: {},
+					traitEntries: {},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 1 dégât perforant, et la cible doit réussir un jet de Constitution DD 10 ou subir 5 (2d4) dégâts de poison." },
+				},
+				"Giant Wolf Spider": {
+					traits: {
+						"Spider Climb": "Escalade de paroi",
+						"Web Sense": "Sens de la toile",
+						"Web Walker": "Marcheur de toile",
+					},
+					traitEntries: {
+						"Spider Climb": "L'araignée-loup géante peut escalader des surfaces difficiles, y compris les plafonds, sans jet de caractéristique.",
+						"Web Sense": "En contact avec une toile, l'araignée-loup géante connaît la position exacte de toute créature en contact avec la même toile.",
+						"Web Walker": "L'araignée-loup géante ignore les restrictions imposées par les toiles.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une créature. Touché : 4 (1d6 + 1) dégâts perforants, et la cible doit réussir un jet de Constitution DD 11 ou subir 7 (2d6) dégâts de poison et être paralysée jusqu'à la fin du prochain tour de l'araignée." },
+				},
+				Boar: {
+					traits: {
+						Charge: "Charge",
+						Relentless: "Implacable",
+					},
+					traitEntries: {
+						Charge: "Si le sanglier se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une défense au même tour, la cible subit 3 (1d6) dégâts tranchants supplémentaires. Si la cible est une créature, elle doit réussir un jet de Force DD 11 ou être projetée à terre.",
+						Relentless: "(Recharge après un repos court ou long). Si le sanglier subit des dégâts qui le réduiraient à 0 pv, il tombe à 1 pv à la place.",
+					},
+					actions: { Tusk: "Défense" },
+					actionEntries: { Tusk: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une cible. Touché : 4 (1d6 + 1) dégâts tranchants." },
+				},
+				Elk: {
+					traits: { Charge: "Charge" },
+					traitEntries: { Charge: "Si l'élan se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une attaque de bois au même tour, la cible subit 7 (2d6) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de Force DD 13 ou être projetée à terre." },
+					actions: { Ram: "Bois", Hooves: "Sabots" },
+					actionEntries: {
+						Ram: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d6 + 3) dégâts contondants.",
+						Hooves: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une créature à terre. Touché : 8 (2d4 + 3) dégâts contondants.",
+					},
+				},
+				"Giant Goat": {
+					traits: {
+						Charge: "Charge",
+						"Sure-Footed": "Pied sûr",
+					},
+					traitEntries: {
+						Charge: "Si la chèvre géante se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une attaque de bélier au même tour, la cible subit 5 (2d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de Force DD 13 ou être projetée à terre.",
+						"Sure-Footed": "La chèvre géante a un avantage aux jets de sauvegarde de Force et de Dextérité contre les effets qui la projetteraient à terre.",
+					},
+					actions: { Ram: "Coup de bélier" },
+					actionEntries: { Ram: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 8 (2d4 + 3) dégâts contondants." },
+				},
+				Worg: {
+					traits: {
+						"Keen Hearing and Smell": "Ouïe et odorat perçants",
+					},
+					traitEntries: {
+						"Keen Hearing and Smell": "Le worg a un avantage aux jets de Sagesse (Perception) basés sur l'ouïe ou l'odorat.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de Force DD 13 ou être projetée à terre." },
+				},
+				Gnoll: {
+					traits: { Rampage: "Déchaînement" },
+					traitEntries: { Rampage: "Quand le gnoll réduit une créature à 0 pv avec une attaque de morsure à son tour, le gnoll peut se déplacer jusqu'à la moitié de sa vitesse et faire une attaque de morsure en action bonus." },
+					actions: { Bite: "Morsure", Spear: "Lance", Longbow: "Arc long" },
+					actionEntries: {
+						Bite: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une créature. Touché : 4 (1d4 + 2) dégâts perforants.",
+						Spear: "Attaque au corps à corps ou à distance : +4 pour toucher, allonge 1,50 m ou portée 6/18 m, une cible. Touché : 5 (1d6 + 2) dégâts perforants, ou 6 (1d8 + 2) à deux mains au corps à corps.",
+						Longbow: "Attaque d'arme à distance : +3 pour toucher, portée 45/180 m, une cible. Touché : 5 (1d8 + 1) dégâts perforants.",
+					},
+				},
+				Orc: {
+					traits: { Aggressive: "Agressif" },
+					traitEntries: { Aggressive: "Par une action bonus, l'orc peut se déplacer jusqu'à sa vitesse vers une créature hostile qu'il peut voir." },
+					actions: { Greataxe: "Grande hache", Javelin: "Javelot" },
+					actionEntries: {
+						Greataxe: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 9 (1d12 + 3) dégâts tranchants.",
+						Javelin: "Attaque au corps à corps ou à distance : +5 pour toucher, allonge 1,50 m ou portée 9/36 m, une cible. Touché : 6 (1d6 + 3) dégâts perforants.",
+					},
+				},
+				Hobgoblin: {
+					traits: { "Martial Advantage": "Avantage martial" },
+					traitEntries: { "Martial Advantage": "Une fois par tour, le hobgobelin peut infliger 7 (2d6) dégâts supplémentaires à une créature qu'il touche avec une attaque si cette créature est à 1,50 m d'un allié du hobgobelin non neutralisé." },
+					actions: { Longsword: "Épée longue", Longbow: "Arc long" },
+					actionEntries: {
+						Longsword: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une cible. Touché : 5 (1d8 + 1) dégâts tranchants, ou 6 (1d10 + 1) à deux mains.",
+						Longbow: "Attaque d'arme à distance : +3 pour toucher, portée 45/180 m, une cible. Touché : 5 (1d8 + 1) dégâts perforants.",
+					},
+				},
+				Cockatrice: {
+					traits: {},
+					traitEntries: {},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une créature. Touché : 3 (1d4 + 1) dégâts perforants, et la cible doit réussir un jet de Constitution DD 11 ou être pétrifiée à la fin de son prochain tour. La cible pétrifiée doit répéter le jet à la fin de chaque tour. Trois échecs consécutifs la pétrifient définitivement jusqu'à ce qu'un sort de restauration supérieure ou autre magie la libère. Trois succès mettent fin à l'effet." },
+				},
+				Lion: {
+					traits: {
+						"Keen Smell": "Odorat perçant",
+						"Pack Tactics": "Tactique de meute",
+						Pounce: "Bond agressif",
+						"Running Leap": "Saut avec élan",
+					},
+					traitEntries: {
+						"Keen Smell": "Le lion a un avantage aux jets de Sagesse (Perception) basés sur l'odorat.",
+						"Pack Tactics": "Le lion a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci.",
+						Pounce: "Si le lion se déplace d'au moins 6 m en ligne droite vers une créature et la touche avec une griffe au même tour, la cible doit réussir un jet de Force DD 13 ou être jetée à terre. Si la cible est à terre, le lion peut effectuer une attaque de morsure contre elle par une action bonus.",
+						"Running Leap": "Avec une course d'élan d'au moins 3 m, le lion peut sauter sur une longueur de 7,50 m.",
+					},
+					actions: { Bite: "Morsure", Claw: "Griffe" },
+					actionEntries: {
+						Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 7 (1d8 + 3) dégâts perforants.",
+						Claw: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d6 + 3) dégâts tranchants.",
+					},
+				},
+				"Giant Hyena": {
+					traits: {
+						Rampage: "Déchaînement",
+					},
+					traitEntries: {
+						Rampage: "Quand la hyène géante réduit une créature à 0 pv avec une attaque de morsure à son tour, la hyène géante peut se déplacer jusqu'à la moitié de sa vitesse et faire une attaque de morsure en action bonus.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts perforants." },
+				},
+				"Giant Eagle": {
+					traits: {
+						"Keen Sight": "Vue perçante",
+					},
+					traitEntries: {
+						"Keen Sight": "L'aigle géant a un avantage aux jets de Sagesse (Perception) basés sur la vue.",
+					},
+					actions: { Multiattack: "Attaques multiples", Beak: "Bec", Talons: "Serres" },
+					actionEntries: {
+						Multiattack: "L'aigle géant fait deux attaques : une de bec et une de serres.",
+						Beak: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d6 + 3) dégâts perforants.",
+						Talons: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts tranchants.",
+					},
+				},
+				"Dire Wolf": {
+					traits: {
+						"Keen Hearing and Smell": "Ouïe et odorat perçants",
+						"Pack Tactics": "Tactique de meute",
+					},
+					traitEntries: {
+						"Keen Hearing and Smell": "Le loup sanguinaire a un avantage aux jets de Sagesse (Perception) basés sur l'ouïe ou l'odorat.",
+						"Pack Tactics": "Le loup sanguinaire a un avantage à l'attaque contre une créature si au moins un de ses alliés non neutralisé se trouve à 1,50 m de celle-ci.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de Force DD 13 ou être projetée à terre." },
+				},
+				"Brown Bear": {
+					traits: {
+						"Keen Smell": "Odorat perçant",
+					},
+					traitEntries: {
+						"Keen Smell": "L'ours brun a un avantage aux jets de Sagesse (Perception) basés sur l'odorat.",
+					},
+					actions: { Multiattack: "Attaques multiples", Bite: "Morsure", Claws: "Griffes" },
+					actionEntries: {
+						Multiattack: "L'ours brun fait deux attaques : une de morsure et une de griffes.",
+						Bite: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 8 (1d8 + 4) dégâts perforants.",
+						Claws: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d6 + 4) dégâts tranchants.",
+					},
+				},
+				Tiger: {
+					traits: {
+						"Keen Smell": "Odorat perçant",
+						Pounce: "Bond agressif",
+					},
+					traitEntries: {
+						"Keen Smell": "Le tigre a un avantage aux jets de Sagesse (Perception) basés sur l'odorat.",
+						Pounce: "Si le tigre se déplace d'au moins 6 m en ligne droite vers une créature et la touche avec une griffe au même tour, la cible doit réussir un jet de Force DD 13 ou être jetée à terre. Si la cible est à terre, le tigre peut effectuer une attaque de morsure contre elle par une action bonus.",
+					},
+					actions: { Bite: "Morsure", Claw: "Griffe" },
+					actionEntries: {
+						Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 8 (1d10 + 3) dégâts perforants.",
+						Claw: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 7 (1d8 + 3) dégâts tranchants.",
+					},
+				},
+				Harpy: {
+					traits: {},
+					traitEntries: {},
+					actions: { Multiattack: "Attaques multiples", Claws: "Griffes", Club: "Massue", "Luring Song": "Chant envoûtant" },
+					actionEntries: {
+						Multiattack: "La harpie fait deux attaques : une de griffes et une de massue.",
+						Claws: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une cible. Touché : 6 (2d4 + 1) dégâts tranchants.",
+						Club: "Attaque d'arme au corps à corps : +3 pour toucher, allonge 1,50 m, une cible. Touché : 3 (1d4 + 1) dégâts contondants.",
+						"Luring Song": "La harpie chante une mélodie magique. Chaque humanoïde et géant à 90 m qui l'entend doit réussir un jet de Sagesse DD 11 ou être charmé jusqu'à la fin du prochain tour de la harpie. Une créature charmée doit se déplacer vers la harpie par le chemin le plus direct, et si elle est à 1,50 m de la harpie, elle s'immobilise.",
+					},
+				},
+				Hippogriff: {
+					traits: { "Keen Sight": "Vue perçante" },
+					traitEntries: { "Keen Sight": "L'hippogriffe a un avantage aux jets de Sagesse (Perception) basés sur la vue." },
+					actions: { Multiattack: "Attaques multiples", Bite: "Morsure", Claws: "Griffes" },
+					actionEntries: {
+						Multiattack: "L'hippogriffe fait deux attaques : une de morsure et une de griffes.",
+						Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 8 (1d10 + 3) dégâts perforants.",
+						Claws: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts tranchants.",
+					},
+				},
+				Bugbear: {
+					traits: {
+						Brute: "Brutal",
+						"Surprise Attack": "Attaque surprise",
+					},
+					traitEntries: {
+						Brute: "Une arme au corps à corps inflige un dé de dégâts supplémentaire quand le bugbear touche (inclus dans l'attaque).",
+						"Surprise Attack": "Si le bugbear surprend une créature et la touche avec une attaque lors du premier tour de combat, la cible subit 7 (2d6) dégâts supplémentaires.",
+					},
+					actions: { Morningstar: "Fléau d'armes", Javelin: "Javelot" },
+					actionEntries: {
+						Morningstar: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d8 + 2) dégâts perforants.",
+						Javelin: "Attaque au corps à corps ou à distance : +4 pour toucher, allonge 1,50 m ou portée 9/36 m, une cible. Touché : 9 (2d6 + 2) dégâts perforants au corps à corps, ou 5 (1d6 + 2) à distance.",
+					},
+				},
+				Aurochs: {
+					traits: { Charge: "Charge" },
+					traitEntries: { Charge: "Si l'auroch se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une attaque de corne au même tour, la cible subit 9 (2d8) dégâts perforants supplémentaires." },
+					actions: { Gore: "Corne" },
+					actionEntries: { Gore: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une cible. Touché : 14 (2d8 + 5) dégâts perforants." },
+				},
+				"Giant Elk": {
+					traits: { Charge: "Charge" },
+					traitEntries: { Charge: "Si le wapiti géant se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une attaque de bois au même tour, la cible subit 7 (2d6) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de Force DD 14 ou être projetée à terre." },
+					actions: { Ram: "Bois", Hooves: "Sabots" },
+					actionEntries: {
+						Ram: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 3 m, une cible. Touché : 11 (2d6 + 4) dégâts contondants.",
+						Hooves: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une créature à terre. Touché : 22 (4d8 + 4) dégâts contondants.",
+					},
+				},
+				"Saber-Toothed Tiger": {
+					traits: {
+						"Keen Smell": "Odorat perçant",
+						Pounce: "Bond agressif",
+					},
+					traitEntries: {
+						"Keen Smell": "Le tigre à dents de sabre a un avantage aux jets de Sagesse (Perception) basés sur l'odorat.",
+						Pounce: "Si le tigre à dents de sabre se déplace d'au moins 6 m en ligne droite vers une créature et la touche avec une griffe au même tour, la cible doit réussir un jet de Force DD 14 ou être jetée à terre. Si la cible est à terre, le tigre à dents de sabre peut effectuer une attaque de morsure contre elle par une action bonus.",
+					},
+					actions: { Bite: "Morsure", Claw: "Griffe" },
+					actionEntries: {
+						Bite: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 10 (1d10 + 5) dégâts perforants.",
+						Claw: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 12 (2d6 + 5) dégâts tranchants.",
+					},
+				},
+				"Giant Boar": {
+					traits: {
+						Charge: "Charge",
+						Relentless: "Implacable",
+					},
+					traitEntries: {
+						Charge: "Si le sanglier géant se déplace d'au moins 6 m en ligne droite vers une cible et la touche avec une défense au même tour, la cible subit 7 (2d6) dégâts tranchants supplémentaires. Si la cible est une créature, elle doit réussir un jet de Force DD 13 ou être projetée à terre.",
+						Relentless: "(Recharge après un repos court ou long). Si le sanglier géant subit des dégâts qui le réduiraient à 0 pv, il tombe à 1 pv à la place.",
+					},
+					actions: { Tusk: "Défense" },
+					actionEntries: { Tusk: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts tranchants." },
+				},
+				Griffon: {
+					traits: { "Keen Sight": "Vue perçante" },
+					traitEntries: { "Keen Sight": "Le griffon a un avantage aux jets de Sagesse (Perception) basés sur la vue." },
+					actions: { Multiattack: "Attaques multiples", Beak: "Bec", Claws: "Griffes" },
+					actionEntries: {
+						Multiattack: "Le griffon fait deux attaques : une de bec et une de griffes.",
+						Beak: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 8 (1d8 + 4) dégâts perforants.",
+						Claws: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d6 + 4) dégâts tranchants.",
+					},
+				},
+				Peryton: {
+					traits: { Flyby: "Vol piqué", "Keen Sight and Smell": "Vue et odorat perçants" },
+					traitEntries: {
+						Flyby: "Le peryton ne provoque pas d'attaque d'opportunité quand il vole hors de portée d'un ennemi.",
+						"Keen Sight and Smell": "Le peryton a un avantage aux jets de Sagesse (Perception) basés sur la vue ou l'odorat.",
+					},
+					actions: { Multiattack: "Attaques multiples", Gore: "Corne", Talons: "Serres" },
+					actionEntries: {
+						Multiattack: "Le peryton fait une attaque de corne et une attaque de serres.",
+						Gore: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 7 (1d8 + 3) dégâts perforants.",
+						Talons: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 8 (2d4 + 3) dégâts perforants.",
+					},
+				},
+				Ankheg: {
+					traits: {},
+					traitEntries: {},
+					actions: { Bite: "Morsure", "Acid Spray": "Jet d'acide" },
+					actionEntries: {
+						Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts tranchants plus 3 (1d6) dégâts d'acide. Si la cible est Grande ou plus petite, elle est saisie (Libération DD 13). Tant que dure la saisie, l'ankheg ne peut mordre que la créature saisie et a un avantage aux jets d'attaque contre elle.",
+						"Acid Spray": "(Recharge 6). L'ankheg crache de l'acide sur une ligne de 9 m de long et 1,50 m de large. Chaque créature dans cette ligne doit réussir un jet de Dextérité DD 13, subissant 10 (3d6) dégâts d'acide en cas d'échec, ou la moitié en cas de succès.",
+					},
+				},
+				Centaur: {
+					traits: { Charge: "Charge" },
+					traitEntries: { Charge: "Si le centaure se déplace d'au moins 9 m en ligne droite vers une cible et la touche avec une attaque de pique au même tour, la cible subit 10 (3d6) dégâts perforants supplémentaires." },
+					actions: { Multiattack: "Attaques multiples", Pike: "Pique", Hooves: "Sabots", Longbow: "Arc long" },
+					actionEntries: {
+						Multiattack: "Le centaure fait deux attaques : une de pique et une de sabots, ou deux attaques d'arc long.",
+						Pike: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 3 m, une cible. Touché : 9 (1d10 + 4) dégâts perforants.",
+						Hooves: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d6 + 4) dégâts contondants.",
+						Longbow: "Attaque d'arme à distance : +4 pour toucher, portée 45/180 m, une cible. Touché : 6 (1d8 + 2) dégâts perforants.",
+					},
+				},
+				Grick: {
+					traits: { "Stone Camouflage": "Camouflage de pierre" },
+					traitEntries: { "Stone Camouflage": "Le grick a un avantage aux jets de Dextérité (Discrétion) pour se cacher dans un terrain rocheux." },
+					actions: { Multiattack: "Attaques multiples", Tentacles: "Tentacules", Beak: "Bec" },
+					actionEntries: {
+						Multiattack: "Le grick fait une attaque de tentacules. Si cette attaque touche, le grick peut faire une attaque de bec contre la même cible.",
+						Tentacles: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 9 (2d6 + 2) dégâts tranchants.",
+						Beak: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 5 (1d6 + 2) dégâts perforants.",
+					},
+				},
+				Basilisk: {
+					traits: { "Petrifying Gaze": "Regard pétrifiant" },
+					traitEntries: { "Petrifying Gaze": "Si une créature commence son tour à 9 m du basilic et qu'elles peuvent se voir, le basilic peut forcer la créature à faire un jet de Constitution DD 12 si le basilic n'est pas neutralisé. En cas d'échec, la créature commence à se transformer en pierre et est entravée. Elle doit répéter le jet à la fin de son prochain tour. En cas de succès, l'effet prend fin. En cas d'échec, la créature est pétrifiée jusqu'à ce qu'un sort de restauration supérieure la libère. Une créature non surprise peut détourner les yeux au début de son tour. Si elle le fait, elle ne peut pas voir le basilic jusqu'au début de son prochain tour. Si elle le regarde entretemps, elle doit immédiatement faire le jet. Si le basilic voit son reflet dans une lumière vive à 9 m, il se prend pour un rival et se cible avec son regard." },
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 10 (2d6 + 3) dégâts perforants plus 7 (2d6) dégâts de poison." },
+				},
+				Manticore: {
+					traits: {},
+					traitEntries: {},
+					actions: { Multiattack: "Attaques multiples", Bite: "Morsure", Claw: "Griffe", "Tail Spike": "Piquant de queue" },
+					actionEntries: {
+						Multiattack: "La manticore fait trois attaques : une de morsure et deux de griffes.",
+						Bite: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 7 (1d8 + 3) dégâts perforants.",
+						Claw: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d6 + 3) dégâts tranchants.",
+						"Tail Spike": "Attaque d'arme à distance : +5 pour toucher, portée 30/60 m, une cible. Touché : 7 (1d8 + 3) dégâts perforants.",
+					},
+				},
+				Owlbear: {
+					traits: { "Keen Sight and Smell": "Vue et odorat perçants" },
+					traitEntries: { "Keen Sight and Smell": "L'owlbear a un avantage aux jets de Sagesse (Perception) basés sur la vue ou l'odorat." },
+					actions: { Multiattack: "Attaques multiples", Beak: "Bec", Claws: "Griffes" },
+					actionEntries: {
+						Multiattack: "L'owlbear fait deux attaques : une de bec et une de griffes.",
+						Beak: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une créature. Touché : 10 (1d10 + 5) dégâts perforants.",
+						Claws: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une cible. Touché : 14 (2d8 + 5) dégâts tranchants.",
+					},
+				},
+				"Phase Spider": {
+					traits: { "Ethereal Jaunt": "Saut éthéré", "Web Walker": "Marcheur de toile" },
+					traitEntries: {
+						"Ethereal Jaunt": "Par une action bonus, l'araignée de phase peut passer magiquement du Plan Matériel au Plan Éthéré, ou vice versa.",
+						"Web Walker": "L'araignée de phase ignore les restrictions imposées par les toiles.",
+					},
+					actions: { Bite: "Morsure" },
+					actionEntries: { Bite: "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une créature. Touché : 7 (1d10 + 2) dégâts perforants, et la cible doit réussir un jet de Constitution DD 11 ou subir 18 (4d8) dégâts de poison, ou la moitié en cas de succès." },
+				},
+				Leucrotta: {
+					traits: {
+						"Keen Smell": "Odorat perçant",
+						Mimicry: "Mimétisme",
+					},
+					traitEntries: {
+						"Keen Smell": "Le leucrotta a un avantage aux jets de Sagesse (Perception) basés sur l'odorat.",
+						Mimicry: "Le leucrotta peut imiter des sons qu'il a entendus. Une créature qui entend ces sons peut les distinguer avec un jet de Sagesse (Perspicacité) réussi DD 14.",
+					},
+					actions: { Multiattack: "Attaques multiples", Bite: "Morsure", Kick: "Coup de pied" },
+					actionEntries: {
+						Multiattack: "Le leucrotta fait une attaque de morsure et une attaque de coup de pied.",
+						Bite: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 8 (1d8 + 4) dégâts perforants. Si le leucrotta fait un coup critique, il lance les dés de dégâts trois fois.",
+						Kick: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d6 + 4) dégâts contondants.",
+					},
+				},
+				"Displacer Beast": {
+					traits: {
+						Avoidance: "Évitement",
+						Displacement: "Déplacement",
+					},
+					traitEntries: {
+						Avoidance: "Si la bête déplaçante est soumise à un effet qui permet un jet de sauvegarde pour ne subir que la moitié des dégâts, elle ne subit aucun dégât si elle réussit, et seulement la moitié si elle échoue.",
+						Displacement: "La bête déplaçante projette une illusion magique qui la fait apparaître près de sa position réelle, causant un désavantage aux jets d'attaque contre elle. Si elle est touchée, ce trait est perturbé jusqu'à la fin de son prochain tour. Ce trait est aussi perturbé pendant qu'elle est neutralisée ou a une vitesse de 0.",
+					},
+					actions: { Multiattack: "Attaques multiples", Tentacle: "Tentacule" },
+					actionEntries: {
+						Multiattack: "La bête déplaçante fait deux attaques de tentacule.",
+						Tentacle: "Attaque d'arme au corps à corps : +6 pour toucher, allonge 3 m, une cible. Touché : 7 (1d6 + 4) dégâts contondants plus 3 (1d6) dégâts perforants.",
+					},
+				},
+				Veteran: {
+					traits: { Multiattack: "Attaques multiples" },
+					traitEntries: {},
+					actions: { Multiattack: "Attaques multiples", Longsword: "Épée longue", Shortsword: "Épée courte", "Heavy Crossbow": "Arbalète lourde" },
+					actionEntries: {
+						Multiattack: "Le vétéran fait deux attaques d'épée longue. S'il a une épée courte à portée, il peut aussi faire une attaque d'épée courte.",
+						Longsword: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 7 (1d8 + 3) dégâts tranchants, ou 8 (1d10 + 3) à deux mains.",
+						Shortsword: "Attaque d'arme au corps à corps : +5 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d6 + 3) dégâts perforants.",
+						"Heavy Crossbow": "Attaque d'arme à distance : +3 pour toucher, portée 30/120 m, une cible. Touché : 6 (1d10 + 1) dégâts perforants.",
+					},
+				},
+				Werewolf: {
+					traits: {
+						Shapechanger: "Métamorphe",
+						"Keen Hearing and Smell": "Ouïe et odorat perçants",
+					},
+					traitEntries: {
+						Shapechanger: "Le loup-garou peut se transformer en loup-garou hybride ou en loup, ou reprendre sa forme véritable. Ses statistiques sont les mêmes quelle que soit la forme, sauf en cas de mention contraire. Les équipements portés ou transportés ne sont pas transformés. Il reprend sa forme véritable s'il meurt.",
+						"Keen Hearing and Smell": "Le loup-garou a un avantage aux jets de Sagesse (Perception) basés sur l'ouïe ou l'odorat.",
+					},
+					actions: {
+						Multiattack: "Attaques multiples",
+						"Bite (Wolf or Hybrid Form Only)": "Morsure (forme loup ou hybride)",
+						"Claws (Hybrid Form Only)": "Griffes (forme hybride)",
+						"Longsword (Humanoid Form Only)": "Épée longue (forme humanoïde)",
+						"Spear (Humanoid or Hybrid Form Only)": "Lance (forme humanoïde ou hybride)",
+					},
+					actionEntries: {
+						Multiattack: "En forme hybride, le loup-garou fait deux attaques : une de morsure et une de griffes.",
+						"Bite (Wolf or Hybrid Form Only)": "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d8 + 2) dégâts perforants. Si la cible est un humanoïde, elle doit réussir un jet de Constitution DD 12 ou être maudite par la lycanthropie.",
+						"Claws (Hybrid Form Only)": "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une créature. Touché : 7 (2d4 + 2) dégâts tranchants.",
+						"Longsword (Humanoid Form Only)": "Attaque d'arme au corps à corps : +4 pour toucher, allonge 1,50 m, une cible. Touché : 6 (1d8 + 2) dégâts tranchants.",
+						"Spear (Humanoid or Hybrid Form Only)": "Attaque au corps à corps ou à distance : +4, allonge 1,50 m ou portée 6/18 m, une cible. Touché : 5 (1d6 + 2) dégâts perforants, ou 6 (1d8 + 2) à deux mains.",
+					},
+				},
+				Bulette: {
+					traits: { "Standing Leap": "Saut debout" },
+					traitEntries: { "Standing Leap": "Le bulette peut sauter jusqu'à 3 m en hauteur et 6 m en longueur avec ou sans élan." },
+					actions: { Bite: "Morsure", "Deadly Leap": "Saut mortel" },
+					actionEntries: {
+						Bite: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une cible. Touché : 30 (4d12 + 4) dégâts perforants.",
+						"Deadly Leap": "Si le bulette saute au moins 4,50 m dans le cadre de son déplacement, il peut atterrir sur des créatures de taille Grande ou inférieure. Il doit dépenser 1,50 m de déplacement sur chaque créature. Chaque créature doit réussir un jet de Force ou de Dextérité DD 16 (au choix). En cas d'échec, la créature subit 3d6 + 4 dégâts contondants et 3d6 + 4 dégâts tranchants, et est projetée à terre. En cas de succès, la créature subit la moitié des dégâts et n'est pas projetée à terre.",
+					},
+				},
+				Gorgon: {
+					traits: { "Trampling Charge": "Charge piétinante" },
+					traitEntries: { "Trampling Charge": "Si le gorgone se déplace d'au moins 6 m en ligne droite vers une créature et la touche avec une attaque de corne au même tour, cette cible doit réussir un jet de Force DD 16 ou être projetée à terre. Si la cible est à terre, le gorgone peut effectuer une attaque de sabots contre elle par une action bonus." },
+					actions: { Multiattack: "Attaques multiples", Gore: "Corne", Hooves: "Sabots", "Petrifying Breath (Recharge 5)": "Souffle pétrifiant (Recharge 5)" },
+					actionEntries: {
+						Multiattack: "Le gorgone fait deux attaques : une de corne et une de sabots.",
+						Gore: "Attaque d'arme au corps à corps : +8 pour toucher, allonge 1,50 m, une cible. Touché : 18 (2d12 + 5) dégâts perforants.",
+						Hooves: "Attaque d'arme au corps à corps : +8 pour toucher, allonge 1,50 m, une cible. Touché : 16 (2d10 + 5) dégâts contondants.",
+						"Petrifying Breath (Recharge 5)": "Le gorgone exhale un gaz pétrifiant dans un cône de 9 m. Chaque créature dans cette zone doit réussir un jet de Constitution DD 13. En cas d'échec, la cible commence à se transformer en pierre et est entravée. Elle doit répéter le jet à la fin de son prochain tour. En cas de succès, l'effet prend fin. En cas d'échec, la cible est pétrifiée jusqu'à ce qu'un sort de restauration supérieure la libère.",
+					},
+				},
+				Chimera: {
+					traits: {},
+					traitEntries: {},
+					actions: { Multiattack: "Attaques multiples", Bite: "Morsure", Horns: "Cornes", Claws: "Griffes", "Fire Breath (Recharge 5)": "Souffle de feu (Recharge 5)" },
+					actionEntries: {
+						Multiattack: "La chimère fait trois attaques : une de morsure, une de cornes et une de griffes. Quand son souffle de feu est disponible, elle peut l'utiliser à la place de la morsure ou des cornes.",
+						Bite: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d6 + 4) dégâts perforants.",
+						Horns: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une cible. Touché : 10 (1d12 + 4) dégâts contondants.",
+						Claws: "Attaque d'arme au corps à corps : +7 pour toucher, allonge 1,50 m, une cible. Touché : 11 (2d6 + 4) dégâts tranchants.",
+						"Fire Breath (Recharge 5)": "La tête de dragon exhale du feu dans un cône de 4,50 m. Chaque créature dans cette zone doit réussir un jet de Dextérité DD 15, subissant 31 (7d8) dégâts de feu en cas d'échec, ou la moitié en cas de succès.",
+					},
+				},
+				Triceratops: {
+					traits: { "Trampling Charge": "Charge piétinante" },
+					traitEntries: { "Trampling Charge": "Si le tricératops se déplace d'au moins 6 m en ligne droite vers une créature et la touche avec une attaque de corne au même tour, cette cible doit réussir un jet de Force DD 13 ou être projetée à terre. Si la cible est à terre, le tricératops peut effectuer une attaque de sabots contre elle par une action bonus." },
+					actions: { Gore: "Corne", Stomp: "Piétinement" },
+					actionEntries: {
+						Gore: "Attaque d'arme au corps à corps : +9 pour toucher, allonge 1,50 m, une cible. Touché : 24 (4d8 + 6) dégâts perforants.",
+						Stomp: "Attaque d'arme au corps à corps : +9 pour toucher, allonge 1,50 m, une créature à terre. Touché : 22 (3d10 + 6) dégâts contondants.",
+					},
+				},
+			};
+			function translateDmg(list) {
+				return list.map((d) => dmgMap[d] || d);
+			}
+
+			function translateSenses(senses) {
+				return senses.map((s) => s.replace("darkvision", "vision dans le noir").replace("blindsight", "vision aveugle").replace("tremorsense", "perception des vibrations").replace("truesight", "vision véritable").replace("ft.", "m"));
+			}
+
+			const armorMap = {
+				"natural armor": "armure naturelle",
+				"hide armor": "armure de peaux",
+				"hide armor, shield": "armure de peaux, bouclier",
+				"chain mail, shield": "cotte de mailles, bouclier",
+				"splint armor": "armure de plates",
+			};
+
+			const langMap = {
+				Common: "commun",
+				Goblin: "gobelin",
+				Orc: "orc",
+				Giant: "géant",
+				Draconic: "draconien",
+				Gnoll: "gnoll",
+				Abyssal: "abyssal",
+				Sylvan: "sylvestre",
+				Elvish: "elfique",
+				Worg: "worg",
+				"Giant Eagle": "aigle géant",
+				"Giant Elk": "élan géant",
+				"any one language (usually Common)": "n'importe quelle langue (généralement le commun)",
+				"understands Common and Auran but can't speak them": "comprend le commun et l'auran mais ne peut pas parler",
+				"understands Common and Elvish but can't speak": "comprend le commun et l'elfique mais ne peut pas parler",
+				"understands Common, Elvish, Sylvan but can't speak them": "comprend le commun, l'elfique et le sylvestre mais ne peut pas parler",
+				"understands Draconic but can't speak": "comprend le draconien mais ne peut pas parler",
+				"Common (can't speak in wolf form)": "commun (ne peut pas parler sous forme de loup)",
+			};
+
+			function translateArmor(acType) {
+				return armorMap[acType] || acType;
+			}
+
+			function translateLanguages(langs) {
+				return langs.map((l) => langMap[l] || l);
+			}
+
+			function renderStatblock(creatureName) {
+				const translated = translateCreatureText(creatureName);
+				const s = translated || statblocks[creatureName];
+				if (!s) return `<div class="statblock"><p>Statblock non disponible: ${creatureName}</p></div>`;
+
+				let speedStr = Object.entries(s.speed)
+					.map(([k, v]) => {
+						const label = speedMap[k] || k;
+						return label + " " + (v * 0.3).toFixed(0) + " m (" + v + " ft.)";
+					})
+					.join(", ");
+
+				let sensesArr = translateSenses(s.senses);
+				let passivePerc = 10 + (parseInt((s.skills.perception || "+0").replace("+", "")) || 0);
+				let sensesStr = sensesArr.length ? sensesArr.join(", ") + ", " : "";
+				sensesStr += "Perception passive " + passivePerc;
+
+				let langsStr = s.languages.length ? translateLanguages(s.languages).join(", ") : "—";
+				let skillsStr = Object.entries(s.skills)
+					.map(([k, v]) => (skillMap[k] || k) + " " + v)
+					.join(", ");
+				let savesStr = Object.entries(s.saves)
+					.map(([k, v]) => (abMap[k] || k.toUpperCase()) + " " + v)
+					.join(", ");
+
+				let resistStr = "";
+				if (s.damageResistances && s.damageResistances.length) {
+					resistStr = s.damageResistances
+						.map((r) => {
+							if (r.startsWith("{")) {
+								try {
+									const obj = JSON.parse(r);
+									return translateDmg(obj.resist).join(", ") + " (des attaques non magiques)";
+								} catch (e) {
+									return r;
+								}
+							}
+							return dmgMap[r] || r;
+						})
+						.join("; ");
+				}
+
+				let immuneStr = "";
+				if (s.damageImmunities && s.damageImmunities.length) {
+					immuneStr = s.damageImmunities
+						.map((r) => {
+							if (r.startsWith("{")) {
+								try {
+									const obj = JSON.parse(r);
+									return translateDmg(obj.immune).join(", ") + " (des attaques non magiques et non en argent)";
+								} catch (e) {
+									return r;
+								}
+							}
+							return dmgMap[r] || r;
+						})
+						.join("; ");
+				}
+
+				let condImmuneStr = s.conditionImmunities.length ? s.conditionImmunities.map((c) => condMap[c] || c).join(", ") : "";
+
+				let sizeStr = sizeMap[s.size] || s.size;
+				let typeStr = typeMap[s.type] || s.type;
+				let alignStr = alignMap[s.alignment] || s.alignment;
+
+				let html = `<div class="statblock">`;
+				html += `<div class="name">${s.name}</div>`;
+				html += `<div class="type-line">${sizeStr} ${typeStr}, ${alignStr}</div>`;
+				html += `<hr class="separator">`;
+				html += `<div class="stat-row"><span class="label">Classe d'armure</span> ${s.ac}${s.acType ? " (" + translateArmor(s.acType) + ")" : ""}</div>`;
+				html += `<div class="stat-row"><span class="label">Points de vie</span> ${s.hp} (${s.hpFormula})</div>`;
+				html += `<div class="stat-row"><span class="label">Vitesse</span> ${speedStr}</div>`;
+				html += `<hr class="separator">`;
+
+				html += `<div class="abilities">`;
+				["str", "dex", "con", "int", "wis", "cha"].forEach((ab) => {
+					html += `<div><div class="ab-label">${abMap[ab]}</div><div class="ab-val">${s[ab]} (${formatMod(s[ab])})</div></div>`;
+				});
+				html += `</div>`;
+				html += `<hr class="separator">`;
+
+				if (savesStr) html += `<div class="stat-row"><span class="label">Jets de sauvegarde</span> ${savesStr}</div>`;
+				if (skillsStr) html += `<div class="stat-row"><span class="label">Compétences</span> ${skillsStr}</div>`;
+				if (resistStr) html += `<div class="stat-row"><span class="label">Résistances aux dégâts</span> ${resistStr}</div>`;
+				if (immuneStr) html += `<div class="stat-row"><span class="label">Immunités aux dégâts</span> ${immuneStr}</div>`;
+				if (condImmuneStr) html += `<div class="stat-row"><span class="label">Immunités aux états</span> ${condImmuneStr}</div>`;
+				html += `<div class="stat-row"><span class="label">Sens</span> ${sensesStr}</div>`;
+				html += `<div class="stat-row"><span class="label">Langues</span> ${langsStr}</div>`;
+				html += `<div class="stat-row"><span class="label">Facteur de puissance</span> ${s.cr}</div>`;
+
+				if (s.traits.length) {
+					html += `<hr class="separator">`;
+					s.traits.forEach((t) => {
+						html += `<div class="trait"><span class="trait-name">${t.name}.</span> ${t.entries}</div>`;
+					});
+				}
+
+				if (s.actions.length) {
+					html += `<div class="section-title">Actions</div>`;
+					s.actions.forEach((a) => {
+						html += `<div class="trait"><span class="trait-name">${a.name}.</span> ${a.entries}</div>`;
+					});
+				}
+
+				if (s.reactions && s.reactions.length) {
+					html += `<div class="section-title">Réactions</div>`;
+					s.reactions.forEach((r) => {
+						html += `<div class="trait"><span class="trait-name">${r.name}.</span> ${r.entries}</div>`;
+					});
+				}
+
+				html += `</div>`;
+				return html;
+			}
+
+			function rollD100() {
+				const roll = Math.floor(Math.random() * 100) + 1;
+				const enc = encounters.find((e) => e.d === roll);
+				const card = document.getElementById("resultCard");
+				const count = rollDice(enc.count);
+				const diffClass = "diff-" + enc.diff;
+
+				document.getElementById("resultRoll").textContent = "d100 : " + roll;
+				document.getElementById("resultEncounter").innerHTML = `<span class="${diffClass}">${count}</span> x ${enc.name}`;
+				document.getElementById("resultDesc").textContent = enc.desc;
+				document.getElementById("resultMeta").innerHTML = `<span><b>Type :</b> <span class="tag tag-${enc.type}">${enc.type}</span></span>` + `<span><b>CR :</b> ${enc.cr}</span>` + `<span><b>Difficulte :</b> <span class="${diffClass}">${enc.diff.toUpperCase()}</span></span>`;
+
+				// Render statblocks
+				const container = document.getElementById("statblockContainer");
+				const uniqueCreatures = [...new Set(enc.creatures)];
+				container.innerHTML = uniqueCreatures.map((c) => renderStatblock(c)).join("");
+
+				card.className = "result-card show";
+				card.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+
+			// Build table
+			const tbody = document.getElementById("tableBody");
+			encounters.forEach((enc) => {
+				const tr = document.createElement("tr");
+				tr.className = enc.diff;
+				tr.innerHTML = "<td>" + String(enc.d).padStart(2, "0") + "</td>" + "<td><b>" + enc.name + "</b></td>" + "<td>" + enc.count + "</td>" + '<td><span class="tag tag-' + enc.type + '">' + enc.type + "</span></td>" + "<td>" + enc.cr + "</td>" + '<td><span class="tag tag-' + enc.diff + '">' + enc.diff + "</span></td>" + "<td>" + enc.desc + "</td>";
+				tbody.appendChild(tr);
+			});
+		</script>
+	</body>
+</html>
