@@ -1,0 +1,5833 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
+		"otherSources": {
+			"monster": {
+				"MM": "ERLW",
+				"VGM": "ERLW",
+				"TCE": "ERLW"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Belashyrra",
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 286,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 19,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 304,
+				"formula": "32d8 + 160"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 24,
+			"dex": 21,
+			"con": 20,
+			"int": 25,
+			"wis": 22,
+			"cha": 23,
+			"save": {
+				"int": "+14",
+				"wis": "+13",
+				"cha": "+13"
+			},
+			"skill": {
+				"arcana": "+14",
+				"perception": "+13"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 23,
+			"resist": [
+				"poison",
+				"psychic"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"poisoned",
+				"prone"
+			],
+			"languages": [
+				"Deep Speech",
+				"telepathy 120 ft."
+			],
+			"cr": {
+				"cr": "22",
+				"lair": "23"
+			},
+			"trait": [
+				{
+					"name": "Alien Mind",
+					"entries": [
+						"If une créature tries to read Belashyrra's thoughts or deals psychicdgts to it, that creature doit réussir on a {@dd 22}jet de sauvegarde Intelligence or be {@condition étourdi} for 1 minute. The {@condition étourdi} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Eye Thief",
+					"entries": [
+						"Belashyrra can see through the eyes of all creatures within 120 mètres of it. It can use its Eye Ray through any creature within 120 mètres of it, as though it were in that creature's space."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Belashyrra fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"Belashyrra avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Régénération",
+					"entries": [
+						"Belashyrra regains 20touché points at the start of its turn. If it takes radiantdgts, this trait doesn't function at the start of its next turn. Belashyrra dies only if it starts its turn with 0touché points and doesn't regenerate."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"As a bonus action, Belashyrra can teleport up to 30 mètres to an unoccupied space it can see."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Belashyrra makes two attacks with its claws and uses its Eye Ray once."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 14} pour toucher, allonge 5 m,, une cible. {@h}17 ({@dégât 3d6 + 7}) slashingdgts."
+					]
+				},
+				{
+					"name": "Eye Ray",
+					"entries": [
+						"Belashyrra shoots one of the following magical eye rays of its choice, targeting une créature it can see within 120 mètres of it:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "itemSub",
+									"name": "1. Psyche-Reconstruction Ray",
+									"entry": "The target must make a {@dc 22} Wisdom saving throw, taking 49 ({@damage 9d10}) psychic damage on a failed save, or half as much damage on a successful one. If this damage reduces a creature to 0 hit points, it dies and transforms into a spectator under Belashyrra's control and acts immediately after Belashyrra in the initiative order. The target can't be returned to its original form by any means short of a {@spell wish} spell."
+								},
+								{
+									"type": "itemSub",
+									"name": "2. Domination Ray",
+									"entry": "The target must succeed on a {@dc 22} Wisdom saving throw or be {@condition charmed} by Belashyrra for 1 minute or until the target takes damage. Belashyrra can issue telepathic commands to the {@condition charmed} creature (no action required), which it does its best to obey."
+								},
+								{
+									"type": "itemSub",
+									"name": "3. Mind-Weakening Ray",
+									"entry": "The target must succeed on a {@dc 22} Intelligence saving throw or take 36 ({@damage 8d8}) psychic damage and be unable to cast spells or activate magic items for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "itemSub",
+									"name": "4. Blinding Ray",
+									"entry": "The target and each creature within 10 feet of it must succeed on a {@dc 22} Constitution saving throw or take 19 ({@damage 3d12}) radiant damage and be {@condition blinded} for 1 minute. Until this blindness ends, Belashyrra can see through the {@condition blinded} creature's eyes. The {@condition blinded} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								}
+							]
+						}
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Belashyrra makes one claw attack."
+					]
+				},
+				{
+					"name": "Implant Fear (Costs 2 Actions)",
+					"entries": [
+						"Belashyrra targets une créature it can see within 60 mètres of it. The target doit réussir on a {@dd 22}Sagesse saving throw or take 22 ({@dégât 4d10}) psychicdgts and immediately use its reaction, if available, to move as far as its speed allows away from Belashyrra."
+					]
+				},
+				{
+					"name": "Rend Reality (Costs 3 Actions)",
+					"entries": [
+						"Belashyrra rips at the bonds of reality in its immediate area. Each creature within 10 mètres of Belashyrra doit réussir on a {@dd 22}jet de sauvegarde Constitution or take 19 ({@dégât 3d12}) forcedgts and gain one level of {@condition épuisement}."
+					]
+				}
+			],
+			"legendaryGroup": {
+				"name": "Belashyrra",
+				"source": "ERLW"
+			},
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Regeneration"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"O",
+				"R",
+				"S",
+				"Y"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflict": [
+				"blinded",
+				"charmed",
+				"exhaustion",
+				"stunned"
+			],
+			"conditionInflictLegendary": [
+				"charmed"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"intelligence",
+				"wisdom"
+			],
+			"savingThrowForcedLegendary": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Bone Knight",
+			"source": "ERLW",
+			"page": 316,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"L",
+				"NX",
+				"C",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"bonecraft armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 84,
+				"formula": "13d8 + 26"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 13,
+			"con": 14,
+			"int": 12,
+			"wis": 14,
+			"cha": 16,
+			"save": {
+				"wis": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"athletics": "+7",
+				"deception": "+6",
+				"intimidation": "+6"
+			},
+			"passive": 12,
+			"resist": [
+				"necrotic",
+				"poison"
+			],
+			"languages": [
+				"any one language (usually Common)"
+			],
+			"cr": "5",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The knight is an 8th-level spellcaster. Its spellcasting ability is Charisma (spell save {@dc 14}, {@hit 6} to hit with spell attacks). It has the following paladin spells prepared:"
+					],
+					"spells": {
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell command}",
+								"{@spell compelled duel}",
+								"{@spell hellish rebuke}",
+								"{@spell wrathful smite}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell branding smite}",
+								"{@spell crown of madness}",
+								"{@spell darkness}",
+								"{@spell find steed}",
+								"{@spell magic weapon}"
+							]
+						}
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Commander of Bones",
+					"entries": [
+						"As a bonus action, the knight can target one skeleton or zombie it can see within 30 mètres of it. The target doit faire a {@dd 14}Sagesse saving throw. On a failed save, la cible must obey the knight's commands until the knight dies or until the knight releases it as a bonus action. The knight can command up to twelve undead at a time this way."
+					]
+				},
+				{
+					"name": "Master of the Pallid Banner",
+					"entries": [
+						"While within 60 mètres of the knight, any undead ally of the knight avantage aux jets de sauvegarde against any effect that turns undead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The knight attacks twice with one of its weapons."
+					]
+				},
+				{
+					"name": "Greatsword",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) slashingdgts."
+					]
+				},
+				{
+					"name": "Longbow",
+					"entries": [
+						"{@atk rw} {@hit 4} pour toucher, portée 150/600 m,, une cible. {@h}5 ({@dégât 1d8 + 1}) piercingdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"greatsword|phb",
+				"longbow|phb"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"damageTagsSpell": [
+				"F",
+				"R",
+				"Y"
+			],
+			"spellcastingTags": [
+				"CP"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RNG",
+				"RW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Changeling",
+			"source": "ERLW",
+			"page": 317,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"changeling",
+					"shapechanger"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"{@item leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 22,
+				"formula": "4d8 + 4"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 8,
+			"dex": 15,
+			"con": 12,
+			"int": 14,
+			"wis": 10,
+			"cha": 16,
+			"skill": {
+				"acrobatics": "+4",
+				"deception": "+5",
+				"insight": "+2",
+				"perception": "+2",
+				"persuasion": "+5"
+			},
+			"passive": 12,
+			"languages": [
+				"Common",
+				"Dwarvish",
+				"Elvish",
+				"Halfling",
+				"Thieves' cant"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Change Appearance",
+					"entries": [
+						"The changeling can use its action to polymorph into a Medium humanoid it has seen, or back into its true form. Its statistics, other than its size, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its true form if it dies."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The changeling makes two attacks with its dagger."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) piercingdgts."
+					]
+				},
+				{
+					"name": "Unsettling Visage (Recharges after a Short or Long Rest)",
+					"entries": [
+						"Each creature within 30 mètres of the changeling doit réussir on a {@dd 13}Sagesse saving throw or be {@condition effrayé} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"attachedItems": [
+				"dagger|phb"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"D",
+				"E",
+				"H",
+				"TC"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Clawfoot",
+			"group": [
+				"Dinosaurs"
+			],
+			"source": "ERLW",
+			"page": 289,
+			"size": [
+				"M"
+			],
+			"type": "bête",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 19,
+				"formula": "3d8 + 6"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 14,
+			"int": 4,
+			"wis": 12,
+			"cha": 10,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+5"
+			},
+			"passive": 13,
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Tactique de groupe",
+					"entries": [
+						"The clawfoot avantage on an attack roll against une créature if at least one of the clawfoot's allies is within 5 mètres of la créature and the ally isn't {@conditionincapacité}."
+					]
+				},
+				{
+					"name": "Pounce",
+					"entries": [
+						"Si  clawfoot moves at least 20 mètres straight toward une créature and thentouchés it with a claw attack on the same turn, that target doit réussir on a {@dd 11}Force saving throw or be knocked {@condition à terre}. If la cible is {@condition à terre}, the clawfoot can make one bite attack against it as a bonus action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The clawfoot makes two attacks: one with its bite and one with its claws."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d8 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d8 + 3}) slashingdgts."
+					]
+				}
+			],
+			"altArt": [
+				{
+					"name": "Clawfoot Raptor",
+					"source": "WGE"
+				}
+			],
+			"traitTags": [
+				"Pack Tactics",
+				"Pounce"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Corrin Delmaco",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 271,
+			"_copy": {
+				"name": "Spy",
+				"source": "MM",
+				"_templates": [
+					{
+						"name": "Stout Halfling",
+						"source": "PHB"
+					}
+				],
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the spy",
+						"with": "Corrin",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"hp": {
+				"average": 21,
+				"formula": "6d6"
+			},
+			"tokenCustom": true,
+			"languageTags": [
+				"H",
+				"X"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Dolgaunt",
+			"source": "ERLW",
+			"page": 290,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"Unarmored Defense"
+					]
+				}
+			],
+			"hp": {
+				"average": 33,
+				"formula": "6d8 + 6"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 14,
+			"dex": 18,
+			"con": 12,
+			"int": 13,
+			"wis": 14,
+			"cha": 11,
+			"skill": {
+				"acrobatics": "+6",
+				"perception": "+4",
+				"stealth": "+6"
+			},
+			"senses": [
+				"blindsight 120 ft. (blind beyond this radius)"
+			],
+			"passive": 14,
+			"conditionImmune": [
+				"blinded"
+			],
+			"languages": [
+				"Deep Speech",
+				"Goblin"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Évasion",
+					"entries": [
+						"Si  dolgaunt is subjected to an effect that allows it to make aDextérité saving throw to take only halfdgts, the dolgaunt instead takes nodgts if it succeeds on the saving throw, and only halfdgts if it fails. It can't use this trait if it's {@conditionincapacité}."
+					]
+				},
+				{
+					"name": "Unarmored Defense",
+					"entries": [
+						"While the dolgaunt is wearing no armor and wielding no shield, its AC includes itsSagesse modifier."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The dolgaunt makes two tentacle attacks and two unarmed strikes. Up to two tentacle attacks can be replaced by Vitality Drain."
+					]
+				},
+				{
+					"name": "Tentacle",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 15 m,, une cible. {@h}7 ({@dégât 1d6 + 4}) bludgeoningdgts. The target is {@condition agrippé} (escape {@dd 12}) if it is a Large or smaller creature. Until this grapple ends, the dolgaunt can't use the same tentacle on another target. The dolgaunt has two tentacles."
+					]
+				},
+				{
+					"name": "Attaque non armée",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d4 + 4}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Vitality Drain",
+					"entries": [
+						"One creature {@condition agrippé} by a tentacle of the dolgaunt doit faire a {@dd 11}jet de sauvegarde Constitution. On a failed save, la cible takes 9 ({@dégât 2d8}) necroticdgts, and the dolgaunt regains a number oftouché points equal to half the necroticdgts taken."
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Tentacles"
+			],
+			"languageTags": [
+				"DS",
+				"GO"
+			],
+			"damageTags": [
+				"B",
+				"N"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Dolgrim",
+			"source": "ERLW",
+			"page": 291,
+			"size": [
+				"S"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor",
+						"{@item shield|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 13,
+				"formula": "3d6 + 3"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 15,
+			"dex": 14,
+			"con": 12,
+			"int": 8,
+			"wis": 10,
+			"cha": 8,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Deep Speech",
+				"Goblin"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Dual Consciousness",
+					"entries": [
+						"The dolgrim avantage aux jets de sauvegarde against being {@condition aveuglé}, {@condition charmé}, {@condition sourd}, {@condition effrayé}, {@condition étourdi}, and knocked {@condition inconscient}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The dolgrim makes three attacks."
+					]
+				},
+				{
+					"name": "Morningstar",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d8 + 2}) piercingdgts."
+					]
+				},
+				{
+					"name": "Spear",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}5 ({@dégât 1d6 + 2}) piercingdgts, or 6 ({@dégât 1d8 + 2}) piercingdgts if used with two hands to make a melee attack."
+					]
+				},
+				{
+					"name": "Hand Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 4} pour toucher, portée 30/120 m,, une cible. {@h}5 ({@dégât 1d6 + 2}) piercingdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"morningstar|phb",
+				"spear|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"DS",
+				"GO"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RNG",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Dusk Hag",
+			"source": "ERLW",
+			"page": 292,
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 82,
+				"formula": "15d8 + 15"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 12,
+			"int": 17,
+			"wis": 16,
+			"cha": 18,
+			"save": {
+				"int": "+6",
+				"wis": "+6"
+			},
+			"skill": {
+				"deception": "+7",
+				"insight": "+6",
+				"perception": "+6"
+			},
+			"senses": [
+				"blindsight 60 ft."
+			],
+			"passive": 16,
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Giant",
+				"Infernal"
+			],
+			"cr": "6",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The hag's spellcasting ability is Charisma (spell save {@dc 15}). She can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell disguise self}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell dream}",
+							"{@spell hypnotic pattern}",
+							"{@spell sleep} ({@dice 9d8})"
+						],
+						"1e": [
+							"{@spell legend lore}",
+							"{@spell scrying}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The hag avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The hag makes two Nightmare Touch attacks."
+					]
+				},
+				{
+					"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}5 ({@dégât 1d6 + 2}) slashingdgts."
+					]
+				},
+				{
+					"name": "Nightmare Touch",
+					"entries": [
+						"{@atk ms} {@hit 7} pour toucher, allonge 5 m,, une créature. {@h}18 ({@dégât 4d6 + 4}) psychicdgts. If la cible is {@condition inconscient}, it takes an extra 10 ({@dégât 3d6}) psychicdgts and is cursed until the hag dies or the curse is removed. The cursed creature'stouché point maximum decreases by 5 ({@dice 1d10}) lorsqueever it finishes a long rest."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Dream Eater",
+					"entries": [
+						"When an {@condition unconscious} creature the hag can see within 30 feet of her regains consciousness, the hag can force the creature to make a {@dc 15} Wisdom saving throw. Unless the save succeeds, the creature takes 11 ({@damage 2d10}) psychic damage, and the hag regains hit points equal to the amount of damage taken."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GI",
+				"I"
+			],
+			"damageTags": [
+				"S",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"CUR",
+				"HPR",
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"charmed",
+				"incapacitated",
+				"unconscious"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Dyrrn",
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 288,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 21,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 325,
+				"formula": "31d8 + 186"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 26,
+			"dex": 21,
+			"con": 22,
+			"int": 26,
+			"wis": 23,
+			"cha": 24,
+			"save": {
+				"int": "+15",
+				"wis": "+13",
+				"cha": "+14"
+			},
+			"skill": {
+				"arcana": "+15",
+				"history": "+15",
+				"insight": "+13",
+				"perception": "+13"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 23,
+			"resist": [
+				"poison",
+				"psychic"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"poisoned",
+				"prone"
+			],
+			"languages": [
+				"Deep Speech",
+				"telepathy 120 ft."
+			],
+			"cr": "24",
+			"trait": [
+				{
+					"name": "Alien Mind",
+					"entries": [
+						"If une créature tries to read Dyrrn's thoughts or deals psychicdgts to it, that creature doit réussir on a {@dd 23}jet de sauvegarde Intelligence or be {@condition étourdi} for 1 minute. The {@condition étourdi} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Dyrrn fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"Dyrrn avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Régénération",
+					"entries": [
+						"Dyrrn regains 20touché points at the start of its turn. If Dyrrn takes radiantdgts, this trait doesn't function at the start of its next turn. Dyrrn dies only if it starts its turn with 0touché points and doesn't regenerate."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"As a bonus action, Dyrrn can teleport up to 30 mètres to an unoccupied space it can see."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Dyrrn makes one Tentacle Whip attack and uses its Corruption once. Dyrrn can replace its Tentacle Whip attack with Extract Brain if it has une créature {@condition agrippé}."
+					]
+				},
+				{
+					"name": "Tentacle Whip",
+					"entries": [
+						"{@atk mw} {@hit 15} pour toucher, allonge 10 m,, une cible. {@h}24 ({@dégât 3d10 + 8}) slashingdgts. If la cible is a Medium or smaller creature, it is {@condition agrippé} (escape {@dd 23}), pulled into an unoccupied space within 5 mètres of Dyrrn, and doit réussir on a {@dd 23}jet de sauvegarde Intelligence or be {@condition étourdi} until this grapple ends. Dyrrn can't use the same tentacle whip on another target until this grapple ends. Dyrrn has two tentacle whips."
+					]
+				},
+				{
+					"name": "Corruption",
+					"entries": [
+						"Dyrrn targets une créature it can see within 60 mètres of it. The target doit réussir on a {@dd 23}jet de sauvegarde Constitution or take 22 ({@dégât 4d6 + 8}) necroticdgts and become corrupted for 1 minute.",
+						"A corrupted creature's flesh twists in alien ways. The creature désavantage aux jets d'attaque, its speed is reduced by half, and if it tries to cast a spell, it must first succeed on a {@dd 15}Intelligence check or the spell fails and is wasted. The corrupted creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Extract Brain",
+					"entries": [
+						"{@atk mw} {@hit 15} pour toucher, allonge 5 m,, one {@conditionincapacité} creature {@condition agrippé} by Dyrrn. {@h}55 ({@dégât 10d10}) piercingdgts. If thisdgts reduces la cible to 0touché points, Dyrrn kills la cible by extracting and devouring its brain."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Tentacle Whip",
+					"entries": [
+						"Dyrrn makes one attack with its Tentacle Whip."
+					]
+				},
+				{
+					"name": "Spawn Aberration (Costs 2 Actions)",
+					"entries": [
+						"Dyrrn regurgitates an intellect devourer in an unoccupied space within 5 mètres of it. The intellect devourer is under Dyrrn's control and acts immediately after Dyrrn in the initiative order."
+					]
+				},
+				{
+					"name": "Mind Blast (Costs 3 Actions)",
+					"entries": [
+						"Dyrrn magically emits psychic energy in a 60-foot cone. Each creature in that area doit réussir on a {@dd 23}jet de sauvegarde Intelligence or take 30 ({@dégât 5d8 + 8}) psychicdgts and be {@condition étourdi} for 1 minute. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"legendaryGroup": {
+				"name": "Dyrrn",
+				"source": "ERLW"
+			},
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Regeneration"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"N",
+				"P",
+				"S",
+				"Y"
+			],
+			"damageTagsLegendary": [
+				"Y"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled",
+				"stunned"
+			],
+			"conditionInflictLegendary": [
+				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"intelligence"
+			],
+			"savingThrowForcedLegendary": [
+				"strength",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Expeditious Messenger",
+			"group": [
+				"Homunculi"
+			],
+			"source": "ERLW",
+			"page": 293,
+			"size": [
+				"T"
+			],
+			"type": "construct",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 7,
+				"formula": "2d4 + 2"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 60
+			},
+			"str": 6,
+			"dex": 16,
+			"con": 13,
+			"int": 8,
+			"wis": 12,
+			"cha": 7,
+			"skill": {
+				"acrobatics": "+5",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"one language spoken by its creator"
+			],
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Vol en piqué",
+					"entries": [
+						"The messenger doesn't provoke opportunity attacks lorsque it flies out of an enemy's allonge."
+					]
+				},
+				{
+					"name": "Lien télépathe",
+					"entries": [
+						"While the messenger is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}5 ({@dégât 1d4 + 3}) piercingdgts."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Flyby"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Fastieth",
+			"group": [
+				"Dinosaurs"
+			],
+			"source": "ERLW",
+			"page": 289,
+			"size": [
+				"M"
+			],
+			"type": "bête",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 50
+			},
+			"str": 12,
+			"dex": 18,
+			"con": 10,
+			"int": 4,
+			"wis": 11,
+			"cha": 4,
+			"passive": 10,
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Quickness {@recharge 5}",
+					"entries": [
+						"The fastieth peut faire the {@action Dodge} action as a bonus action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}8 ({@dégât 1d8 + 4}) piercingdgts."
+					]
+				}
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Garra",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 272,
+			"_copy": {
+				"name": "Half-Ogre (Ogrillon)",
+				"source": "MM"
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"int": 14,
+			"tokenCustom": true,
+			"hasToken": true
+		},
+		{
+			"name": "Hashalaq Quori",
+			"group": [
+				"Quori"
+			],
+			"source": "ERLW",
+			"page": 305,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 99,
+				"formula": "18d8 + 18"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 13,
+			"int": 18,
+			"wis": 16,
+			"cha": 18,
+			"save": {
+				"wis": "+7",
+				"cha": "+8"
+			},
+			"skill": {
+				"arcana": "+12",
+				"history": "+12",
+				"insight": "+11",
+				"persuasion": "+8"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Quori"
+			],
+			"cr": "9",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting (Psionics)",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The quori's spellcasting ability is Intelligence (spell save {@dc 16}). It can innately cast the following spells, requiring no components:"
+					],
+					"will": [
+						"{@spell charm person}"
+					],
+					"daily": {
+						"1": [
+							"{@spell dominate person}",
+							"{@spell dream}"
+						],
+						"3e": [
+							"{@spell detect thoughts}",
+							"{@spell disguise self}",
+							"{@spell suggestion}"
+						]
+					},
+					"ability": "int"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The quori uses its Mind Thrust twice."
+					]
+				},
+				{
+					"name": "Idyllic Touch",
+					"entries": [
+						"{@atk ms} {@hit 8} pour toucher, allonge 5 m,, une cible. {@h}9 ({@dégât 1d10 + 4}) forcedgts. If la cible is une créature, it doit réussir on a {@dd 16}Sagesse saving throw or fall {@condition à terre} in a fit of laughter."
+					]
+				},
+				{
+					"name": "Mind Thrust",
+					"entries": [
+						"The quori targets une créature it can see within 60 mètres of it. The target doit faire a {@dd 16}Sagesse saving throw, taking 18 ({@dégât 4d8}) psychicdgts on a failed save, or half as muchdgts on a successful one."
+					]
+				},
+				{
+					"name": "Possession {@recharge}",
+					"entries": [
+						"One humanoid that the quori can see within 5 mètres of it doit réussir on a {@dd 16}Charisme saving throw or be possessed by the quori; the quori then disappears, and la cible is {@conditionincapacité} and loses control of its body. The quori now controls the body but doesn't deprive la cible of awareness. The quori can't be targeted by any attack, spell, or other effect, and it retains its alignment,Intelligence,Sagesse,Charisme, and immunity to being {@condition charmé} and {@condition effrayé}. It otherwise uses the possessed target's statistics, but doesn't gain access to la cible's knowledge, class features, or proficiencies.",
+						"The possession lasts until the body drops to 0touché points, the quori ends it as a bonus action, or the quori is forced out by an effect like the {@spell dispel evil and good} spell. When the possession ends, the quori reappears in an unoccupied space within 5 mètres of the body. The target is immune to this quori's Possession for 24 heures after succeeding on the saving throw or after the possession ends."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Empathic Feedback",
+					"entries": [
+						"When the quori takes damage from a creature it can see within 60 feet of it, the quori can force that creature to succeed on a {@dc 16} Intelligence saving throw or take 11 ({@damage 2d10}) psychic damage."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"I",
+				"P"
+			],
+			"conditionInflict": [
+				"incapacitated",
+				"prone"
+			],
+			"conditionInflictSpell": [
+				"charmed"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"intelligence",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Inspired",
+			"source": "ERLW",
+			"page": 294,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				12,
+				{
+					"ac": 15,
+					"condition": "with {@spell mage armor}",
+					"braces": true
+				}
+			],
+			"hp": {
+				"average": 40,
+				"formula": "9d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 14,
+			"con": 10,
+			"int": 16,
+			"wis": 10,
+			"cha": 16,
+			"save": {
+				"int": "+5",
+				"wis": "+2"
+			},
+			"skill": {
+				"deception": "+7",
+				"insight": "+2",
+				"persuasion": "+7"
+			},
+			"passive": 10,
+			"resist": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Quori"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting (Psionics)",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The Inspired's spellcasting ability is Intelligence (spell save {@dc 13}). It can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell mage hand}",
+						"{@spell vicious mockery} (see \"Actions\" below)"
+					],
+					"daily": {
+						"1e": [
+							"{@spell charm person}",
+							"{@spell dissonant whispers}",
+							"{@spell hex}",
+							"{@spell hold person}",
+							"{@spell mage armor}"
+						]
+					},
+					"ability": "int"
+				}
+			],
+			"trait": [
+				{
+					"name": "Dual Mind",
+					"entries": [
+						"The Inspired avantage onSagesse saving throws."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Inspired makes two crysteel dagger attacks. It can replace one attack with vicious mockery."
+					]
+				},
+				{
+					"name": "Crysteel Dagger",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) piercingdgts plus 10 ({@dégât 3d6}) forcedgts."
+					]
+				},
+				{
+					"name": "Vicious Mockery (Cantrip)",
+					"entries": [
+						"The Inspired unleashes a string of insults laced with subtle enchantments at une créature it can see within 60 mètres of it. If la cible can hear the Inspired, la cible doit réussir on a {@dd 13}Sagesse saving throw or take 2 ({@dégât 1d4}) psychicdgts and have disadvantage on the next attack roll it makes before la fin de son prochain tour."
+					]
+				}
+			],
+			"variant": [
+				{
+					"type": "variant",
+					"name": "Quori Vessel",
+					"entries": [
+						"The Inspired are vessels for quori spirits, allowing the quori to manifest a portion of their power while the vessel is possessed. An Inspired can gain benefits depending on the type of quori possessing it. The quori also gains access to the Inspired's knowledge and features.",
+						{
+							"type": "variantInner",
+							"name": "Hashalaq",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Suggestion (3/Day)",
+									"entries": [
+										"The Inspired can cast the {@spell suggestion} spell (spell save {@dc 13}), requiring no material components."
+									]
+								}
+							]
+						},
+						{
+							"type": "variantInner",
+							"name": "Kalaraq",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "All Around Vision",
+									"entries": [
+										"The Inspired can't be {@status surprised}."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcane Eye (3/Day)",
+									"entries": [
+										"The Inspired can cast the {@spell arcane eye} spell, requiring no material components."
+									]
+								}
+							]
+						},
+						{
+							"type": "variantInner",
+							"name": "Tsucora",
+							"entries": [
+								{
+									"type": "entries",
+									"name": "Fear (1/Day)",
+									"entries": [
+										"The Inspired can cast the {@spell fear} spell (spell save {@dc 13}), requiring no material components."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"O",
+				"P",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"N",
+				"Y"
+			],
+			"spellcastingTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true,
+			"_versions": [
+				{
+					"name": "Inspired (Quori Vessel; Hashalaq)",
+					"source": "EGW",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"3e": [
+									"{@spell suggestion}"
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Inspired (Quori Vessel; Kalaraq)",
+					"source": "EGW",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"3e": [
+									"{@spell arcane eye}"
+								]
+							}
+						},
+						"trait": {
+							"mode": "appendArr",
+							"items": {
+								"name": "All Around Vision",
+								"entries": [
+									"The Inspired can't be {@status surprised}."
+								]
+							}
+						}
+					},
+					"variant": null
+				},
+				{
+					"name": "Inspired (Quori Vessel; Tsucora)",
+					"source": "EGW",
+					"_mod": {
+						"_": {
+							"mode": "addSpells",
+							"daily": {
+								"1e": [
+									"{@spell fear}"
+								]
+							}
+						}
+					},
+					"variant": null
+				}
+			]
+		},
+		{
+			"name": "Iron Defender",
+			"group": [
+				"Homunculi"
+			],
+			"source": "ERLW",
+			"page": 293,
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 30,
+				"formula": "4d8 + 12"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 16,
+			"dex": 14,
+			"con": 16,
+			"int": 8,
+			"wis": 11,
+			"cha": 7,
+			"skill": {
+				"perception": "+4",
+				"stealth": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Sens aiguisés",
+					"entries": [
+						"The defender avantage onSagesse ({@skillPerception}) checks."
+					]
+				},
+				{
+					"name": "Lien télépathe",
+					"entries": [
+						"While the defender is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts. If la cible is une créature, it doit réussir on a {@dd 13}Force saving throw or take an extra 3 ({@dégât 1d6}) piercingdgts and be {@condition agrippé} (escape {@dd 13}). The defender can have only une créature {@condition agrippé} in this way at a time."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Kalaraq Quori",
+			"alias": [
+				"Eyebinder"
+			],
+			"group": [
+				"Quori"
+			],
+			"source": "ERLW",
+			"page": 306,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 161,
+				"formula": "19d8 + 76"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 60,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 12,
+			"dex": 21,
+			"con": 18,
+			"int": 23,
+			"wis": 24,
+			"cha": 25,
+			"save": {
+				"int": "+12",
+				"wis": "+13",
+				"cha": "+13"
+			},
+			"skill": {
+				"deception": "+13",
+				"perception": "+13",
+				"persuasion": "+13"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 23,
+			"resist": [
+				"cold",
+				"necrotic",
+				"poison",
+				"psychic",
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"grappled",
+				"paralyzed",
+				"petrified",
+				"prone",
+				"restrained"
+			],
+			"languages": [
+				"all",
+				"telepathy 120 ft."
+			],
+			"cr": "19",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting (Psionics)",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The quori's spellcasting ability is Charisma (spell save {@dc 21}, {@hit 13} to hit with spell attacks). It can innately cast the following spells, requiring no components:"
+					],
+					"will": [
+						"{@spell arcane eye}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell clairvoyance}",
+							"{@spell confusion}",
+							"{@spell dream}",
+							"{@spell eyebite}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "All-Around Vision",
+					"entries": [
+						"The quori can't be {@status surprised} while it isn't {@conditionincapacité}."
+					]
+				},
+				{
+					"name": "Mouvement incorporel",
+					"entries": [
+						"The quori can move through other creatures and objects comme si they were {@quickref difficult terrain||3}. It takes 5 ({@dégât 1d10}) forcedgts if it ends its turn inside an object."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The quori avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The quori makes two Soul Binding attacks. Alternatively, it can make four attacks with Arcane Blast."
+					]
+				},
+				{
+					"name": "Arcane Blast",
+					"entries": [
+						"{@atk rs} {@hit 13} pour toucher, portée 120 m,, une cible. {@h}12 ({@dégât 1d10 + 7}) forcedgts."
+					]
+				},
+				{
+					"name": "Soul Binding",
+					"entries": [
+						"{@atk ms} {@hit 13} pour toucher, allonge 5 m,, une cible. {@h}29 ({@dégât 4d10 + 7}) necroticdgts. A creature reduced to 0touché points from this attack dies and has its soul imprisoned in one of the quori's eyes. The target can't be revived by any means short of a {@spell wish} spell until the quori is destroyed."
+					]
+				},
+				{
+					"name": "Mind Seed (1/Day)",
+					"entries": [
+						"The quori touches one humanoid, which doit réussir on a {@dd 21}jet de sauvegarde Intelligence or be cursed. The curse lasts until it's removed by a remove curse or {@spell greater restoration} spell.",
+						"The cursed target suffers 1 level of {@condition épuisement} every 24 heures, and finishing a long rest doesn't reduce its {@condition épuisement}. Si  cursed target reaches {@condition épuisement} level 6, it doesn't die; it instead becomes a thrall under the quori's control, and all its {@condition épuisement} is removed. Only the {@spell wish} spell can free the thrall from this control."
+					]
+				},
+				{
+					"name": "Swarm of Eyes {@recharge}",
+					"entries": [
+						"The quori creates a swarm of spectral eyes that fills a 30-foot-radius sphere centered on a point it can see within 60 mètres of it. Each creature in that area doit faire a {@dd 21}Sagesse saving throw. On a failure, une créature takes 45 ({@dégât 10d8}) psychicdgts, and it is {@condition aveuglé} for 1 minute. On a success, une créature takes half as muchdgts and isn't {@condition aveuglé}. A {@condition aveuglé} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Possession {@recharge}",
+					"entries": [
+						"One humanoid that the quori can see within 5 mètres of it doit réussir on a {@dd 21}Charisme saving throw or be possessed by the quori; the quori then disappears, and la cible is {@conditionincapacité} and loses control of its body. The quori now controls the body but doesn't deprive la cible of awareness. The quori can't be targeted by any attack, spell, or other effect, and it retains its alignment,Intelligence,Sagesse,Charisme, and immunity to being {@condition charmé} and {@condition effrayé}. It otherwise uses the possessed target's statistics, but doesn't gain access to la cible's knowledge, class features, or proficiencies.",
+						"The possession lasts until the body drops to 0touché points, the quori ends it as a bonus action, or the quori is forced out by an effect like the {@spell dispel evil and good} spell. When the possession ends, the quori reappears in an unoccupied space within 5 mètres of the body. The target is immune to this quori's Possession for 24 heures after succeeding on the saving throw or after the possession ends."
+					]
+				}
+			],
+			"traitTags": [
+				"Incorporeal Movement",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"TP",
+				"XX"
+			],
+			"damageTags": [
+				"N",
+				"O",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"CUR"
+			],
+			"conditionInflict": [
+				"blinded",
+				"incapacitated"
+			],
+			"conditionInflictSpell": [
+				"frightened",
+				"unconscious"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"intelligence",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Kalashtar",
+			"source": "ERLW",
+			"page": 317,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"kalashtar"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 16,
+				"formula": "3d8 + 3"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 12,
+			"int": 13,
+			"wis": 15,
+			"cha": 15,
+			"skill": {
+				"acrobatics": "+4",
+				"insight": "+4",
+				"persuasion": "+6"
+			},
+			"passive": 12,
+			"resist": [
+				"psychic"
+			],
+			"languages": [
+				"Common",
+				"telepathy 20 ft."
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Dual Mind",
+					"entries": [
+						"The kalashtar avantage onSagesse saving throws."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) piercingdgts."
+					]
+				},
+				{
+					"name": "Mind Thrust",
+					"entries": [
+						"The kalashtar targets une créature it can see within 30 mètres of it. The target doit réussir on a {@dd 12}Sagesse saving throw or take 11 ({@dégât 2d10}) psychicdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"dagger|phb"
+			],
+			"languageTags": [
+				"C",
+				"TP"
+			],
+			"damageTags": [
+				"P",
+				"Y"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Karrnathi Undead Soldier",
+			"source": "ERLW",
+			"page": 295,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"{@item half plate armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 52,
+				"formula": "7d8 + 21"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 14,
+			"con": 16,
+			"int": 12,
+			"wis": 13,
+			"cha": 5,
+			"skill": {
+				"athletics": "+5",
+				"perception": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"cold",
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened",
+				"poisoned"
+			],
+			"languages": [
+				"Common"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Tactique de groupe",
+					"entries": [
+						"The soldier avantage on an attack roll against une créature if at least one of the soldier's allies is within 5 mètres of la créature and the ally isn't {@conditionincapacité}."
+					]
+				},
+				{
+					"name": "Undead Fortitude",
+					"entries": [
+						"Ifdgts reduces the soldier to 0touché points, it doit faire ajet de sauvegarde Constitution with a DD of 5 + thedgts taken, unless thedgts is radiant or from a criticaltouché. On a success, the soldier drops to 1touché point instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The soldier attacks three times with one of its weapons."
+					]
+				},
+				{
+					"name": "Longsword",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d8 + 3}) slashingdgts, or 8 ({@dégât 1d10 + 3}) slashingdgts if used with two hands."
+					]
+				},
+				{
+					"name": "Longbow",
+					"entries": [
+						"{@atk rw} {@hit 4} pour toucher, portée 150/600 m,, une cible. {@h}6 ({@dégât 1d8 + 2}) piercingdgts."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Parry",
+					"entries": [
+						"The soldier adds 3 to its AC against one melee attack that would hit it. To do so, the soldier must see the attacker and be wielding a melee weapon."
+					]
+				}
+			],
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
+			"traitTags": [
+				"Pack Tactics",
+				"Undead Fortitude"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RNG",
+				"RW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Lady Illmarrow",
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 296,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 19,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 199,
+				"formula": "21d8 + 105"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 40
+			},
+			"str": 16,
+			"dex": 16,
+			"con": 20,
+			"int": 27,
+			"wis": 21,
+			"cha": 24,
+			"save": {
+				"con": "+12",
+				"int": "+15",
+				"wis": "+12"
+			},
+			"skill": {
+				"arcana": "+15",
+				"history": "+15",
+				"insight": "+12",
+				"perception": "+12"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 22,
+			"resist": [
+				"cold",
+				"lightning"
+			],
+			"immune": [
+				"necrotic",
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned",
+				"stunned"
+			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"Elvish"
+			],
+			"cr": "22",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Illmarrow is a 20th-level spellcaster. Her spellcasting ability is Intelligence (spell save {@dc 23}, {@hit 15} to hit with spell attacks). Illmarrow has the following wizard spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell chill touch} (see \"Actions\" below)",
+								"{@spell fire bolt}",
+								"{@spell mage hand}",
+								"{@spell prestidigitation}",
+								"{@spell ray of frost}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell magic missile}",
+								"{@spell shield}",
+								"{@spell sleep}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell blur}",
+								"{@spell detect thoughts}",
+								"{@spell mirror image}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell animate dead}",
+								"{@spell counterspell}",
+								"{@spell fireball}",
+								"{@spell fly}",
+								"{@spell lightning bolt}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell blight}",
+								"{@spell confusion}",
+								"{@spell polymorph}"
+							]
+						},
+						"5": {
+							"slots": 3,
+							"spells": [
+								"{@spell cloudkill}",
+								"{@spell cone of cold}",
+								"{@spell hold monster}",
+								"{@spell scrying}"
+							]
+						},
+						"6": {
+							"slots": 2,
+							"spells": [
+								"{@spell chain lightning}",
+								"{@spell circle of death}",
+								"{@spell create undead}"
+							]
+						},
+						"7": {
+							"slots": 2,
+							"spells": [
+								"{@spell finger of death}",
+								"{@spell forcecage}",
+								"{@spell prismatic spray}"
+							]
+						},
+						"8": {
+							"slots": 1,
+							"spells": [
+								"{@spell incendiary cloud}",
+								"{@spell maze}"
+							]
+						},
+						"9": {
+							"slots": 1,
+							"spells": [
+								"{@spell power word kill}",
+								"{@spell time stop}"
+							]
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Illmarrow fails a saving throw, she can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"Illmarrow avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Rejuvenation",
+					"entries": [
+						"Illmarrow's body turns to dust lorsque she drops to 0touché points, and her equipment is left behind. She gains a new body after {@dice 1d10} days, regaining all hertouché points and becoming active again. The new body appears within two hundred kilomètres of the location at which she was destroyed."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Chill Touch (Cantrip)",
+					"entries": [
+						"{@atk rs} {@hit 15} pour toucher, portée 120 m,, une créature. {@h}18 ({@dégât 4d8}) necroticdgts, and la cible can't regaintouché points until the start of Illmarrow's next turn. If la cible is undead, it also désavantage aux jets d'attaque against Illmarrow until the end of her next turn."
+					]
+				},
+				{
+					"name": "Paralyzing Claw",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 5 m,, une créature. {@h}13 ({@dégât 3d6 + 3}) slashingdgts plus 10 ({@dégât 3d6}) colddgts, and la cible doit réussir on a {@dd 20}jet de sauvegarde Constitution or be {@condition paralisé} for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Poison Breath {@recharge 5}",
+					"entries": [
+						"Illmarrow exhales poisonous gas in a 30-foot cone. Each creature in that area doit faire a {@dd 20}jet de sauvegarde Constitution. On a failed save, une créature takes 35 ({@dégât 10d6}) poisondgts and is {@condition empoisonné} for 1 minute. While {@condition empoisonné} in this way, la créature can't regaintouché points. On a successful save, la créature takes half as muchdgts and isn't {@condition empoisonné}.",
+						"A humanoid reduced to 0touché points by thisdgts dies and rises at the start of Illmarrow's next turn as a zombie. The zombie acts immediately after Illmarrow in the initiative count and is permanently under her command, following her verbal orders."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Cantrip",
+					"entries": [
+						"Illmarrow casts a cantrip."
+					]
+				},
+				{
+					"name": "Paralyzing Claw",
+					"entries": [
+						"Illmarrow uses her Paralyzing Claw."
+					]
+				},
+				{
+					"name": "Frightening Presence (Costs 2 Actions)",
+					"entries": [
+						"Illmarrow targets up to three creatures she can see within 30 mètres of her. Each target doit réussir on a {@dd 20}Sagesse saving throw or be {@condition effrayé} for 1 minute. A {@condition effrayé} target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a target's saving throw is successful or the effect ends for it, la cible is immune to Illmarrow's Frightening Presence for the next 24 heures."
+					]
+				},
+				{
+					"name": "Poison Breath (Costs 3 Actions)",
+					"entries": [
+						"Illmarrow recharges her Poison Breath and uses it."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Rejuvenation"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Breath Weapon"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"E"
+			],
+			"damageTags": [
+				"C",
+				"I",
+				"N",
+				"S"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"N",
+				"O"
+			],
+			"spellcastingTags": [
+				"CW"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflict": [
+				"frightened",
+				"paralyzed",
+				"poisoned"
+			],
+			"conditionInflictSpell": [
+				"blinded",
+				"paralyzed",
+				"petrified",
+				"restrained",
+				"unconscious"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Living Burning Hands",
+			"source": "ERLW",
+			"page": 298,
+			"size": [
+				"M"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 15,
+				"formula": "2d8 + 6"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 25
+			},
+			"str": 10,
+			"dex": 12,
+			"con": 16,
+			"int": 3,
+			"wis": 6,
+			"cha": 6,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 8,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"fire"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"exhaustion",
+				"frightened",
+				"grappled",
+				"poisoned",
+				"prone"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Amorphe",
+					"entries": [
+						"The living spell can move through a space as narrow as 1 inch wide without squeezing."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The living spell avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Magical Strike",
+					"entries": [
+						"{@atk ms} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) firedgts."
+					]
+				},
+				{
+					"name": "Spell Mimicry {@recharge 5}",
+					"entries": [
+						"The living spell unleashes a thin sheet of flames in a 15-foot cone. Each creature in that area doit faire a {@dd 13}Dextérité saving throw, taking 10 ({@dégât 3d6}) firedgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"traitTags": [
+				"Amorphous",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"damageTags": [
+				"F"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Living Cloudkill",
+			"source": "ERLW",
+			"page": 299,
+			"size": [
+				"L"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 73,
+				"formula": "7d10 + 35"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 25
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 20,
+			"int": 3,
+			"wis": 11,
+			"cha": 6,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"exhaustion",
+				"frightened",
+				"grappled",
+				"poisoned",
+				"prone"
+			],
+			"cr": "7",
+			"trait": [
+				{
+					"name": "Amorphe",
+					"entries": [
+						"The living spell can move through a space as narrow as 1 inch wide without squeezing."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The living spell avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The living spell makes two Magical Strike attacks."
+					]
+				},
+				{
+					"name": "Magical Strike",
+					"entries": [
+						"{@atk ms} {@hit 8} pour toucher, allonge 10 m,, une cible. {@h}22 ({@dice 5d6 + 5}) poisondgts."
+					]
+				},
+				{
+					"name": "Spell Mimicry {@recharge 5}",
+					"entries": [
+						"The living spell creates a 40-foot-diameter sphere of fog within 60 mètres of it (the fog spreads around corners). When une créature enters the fog for the first time on a turn or starts its turn there, it doit faire a {@dd 16}jet de sauvegarde Constitution, taking 22 ({@dégât 5d8}) poisondgts on a failed save, or half as muchdgts on a successful one.",
+						"The fog moves 10 mètres away from the living spell at the start of each of its turns, rolling along the ground and through openings. The fog lasts for 10 minutes or until the living spell's {@status concentration} ends (comme si {@status concentration||concentrating} on a spell)."
+					]
+				}
+			],
+			"traitTags": [
+				"Amorphous",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"I"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Living Lightning Bolt",
+			"source": "ERLW",
+			"page": 299,
+			"size": [
+				"L"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 57,
+				"formula": "6d10 + 24"
+			},
+			"speed": {
+				"walk": 25,
+				"fly": 25
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 18,
+			"int": 3,
+			"wis": 10,
+			"cha": 6,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"lightning"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"exhaustion",
+				"frightened",
+				"grappled",
+				"poisoned",
+				"prone"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Amorphe",
+					"entries": [
+						"The living spell can move through a space as narrow as 1 inch wide without squeezing."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The living spell avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The living spell makes two Magical Strike attacks."
+					]
+				},
+				{
+					"name": "Magical Strike",
+					"entries": [
+						"{@atk ms} {@hit 7} pour toucher, allonge 10 m,, une cible. {@h}21 ({@dégât 5d6 + 4}) lightningdgts."
+					]
+				},
+				{
+					"name": "Spell Mimicry {@recharge 5}",
+					"entries": [
+						"The living spell unleashes a stroke of lightning in a line 100 mètres long and 5 mètres wide. Each creature in the line doit faire a {@dd 15}Dextérité saving throw, taking 28 ({@dégât 8d6}) lightningdgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"traitTags": [
+				"Amorphous",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"L"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Magewright",
+			"source": "ERLW",
+			"page": 318,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 9,
+				"formula": "2d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 13,
+			"con": 10,
+			"int": 14,
+			"wis": 14,
+			"cha": 12,
+			"skill": {
+				"arcana": "+4"
+			},
+			"passive": 12,
+			"languages": [
+				"Common plus any two languages"
+			],
+			"cr": "0",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The magewright's spellcasting ability is Intelligence (spell save {@dc 12}). To cast one of its rituals, the magewright must provide additional material components whose value in gold pieces is 20 times the spell's level. These components are consumed when the ritual is finished. The magewright knows the following spells:"
+					],
+					"will": [
+						"{@spell mage hand}",
+						"{@spell prestidigitation}"
+					],
+					"ritual": [
+						"{@spell knock}"
+					],
+					"ability": "int"
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 3} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}3 ({@dégât 1d4 + 1}) piercingdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"dagger|phb"
+			],
+			"languageTags": [
+				"C",
+				"X"
+			],
+			"damageTags": [
+				"P"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Mordakhesh",
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 301,
+			"size": [
+				"M"
+			],
+			"type": "fiélon",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"{@item plate armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 170,
+				"formula": "20d8 + 80"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 20,
+			"dex": 16,
+			"con": 18,
+			"int": 15,
+			"wis": 17,
+			"cha": 20,
+			"save": {
+				"str": "+10",
+				"con": "+9",
+				"wis": "+8",
+				"cha": "+10"
+			},
+			"skill": {
+				"athletics": "+10",
+				"insight": "+8",
+				"perception": "+8",
+				"persuasion": "+10"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 18,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks that aren't silvered",
+					"cond": true
+				}
+			],
+			"vulnerable": [
+				{
+					"vulnerable": [
+						"piercing"
+					],
+					"note": "from magic weapons wielded by good creatures",
+					"cond": true
+				}
+			],
+			"languages": [
+				"Common",
+				"Infernal"
+			],
+			"cr": "15",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Mordakhesh's spellcasting ability is Charisma (spell save {@dc 18}, {@hit 10} to hit with spell attacks). Mordakhesh can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell chromatic orb} (see \"Actions\" below)",
+						"{@spell detect thoughts}",
+						"{@spell disguise self}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell banishing smite}",
+							"{@spell destructive wave}",
+							"{@spell fly}",
+							"{@spell mass suggestion}",
+							"{@spell staggering smite}",
+							"{@spell suggestion}",
+							"{@spell true seeing}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Immunité magique limitée",
+					"entries": [
+						"Mordakhesh can't be affected or detected by spells of 6th level or lower unless he wishes to be. Mordakhesh avantage aux jets de sauvegarde against all other spells and magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Mordakhesh makes three greatsword attacks."
+					]
+				},
+				{
+					"name": "Greatsword",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 5 m,, une cible. {@h}12 ({@dégât 2d6 + 5}) slashingdgts plus 5 ({@dégât 1d10}) forcedgts."
+					]
+				},
+				{
+					"name": "Chromatic Orb",
+					"entries": [
+						"{@atk rs} {@hit 10} pour toucher, portée 120 m,, une créature. {@h}13 ({@dice 3d8})dgts of a type chosen by Mordakhesh: acid, cold, fire, lightning, poison, or thunder."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Attack",
+					"entries": [
+						"Mordakhesh makes one weapon attack or casts {@spell chromatic orb}."
+					]
+				},
+				{
+					"name": "Chromatic Resistance",
+					"entries": [
+						"Modakhesh gains resistance to onedgts type of his choice—acid, cold, fire, lightning, poison, or thunder—until the start of his next turn."
+					]
+				},
+				{
+					"name": "Warlord's Command (Costs 2 Actions)",
+					"entries": [
+						"Mordakhesh targets up to two allies that he can see within 30 mètres of him. If a target can see and hear him, la cible can make one weapon attack as a reaction and gains advantage on the attack roll."
+					]
+				}
+			],
+			"attachedItems": [
+				"greatsword|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"I"
+			],
+			"damageTags": [
+				"O",
+				"S"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"N",
+				"O",
+				"R",
+				"T",
+				"Y"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"MLW",
+				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Radiant Idol",
+			"source": "ERLW",
+			"page": 308,
+			"size": [
+				"L"
+			],
+			"type": "céleste",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 142,
+				"formula": "15d10 + 60"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 23,
+			"dex": 18,
+			"con": 19,
+			"int": 17,
+			"wis": 20,
+			"cha": 21,
+			"save": {
+				"wis": "+9",
+				"cha": "+9"
+			},
+			"skill": {
+				"deception": "+9",
+				"insight": "+9",
+				"perception": "+9",
+				"persuasion": "+9"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 19,
+			"resist": [
+				"radiant",
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened"
+			],
+			"languages": [
+				"all",
+				"telepathy 120 ft."
+			],
+			"cr": "11",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The radiant idol's spellcasting ability is Charisma (spell save {@dc 17}). The radiant idol can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell charm person}",
+						"{@spell cure wounds}",
+						"{@spell disguise self}",
+						"{@spell thaumaturgy}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell commune}",
+							"{@spell dominate person}",
+							"{@spell insect plague}",
+							"{@spell mass suggestion}",
+							"{@spell raise dead}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Aura of False Divinity",
+					"entries": [
+						"A creature that starts its turn within 30 mètres of the radiant idol doit faire a {@dd 17}Sagesse saving throw, provided the radiant idol isn't {@conditionincapacité}. On a failed save, la créature is {@condition charmé} by the radiant idol. A creature {@condition charmé} in this way can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Once it succeeds on the saving throw, une créature is immune to this radiant idol's Aura of False Divinity for 24 heures."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The radiant idol avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The radiant idol makes two melee attacks."
+					]
+				},
+				{
+					"name": "Flail",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 5 m,, une cible. {@h}10 ({@dégât 1d8 + 6}) bludgeoningdgts plus 18 ({@dégât 4d8}) radiantdgts."
+					]
+				},
+				{
+					"name": "Radiant Strike (1/Day)",
+					"entries": [
+						"The radiant idol chooses a point on the ground it can see within 60 mètres of it. A 30-foot-radius, 40-foot-high cylinder of bright light appears there until the start of the radiant idol's next turn. Each creature in the cylinder lorsque it appears or that ends its turn there doit faire a {@dd 17}jet de sauvegarde Constitution, taking 36 ({@dégât 8d8}) radiantdgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"attachedItems": [
+				"flail|phb"
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"TP",
+				"XX"
+			],
+			"damageTags": [
+				"B",
+				"R"
+			],
+			"damageTagsSpell": [
+				"P"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW"
+			],
+			"conditionInflict": [
+				"charmed"
+			],
+			"conditionInflictSpell": [
+				"charmed"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Rak Tulkhesh",
+			"shortName": true,
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 303,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"H"
+			],
+			"type": "fiélon",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 23,
+					"from": [
+						"natural armor"
+					]
+				},
+				{
+					"ac": 25,
+					"braces": true,
+					"condition": "versus ranged attacks"
+				}
+			],
+			"hp": {
+				"average": 478,
+				"formula": "33d12 + 264"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40,
+				"fly": 80
+			},
+			"str": 29,
+			"dex": 19,
+			"con": 27,
+			"int": 21,
+			"wis": 22,
+			"cha": 26,
+			"save": {
+				"str": "+17",
+				"con": "+16",
+				"wis": "+14",
+				"cha": "+16"
+			},
+			"skill": {
+				"athletics": "+17",
+				"intimidation": "+16",
+				"perception": "+14"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 24,
+			"resist": [
+				"cold",
+				"fire",
+				"lightning"
+			],
+			"immune": [
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"poisoned",
+				"stunned"
+			],
+			"languages": [
+				"all",
+				"telepathy 120 ft."
+			],
+			"cr": "28",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Rak Tulkhesh's spellcasting ability is Charisma (spell save {@dc 24}). He can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell detect thoughts}",
+						"{@spell dispel magic}",
+						"{@spell spirit guardians}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell banishing smite}",
+							"{@spell blinding smite}",
+							"{@spell staggering smite}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Deadly Critical",
+					"entries": [
+						"Rak Tulkhesh scores a criticaltouché on a roll of 19 or 20 and rolls thedgts dice three times, instead of twice."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Rak Tulkhesh fails a saving throw, he can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"Rak Tulkhesh avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Whirlwind of Weapons",
+					"entries": [
+						"A magical aura of weapons surrounds Rak Tulkhesh in a 10 mètre radius. At the start of each of his turns, any other creature in the aura takes 14 ({@dégât 4d6}) forcedgts."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Rak Tulkhesh makes four weapon attacks."
+					]
+				},
+				{
+					"name": "Spawned Melee Weapon",
+					"entries": [
+						"{@atk mw} {@hit 17} pour toucher, allonge 10 m,, une cible. {@h}28 ({@dégât 3d12 + 9}) forcedgts."
+					]
+				},
+				{
+					"name": "Spawned Ranged Weapon",
+					"entries": [
+						"{@atk rw} {@hit 12} pour toucher, portée 150/600 m,, une cible. {@h}17 ({@dégât 3d8 + 4}) forcedgts."
+					]
+				},
+				{
+					"name": "Change Shape",
+					"entries": [
+						"Rak Tulkhesh magically polymorphs into a humanoid, beast, or giant that has a challenge rating no higher than his own, or back into his true form. He reverts to his true form if he dies. Any equipment he is wearing or carrying is absorbed or borne by the new form (his choice).",
+						"In a new form, Rak Tulkhesh retains his alignment,touché points, Touché Dice, ability to speak, proficiencies, Legendary Resistance, andIntelligence,Sagesse, andCharisme scores, as well as this action. His statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Attack",
+					"entries": [
+						"Rak Tulkhesh makes one weapon attack."
+					]
+				},
+				{
+					"name": "End Magic (Costs 2 Actions)",
+					"entries": [
+						"Rak Tulkhesh casts {@spell dispel magic}."
+					]
+				},
+				{
+					"name": "Provoke Rage (Costs 3 Actions)",
+					"entries": [
+						"Each creature within 60 mètres of Rak Tulkhesh doit réussir on a {@dd 24}Sagesse saving throw or use its reaction to make a melee weapon attack against a random creature within allonge. If no creatures are within allonge, it makes a ranged weapon attack against a random creature within portée, throwing its weapon if necessary. This attack is made with advantage and gains a +4 bonus to thedgts roll."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Shapechanger"
+			],
+			"languageTags": [
+				"TP",
+				"XX"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"N",
+				"O",
+				"R",
+				"Y"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sergeant",
+			"source": "ERLW",
+			"page": 197,
+			"_copy": {
+				"name": "Guard",
+				"source": "MM"
+			},
+			"tokenCustom": true,
+			"hasToken": true
+		},
+		{
+			"name": "Shifter",
+			"source": "ERLW",
+			"page": 319,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"shifter"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item leather armor|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 19,
+				"formula": "3d8 + 6"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 14,
+			"int": 11,
+			"wis": 15,
+			"cha": 10,
+			"skill": {
+				"acrobatics": "+5",
+				"insight": "+4",
+				"nature": "+2",
+				"perception": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"Common"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Shifting (Recharges after a Short or Long Rest)",
+					"entries": [
+						"As a bonus action, the shifter takes on a more bestial form for 1 minute or until it dies. The shifter gains 5 temporarytouché points. It can make a bite attack lorsque it activates this trait and also as a bonus action on each of its turns while in its bestial form."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une créature. {@h}5 ({@dégât 1d4 + 3}) piercingdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sul Khatesh",
+			"shortName": true,
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 304,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"L"
+			],
+			"type": "fiélon",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 22,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 475,
+				"formula": "50d10 + 200"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 18,
+			"dex": 21,
+			"con": 19,
+			"int": 30,
+			"wis": 22,
+			"cha": 25,
+			"save": {
+				"con": "+12",
+				"int": "+18",
+				"wis": "+14",
+				"cha": "+15"
+			},
+			"skill": {
+				"arcana": "+18",
+				"history": "+18",
+				"insight": "+14",
+				"religion": "+18"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 16,
+			"resist": [
+				"cold",
+				"fire",
+				"lightning"
+			],
+			"immune": [
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"all",
+				"telepathy 150 ft."
+			],
+			"cr": "28",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Sul Khatesh's spellcasting ability is Intelligence (spell save {@dc 26}, {@hit 18} to hit with spell attacks). She can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell counterspell}",
+						"{@spell detect magic}",
+						"{@spell detect thoughts}",
+						"{@spell dispel magic}",
+						"{@spell eyebite}",
+						"{@spell fireball}",
+						"{@spell lightning bolt}",
+						"{@spell shield}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell chain lightning}",
+							"{@spell create undead}",
+							"{@spell dream}",
+							"{@spell hold monster}",
+							"{@spell mass suggestion}",
+							"{@spell scrying}"
+						],
+						"1e": [
+							"{@spell foresight}",
+							"{@spell gate}",
+							"{@spell power word kill}",
+							"{@spell teleport}"
+						]
+					},
+					"ability": "int"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Sul Khatesh fails a saving throw, she can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"Sul Khatesh avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Master of Magic",
+					"entries": [
+						"Sul Khatesh avantage onjet de sauvegarde Constitutions to maintain {@status concentration}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Sul Khatesh makes four attacks with Arcane Blast."
+					]
+				},
+				{
+					"name": "Arcane Blast",
+					"entries": [
+						"{@atk rs} {@hit 18} pour toucher, portée 120 m,, une cible. {@h}15 ({@dégât 1d10 + 10}) forcedgts."
+					]
+				},
+				{
+					"name": "Magic Staff",
+					"entries": [
+						"{@atk mw} {@hit 12} pour toucher, allonge 5 m,, une cible. {@h}36 ({@dégât 5d12 + 4}) forcedgts."
+					]
+				},
+				{
+					"name": "Arcane Cataclysm (Recharges after a Long Rest)",
+					"entries": [
+						"Sul Khatesh conjures orbs of magical energy that plummet to the ground at three different points she can see within 480 mètres of her. Each creature in a 40-foot-radius sphere centered on each point doit faire a {@dd 26}Dextérité saving throw, taking 71 ({@dégât 11d12}) forcedgts on a failed save or half as muchdgts on a successful one. A creature in the area of more than one arcane burst is affected only once. The area of each arcane burst then acts as an {@spell antimagic field} for 1 heure. Sul Khatesh and spells she casts are unaffected by these fields."
+					]
+				},
+				{
+					"name": "Change Shape",
+					"entries": [
+						"Sul Khatesh magically polymorphs into a humanoid, beast, or giant that has a challenge rating no higher than her own, or back into her true form. She reverts to her true form if she dies. Any equipment she is wearing or carrying is absorbed or borne by the new form (Sul Khatesh's choice).",
+						"In a new form, Sul Khatesh retains her alignment,touché points, Touché Dice, ability to speak, proficiencies, Legendary Resistance, andIntelligence,Sagesse, andCharisme scores, as well as this action. Her statistics and capabilities are otherwise replaced by those of the new form, except any class features or legendary actions of that form."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Attack",
+					"entries": [
+						"Sul Khatesh makes two attacks with her Arcane Blast or one attack with her magic staff."
+					]
+				},
+				{
+					"name": "Consume Magic (Costs 2 Actions)",
+					"entries": [
+						"Sul Khatesh targets une créature within 120 mètres of her who is {@status concentration||concentrating} on a spell. The target doit réussir on a {@dd 26}jet de sauvegarde Constitution or its {@status concentration} is broken on the spell, and Sul Khatesh gains 5 temporarytouché points per level of that spell."
+					]
+				},
+				{
+					"name": "Maddening Secrets (Costs 3 Actions)",
+					"entries": [
+						"Sul Khatesh whispers an arcane secret into the mind of une créature she can see within 60 mètres of her. The target doit réussir on a {@dd 26}Sagesse saving throw or expend one of its spell slots of 3rd level or lower and deal 26 ({@dégât 4d12}) forcedgts to each creature within 30 mètres of it. A creature that fails the saving throw but can't expend a spell slot is instead {@condition étourdi} until la fin de son prochain tour."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Shapechanger"
+			],
+			"languageTags": [
+				"TP",
+				"XX"
+			],
+			"damageTags": [
+				"O"
+			],
+			"damageTagsSpell": [
+				"F",
+				"L",
+				"Y"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"charmed",
+				"frightened",
+				"paralyzed",
+				"unconscious"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tarkanan Assassin",
+			"source": "ERLW",
+			"page": 320,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"any race"
+				]
+			},
+			"alignment": [
+				"L",
+				"NX",
+				"C",
+				"NY",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"{@item studded leather armor|phb|studded leather}"
+					]
+				}
+			],
+			"hp": {
+				"average": 45,
+				"formula": "7d8 + 14"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 16,
+			"con": 14,
+			"int": 10,
+			"wis": 14,
+			"cha": 11,
+			"skill": {
+				"athletics": "+3",
+				"deception": "+2",
+				"perception": "+4",
+				"sleight of hand": "+5",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"Common",
+				"Thieves' cant"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The assassin's spellcasting ability is Constitution ({@hit 4} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell fire bolt}"
+					],
+					"daily": {
+						"1": [
+							"{@spell chromatic orb}"
+						]
+					},
+					"ability": "con"
+				}
+			],
+			"trait": [
+				{
+					"name": "Unstable Mark",
+					"entries": [
+						"When the assassin casts an innate spell, each creature within 10 mètres of the assassin doit faire a {@dd 12}jet de sauvegarde Constitution, taking 4 ({@dégât 1d8}) forcedgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The assassin makes two shortsword attacks."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts plus 7 ({@dégât 2d6}) poisondgts."
+					]
+				},
+				{
+					"name": "Fire Bolt (Cantrip)",
+					"entries": [
+						"{@atk rs} {@hit 4} pour toucher, portée 120 m,, une cible. {@h}11 ({@dégât 2d10}) firedgts. A flammable objecttouché by this spell ignites if it isn't being worn or carried."
+					]
+				},
+				{
+					"name": "Chromatic Orb (1/Day)",
+					"entries": [
+						"{@atk rs} {@hit 4} pour toucher, portée 90 m,, une créature. {@h}18 ({@dice 4d8})dgts of a type chosen by the assassin: acid, cold, fire, lightning, poison, or thunder."
+					]
+				}
+			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"TC"
+			],
+			"damageTags": [
+				"F",
+				"I",
+				"O",
+				"P"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"T"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "The Lord of Blades",
+			"shortName": true,
+			"isNamedCreature": true,
+			"source": "ERLW",
+			"page": 300,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"warforged"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 19,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 195,
+				"formula": "23d8 + 92"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 20,
+			"dex": 15,
+			"con": 18,
+			"int": 19,
+			"wis": 17,
+			"cha": 18,
+			"save": {
+				"str": "+11",
+				"con": "+10",
+				"int": "+10",
+				"wis": "+9"
+			},
+			"skill": {
+				"arcana": "+10",
+				"athletics": "+11",
+				"history": "+10",
+				"perception": "+9"
+			},
+			"passive": 19,
+			"resist": [
+				"necrotic",
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"disease"
+			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"Dwarvish",
+				"Elvish"
+			],
+			"cr": "18",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The Lord of Blades is a 20th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 18}, {@hit 10} to hit with spell attacks). He has the following artificer spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell fire bolt} (see \"Actions\" below)",
+								"{@spell mage hand}",
+								"{@spell mending}",
+								"{@spell prestidigitation}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell expeditious retreat}",
+								"{@spell sanctuary}",
+								"{@spell thunderwave}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell blur}",
+								"{@spell heat metal}",
+								"{@spell scorching ray}",
+								"{@spell see invisibility}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell dispel magic}",
+								"{@spell fly}",
+								"{@spell haste}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell freedom of movement}",
+								"{@spell Mordenkainen's faithful hound}"
+							]
+						},
+						"5": {
+							"slots": 2,
+							"spells": [
+								"{@spell animate objects}",
+								"{@spell wall of force}"
+							]
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"trait": [
+				{
+					"name": "Adamantine Plating",
+					"entries": [
+						"Any criticaltouché against the Lord of Blades becomes a normaltouché."
+					]
+				},
+				{
+					"name": "Bladed Armor",
+					"entries": [
+						"A creature that grapples the Lord of Blades or is {@condition agrippé} by him takes 13 ({@dégât 3d8}) slashingdgts. A creature takes 13 ({@dégât 3d8}) slashingdgts if it starts its turn grappling or being {@condition agrippé} by the Lord of Blades."
+					]
+				},
+				{
+					"name": "Charge",
+					"entries": [
+						"Si  Lord of Blades moves at least 10 mètres straight toward a target and thentouchés it with his adamantine sixblade on the same turn, la cible takes an extra 11 ({@dégât 2d10}) slashingdgts. If la cible is une créature, it doit réussir on a {@dd 19}Force saving throw or be pushed up to 10 mètres away and knocked {@condition à terre}."
+					]
+				},
+				{
+					"name": "Warforged Resilience",
+					"entries": [
+						"The Lord of Blades avantage aux jets de sauvegarde against being {@condition empoisonné}, is immune to disease, and magic can't put him to sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Lord of Blades makes three attacks: two with his adamantine sixblade and one with his bladed wings."
+					]
+				},
+				{
+					"name": "Adamantine Sixblade",
+					"entries": [
+						"{@atk mw} {@hit 11} pour toucher, allonge 10 m,, une cible. {@h}21 ({@dégât 3d10 + 5}) slashingdgts plus 7 ({@dégât 2d6}) forcedgts."
+					]
+				},
+				{
+					"name": "Bladed Wings",
+					"entries": [
+						"{@atk mw,rw} {@hit 11} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}8 ({@dégât 1d6 + 5}) slashingdgts."
+					]
+				},
+				{
+					"name": "Fire Bolt (Cantrip)",
+					"entries": [
+						"{@atk rs} {@hit 10} pour toucher, portée 120 m,, une cible. {@h}22 ({@dégât 4d10}) firedgts."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Attack",
+					"entries": [
+						"The Lord of Blades makes one weapon attack."
+					]
+				},
+				{
+					"name": "Cantrip",
+					"entries": [
+						"The Lord of Blades casts one of his cantrips."
+					]
+				},
+				{
+					"name": "Cast a Spell (Costs 2 Actions)",
+					"entries": [
+						"The Lord of Blades casts a spell of 2nd level or lower from his spell list that takes 1 action to cast."
+					]
+				},
+				{
+					"name": "Blade Dash (Costs 3 Actions)",
+					"entries": [
+						"The Lord of Blades moves up to his speed without provoking opportunity attacks, then makes one attack with his adamantine sixblade. He can make one bladed wings attack against each creature he moves past."
+					]
+				}
+			],
+			"traitTags": [
+				"Charge"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"D",
+				"DR",
+				"E"
+			],
+			"damageTags": [
+				"F",
+				"O",
+				"S"
+			],
+			"damageTagsSpell": [
+				"B",
+				"F",
+				"P",
+				"S",
+				"T"
+			],
+			"spellcastingTags": [
+				"CA"
+			],
+			"miscTags": [
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tsucora Quori",
+			"group": [
+				"Quori"
+			],
+			"source": "ERLW",
+			"page": 307,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 68,
+				"formula": "8d8 + 32"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 17,
+			"dex": 14,
+			"con": 18,
+			"int": 14,
+			"wis": 14,
+			"cha": 16,
+			"save": {
+				"wis": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"insight": "+5",
+				"perception": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 15,
+			"resist": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Quori"
+			],
+			"cr": "7",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting (Psionics)",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The quori's spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no components:"
+					],
+					"will": [
+						"{@spell charm person}"
+					],
+					"daily": {
+						"1": [
+							"{@spell fear}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The quori makes three attacks: one pincer attack, one attack with its claws, and one stinger attack."
+					]
+				},
+				{
+					"name": "Pincer",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}8 ({@dégât 1d10 + 3}) bludgeoningdgts. The target is {@condition agrippé} (escape {@dd 14}) if it is a Large or smaller creature. The quori has two pincers, each of which can grapple une cible."
+					]
+				},
+				{
+					"name": "Claws",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}13 ({@dégât 4d4 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Stinger",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une créature. {@h}8 ({@dégât 1d10 + 3}) piercingdgts plus 10 ({@dégât 3d6}) psychicdgts, and la cible doit réussir on a {@dd 14}Sagesse saving throw or be {@condition effrayé} of the quori for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Possession {@recharge}",
+					"entries": [
+						"One humanoid that the quori can see within 5 mètres of it doit réussir on a {@dd 14}Charisme saving throw or be possessed by the quori; the quori then disappears, and la cible is {@conditionincapacité} and loses control of its body. The quori now controls the body but doesn't deprive la cible of awareness. The quori can't be targeted by any attack, spell, or other effect, and it retains its alignment,Intelligence,Sagesse,Charisme, and immunity to being {@condition charmé} and {@condition effrayé}. It otherwise uses the possessed target's statistics, but doesn't gain access to la cible's knowledge, class features, or proficiencies.",
+						"The possession lasts until the body drops to 0touché points, the quori ends it as a bonus action, or the quori is forced out by an effect like the {@spell dispel evil and good} spell. When the possession ends, the quori reappears in an unoccupied space within 5 mètres of the body. The target is immune to this quori's Possession for 24 heures after succeeding on the saving throw or after the possession ends."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"B",
+				"P",
+				"S",
+				"Y"
+			],
+			"spellcastingTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"frightened",
+				"grappled",
+				"incapacitated"
+			],
+			"conditionInflictSpell": [
+				"charmed",
+				"frightened"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Undying Councilor",
+			"source": "ERLW",
+			"page": 311,
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 104,
+				"formula": "16d8 + 32"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 10,
+			"con": 14,
+			"int": 17,
+			"wis": 21,
+			"cha": 16,
+			"save": {
+				"con": "+6",
+				"int": "+7",
+				"wis": "+9"
+			},
+			"skill": {
+				"arcana": "+7",
+				"history": "+11",
+				"insight": "+9",
+				"perception": "+9",
+				"religion": "+7"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 19,
+			"immune": [
+				"poison",
+				"radiant"
+			],
+			"vulnerable": [
+				"necrotic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Common",
+				"Elvish"
+			],
+			"cr": "10",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The councilor is a 13th-level spellcaster. Its spellcasting ability is Wisdom (spell save {@dc 17}, {@hit 9} to hit with spell attacks). It has the following cleric spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell guidance}",
+								"{@spell mending}",
+								"{@spell sacred flame}",
+								"{@spell spare the dying}",
+								"{@spell thaumaturgy}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell bless}",
+								"{@spell command}",
+								"{@spell create or destroy water}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell augury}",
+								"{@spell calm emotions}",
+								"{@spell hold person}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell daylight}",
+								"{@spell dispel magic}",
+								"{@spell spirit guardians}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell banishment}",
+								"{@spell divination}",
+								"{@spell guardian of faith}"
+							]
+						},
+						"5": {
+							"slots": 2,
+							"spells": [
+								"{@spell dispel evil and good}",
+								"{@spell flame strike} (see \"Actions\" below)",
+								"{@spell scrying}"
+							]
+						},
+						"6": {
+							"slots": 1,
+							"spells": [
+								"{@spell forbiddance}",
+								"{@spell planar ally}"
+							]
+						},
+						"7": {
+							"slots": 1,
+							"spells": [
+								"{@spell plane shift}"
+							]
+						}
+					},
+					"ability": "wis"
+				}
+			],
+			"trait": [
+				{
+					"name": "Aura of Radiance",
+					"entries": [
+						"The councilor magically sheds bright light in a 15-foot radius and dim light for an additional 15 mètres. The councilor can extinguish or restore this light as a bonus action. Si  bright light overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created that darkness is dispelled."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The councilor avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The councilor makes two Radiant Touch attacks."
+					]
+				},
+				{
+					"name": "Radiant Touch",
+					"entries": [
+						"{@atk ms} {@hit 9} pour toucher, allonge 5 m,, une cible. {@h}15 ({@dégât 3d6 + 5}) radiantdgts."
+					]
+				},
+				{
+					"name": "Healing Touch (3/Day)",
+					"entries": [
+						"The councilor touches another creature. The target magically regains 18 ({@dice 3d8 + 5})touché points and is freed from one curse afflicting it (councilor's choice)."
+					]
+				},
+				{
+					"name": "Flame Strike (5th-Level Spell; Requires a Spell Slot)",
+					"entries": [
+						"The councilor chooses a point it can see within 60 mètres of it. Each creature in a 10-foot-radius, 40-foot-high cylinder centered on that point doit faire a {@dd 17}Dextérité saving throw. A creature takes 14 ({@dégât 4d6}) firedgts and 14 ({@dégât 4d6}) radiantdgts on a failed save, or half as muchdgts on a successful one. Si  councilor casts this spell using a spell slot of 6th level or higher, the firedgts or the radiantdgts (its choice) increases by {@dice 1d6} for each slot level above 5th."
+					]
+				}
+			],
+			"legendaryActions": 2,
+			"legendary": [
+				{
+					"name": "Touch",
+					"entries": [
+						"The councilor makes one attack with its Radiant Touch."
+					]
+				},
+				{
+					"name": "Shimmering Aura (Costs 2 Actions)",
+					"entries": [
+						"The councilor channels positive energy into its Aura of Radiance. Until the end of the councilor's next turn, it sheds bright light in a 30-foot radius and dim light for an additional 30 mètres. Any creature that starts its turn in the bright light doit réussir on a {@dd 17}jet de sauvegarde Constitution or be {@condition aveuglé} until the end of the councilor's next turn."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"E"
+			],
+			"damageTags": [
+				"F",
+				"R"
+			],
+			"damageTagsSpell": [
+				"F",
+				"N",
+				"R"
+			],
+			"spellcastingTags": [
+				"CC"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"conditionInflictSpell": [
+				"incapacitated",
+				"paralyzed",
+				"prone"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Undying Soldier",
+			"source": "ERLW",
+			"page": 311,
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"{@item breastplate|phb}",
+						"{@item shield|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 26,
+				"formula": "4d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 12,
+			"con": 14,
+			"int": 11,
+			"wis": 13,
+			"cha": 14,
+			"skill": {
+				"athletics": "+5",
+				"history": "+4",
+				"perception": "+3",
+				"religion": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"radiant",
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks that aren't silvered",
+					"cond": true
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"vulnerable": [
+				"necrotic"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"Common",
+				"Elvish"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Illumination",
+					"entries": [
+						"The soldier magically sheds bright light in a 10-foot radius and dim light for an additional 10 mètres. The soldier can extinguish or restore this light as a bonus action."
+					]
+				},
+				{
+					"name": "Turn Resistance",
+					"entries": [
+						"The soldier avantage aux jets de sauvegarde against any effect that turns undead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The soldier makes two spear attacks."
+					]
+				},
+				{
+					"name": "Spear",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts or 7 ({@dégât 1d8 + 3}) piercingdgts if used with two hands to make a melee attack, plus 9 ({@dégât 2d8}) radiantdgts if la cible is a fiend or undead."
+					]
+				}
+			],
+			"attachedItems": [
+				"spear|phb"
+			],
+			"traitTags": [
+				"Illumination",
+				"Turn Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"E"
+			],
+			"damageTags": [
+				"P",
+				"R"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Valenar Hawk",
+			"source": "ERLW",
+			"page": 312,
+			"size": [
+				"T"
+			],
+			"type": "féerique",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 10,
+				"formula": "4d4"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 60
+			},
+			"str": 8,
+			"dex": 18,
+			"con": 10,
+			"int": 9,
+			"wis": 16,
+			"cha": 11,
+			"skill": {
+				"perception": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"understands Common",
+				"Elvish",
+				"and Sylvan but can't speak"
+			],
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Bonding",
+					"entries": [
+						"The hawk can magically bond with une créature it can see, immediately after spending at least 1 heure observing that creature while within 30 mètres of it. The bond lasts until the hawk bonds with a different creature or until the bonded creature dies. While bonded, the hawk and the bonded creature can communicate telepathically with each other at a distance of up to 100 mètres."
+					]
+				},
+				{
+					"name": "Vue fine",
+					"entries": [
+						"The hawk avantage onSagesse ({@skillPerception}) checks that rely on sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Serres",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d4 + 4}) slashingdgts."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Keen Senses"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"E",
+				"S"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Valenar Hound",
+			"source": "ERLW",
+			"page": 312,
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 19,
+				"formula": "3d8 + 6"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 17,
+			"dex": 15,
+			"con": 14,
+			"int": 10,
+			"wis": 15,
+			"cha": 11,
+			"skill": {
+				"perception": "+4"
+			},
+			"passive": 14,
+			"languages": [
+				"understands Common",
+				"Elvish",
+				"and Sylvan but can't speak"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Bonding",
+					"entries": [
+						"The hound can magically bond with une créature it can see, immediately after spending at least 1 heure observing that creature while within 30 mètres of it. The bond lasts until the hound bonds with a different creature or until the bonded creature dies. While bonded, the hound and the bonded creature can communicate telepathically with each other at a distance of up to 100 mètres."
+					]
+				},
+				{
+					"name": "Keen Hearing and Smell",
+					"entries": [
+						"The hound avantage onSagesse ({@skillPerception}) checks that rely on hearing or smell."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts. If la cible is une créature, it doit réussir on a {@dd 13}Force saving throw or be knocked {@condition à terre}."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"E",
+				"S"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Valenar Steed",
+			"source": "ERLW",
+			"page": 313,
+			"size": [
+				"L"
+			],
+			"type": "féerique",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 22,
+				"formula": "3d10 + 6"
+			},
+			"speed": {
+				"walk": 60
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 14,
+			"int": 10,
+			"wis": 15,
+			"cha": 11,
+			"skill": {
+				"perception": "+4"
+			},
+			"passive": 14,
+			"languages": [
+				"understands Common",
+				"Elvish",
+				"and Sylvan but can't speak"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Bonding",
+					"entries": [
+						"The steed can magically bond with une créature it can see, immediately after spending at least 1 heure observing that creature while within 30 mètres of it. The bond lasts until the steed bonds with a different creature or until the bonded creature dies. While bonded, the steed and the bonded creature can communicate telepathically with each other at a distance of up to 100 mètres."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Sabots",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}10 ({@dégât 2d6 + 3}) bludgeoningdgts."
+					]
+				}
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"E",
+				"S"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Warforged Colossus",
+			"source": "ERLW",
+			"page": 314,
+			"size": [
+				"G"
+			],
+			"type": "construct",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 23,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 410,
+				"formula": "20d20 + 200"
+			},
+			"speed": {
+				"walk": 60
+			},
+			"str": 30,
+			"dex": 11,
+			"con": 30,
+			"int": 3,
+			"wis": 11,
+			"cha": 8,
+			"save": {
+				"int": "+4",
+				"wis": "+8",
+				"cha": "+7"
+			},
+			"senses": [
+				"truesight 150 ft."
+			],
+			"passive": 10,
+			"immune": [
+				"necrotic",
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"incapacitated",
+				"paralyzed",
+				"petrified",
+				"poisoned",
+				"stunned"
+			],
+			"languages": [
+				"understands Common but can't speak"
+			],
+			"cr": "25",
+			"trait": [
+				{
+					"name": "Forme immuable",
+					"entries": [
+						"The colossus is immune to any spell or effect that would alter its form."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  colossus fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The colossus avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Monstre de siège",
+					"entries": [
+						"The colossus deals doubledgts to objects and structures."
+					]
+				},
+				{
+					"name": "Towering Terror",
+					"entries": [
+						"Any enemy outside the colossus that starts its turn within 30 mètres of it doit réussir on a {@dd 26}Sagesse saving throw or be {@condition effrayé} until the start of the enemy's next turn. Si  enemy's saving throw is successful, it is immune to this colossus's Towering Terror for the next 24 heures."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The colossus makes three attacks—one with its slam and two with its eldritch turrets—and then uses Stomp."
+					]
+				},
+				{
+					"name": "Coup",
+					"entries": [
+						"{@atk mw} {@hit 18} pour toucher, allonge 20 m,, une cible. {@h}29 ({@dégât 3d12 + 10}) bludgeoningdgts, and the colossus can push la cible up to 20 mètres away from it."
+					]
+				},
+				{
+					"name": "Eldritch Turret",
+					"entries": [
+						"{@atk rs} {@hit 18} pour toucher, portée 300 m,, une cible. {@h}18 ({@dégât 4d8}) forcedgts, and if la cible is une créature, it is knocked {@condition à terre}."
+					]
+				},
+				{
+					"name": "Stomp",
+					"entries": [
+						"The colossus stomps one of its mètres at a point on the ground within 20 mètres of it. Any creature in a 20-foot-radius, 20-foot-high cylinder centered on this point doit réussir on a {@dd 26}Dextérité saving throw or take 33 ({@dégât 6d10}) bludgeoningdgts and fall {@condition à terre}. Until the colossus uses its Stomp again or moves, la créature is {@condition entravé}. While {@condition entravé} in this way, la créature (or another creature within 5 mètres of it) can use its action to make a {@dd 26}Force check. On a success, la créature relocates to an unoccupied space of its choice within 5 mètres of the colossus and is no longer {@condition entravé}.",
+						"Structures, as well as nonmagical objects that are neither being worn nor carried, take the same amount ofdgts if they are in the cylinder (no save)."
+					]
+				},
+				{
+					"name": "Incinerating Beam {@recharge 5}",
+					"entries": [
+						"The colossus fires a beam of light in a 150-foot line that is 10 mètres wide. Each creature in the line doit faire a {@dd 26}Dextérité saving throw, taking 60 ({@dégât 11d10}) radiantdgts on a failed save, or half as muchdgts on a successful one. A creature reduced to 0touché points by this beam is disintegrated, leaving behind anything it was wearing or carrying."
+					]
+				}
+			],
+			"traitTags": [
+				"Immutable Form",
+				"Legendary Resistances",
+				"Magic Resistance",
+				"Siege Monster"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"CS"
+			],
+			"damageTags": [
+				"B",
+				"O",
+				"R"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"frightened",
+				"prone",
+				"restrained"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Warforged Soldier",
+			"source": "ERLW",
+			"page": 320,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"warforged"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor",
+						"{@item shield|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 30,
+				"formula": "4d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 12,
+			"con": 16,
+			"int": 10,
+			"wis": 14,
+			"cha": 11,
+			"skill": {
+				"athletics": "+5",
+				"perception": "+4",
+				"survival": "+4"
+			},
+			"passive": 14,
+			"resist": [
+				"poison"
+			],
+			"conditionImmune": [
+				"disease"
+			],
+			"languages": [
+				"Common"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Warforged Resilience",
+					"entries": [
+						"The warforged avantage aux jets de sauvegarde against being {@condition empoisonné} and is immune to disease. Magic can't put it to sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The warforged makes two armblade attacks."
+					]
+				},
+				{
+					"name": "Armblade",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Javelin",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} pour toucher, allonge 5 m, or portée 30/120 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Protection",
+					"entries": [
+						"When an attacker the warforged can see makes an attack roll against a creature within 5 feet of the warforged, the warforged can impose disadvantage on the attack roll."
+					]
+				}
+			],
+			"attachedItems": [
+				"javelin|phb"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Warforged Titan",
+			"source": "ERLW",
+			"page": 315,
+			"referenceSources": [
+				"EFA"
+			],
+			"size": [
+				"H"
+			],
+			"type": "construct",
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 125,
+				"formula": "10d12 + 60"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 23,
+			"dex": 8,
+			"con": 22,
+			"int": 3,
+			"wis": 11,
+			"cha": 1,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"petrified",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages of its creator but can't speak"
+			],
+			"cr": "8",
+			"trait": [
+				{
+					"name": "Platforms",
+					"entries": [
+						"The warforged titan has two platforms built into its chassis. One Medium or smaller creature can ride on each platform without squeezing. To make a melee attack against a target within 5 mètres of the warforged, they must use spears or weapons with allonge and la cible must be Large or larger."
+					]
+				},
+				{
+					"name": "Monstre de siège",
+					"entries": [
+						"The warforged titan deals doubledgts to objects and structures."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The warforged titan makes one axehand attack and one hammerfist attack."
+					]
+				},
+				{
+					"name": "Axehand",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 10 m,, une cible. {@h}19 ({@dégât 3d8 + 6}) slashingdgts, plus 11 ({@dégât 2d10}) slashingdgts if la cible is {@condition à terre}."
+					]
+				},
+				{
+					"name": "Hammerfist",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 10 m,, une cible. {@h}19 ({@dégât 3d8 + 6}) bludgeoningdgts. If la cible is une créature, it doit réussir on a {@dd 17}Force saving throw or be knocked {@condition à terre}."
+					]
+				},
+				{
+					"name": "Sweeping Axe {@recharge}",
+					"entries": [
+						"The warforged titan makes a sweep with its axehand, and each creature within 10 mètres of it doit faire a {@dd 17}Dextérité saving throw. A creature takes 19 ({@dégât 3d8 + 6}) slashingdgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"traitTags": [
+				"Siege Monster"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"CS"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Zakya Rakshasa",
+			"source": "ERLW",
+			"page": 309,
+			"size": [
+				"M"
+			],
+			"type": "fiélon",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"{@item scale mail|phb}",
+						"{@item shield|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 59,
+				"formula": "7d8 + 28"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 18,
+			"dex": 14,
+			"con": 18,
+			"int": 12,
+			"wis": 13,
+			"cha": 11,
+			"skill": {
+				"athletics": "+7",
+				"perception": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"vulnerable": [
+				{
+					"vulnerable": [
+						"piercing"
+					],
+					"note": "from magic weapons wielded by good creatures",
+					"cond": true
+				}
+			],
+			"languages": [
+				"Common",
+				"Infernal"
+			],
+			"cr": "5",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The rakshasa's innate spellcasting ability is Charisma (spell save {@dc 11}). The rakshasa can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell detect thoughts}",
+						"{@spell disguise self}"
+					],
+					"daily": {
+						"1": [
+							"{@spell shield}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Immunité magique limitée",
+					"entries": [
+						"The rakshasa can't be affected or detected by spells of 1st level or lower unless it wishes to be. It avantage aux jets de sauvegarde against all other spells and magical effects."
+					]
+				},
+				{
+					"name": "Armes magiques",
+					"entries": [
+						"The rakshasa's weapon attacks are magical."
+					]
+				},
+				{
+					"name": "Martial Prowess (1/Turn)",
+					"entries": [
+						"When the rakshasatouchés une créature with a melee weapon attack, the attack deals an extra 11 ({@dice 2d10})dgts of the weapon's type, and la créature doit faire a {@dd 15}Force saving throw. On a failure, the rakshasa can push la créature up to 10 mètres away from it, knock la créature {@condition à terre}, or make la créature drop one item it is holding of the rakshasa's choice."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The rakshasa makes three melee weapon attacks. Alternatively, it can make two ranged attacks with its javelins."
+					]
+				},
+				{
+					"name": "Longsword",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}8 ({@dégât 1d8 + 4}) slashingdgts, or 9 ({@dégât 1d10 + 4}) slashingdgts if used with two hands."
+					]
+				},
+				{
+					"name": "Javelin",
+					"entries": [
+						"{@atk mw,rw} {@hit 7} pour toucher, allonge 5 m, or portée 30/120 m,, une cible. {@h}7 ({@dégât 1d6 + 4}) piercingdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"javelin|phb",
+				"longsword|phb"
+			],
+			"traitTags": [
+				"Magic Weapons"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"I"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

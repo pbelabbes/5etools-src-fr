@@ -1,0 +1,361 @@
+{
+	"_meta": {
+		"otherSources": {
+			"monster": {
+				"MM": "HftT"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Demogorgon",
+			"source": "HftT",
+			"page": 36,
+			"size": [
+				"M"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 60,
+				"formula": "8d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 12,
+			"con": 16,
+			"int": 3,
+			"wis": 12,
+			"cha": 5,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+5"
+			},
+			"senses": [
+				"blindsight 60 ft."
+			],
+			"passive": 13,
+			"cr": "4",
+			"trait": [
+				{
+					"name": "Odorat fin",
+					"entries": [
+						"The demogorgon avantage onSagesse ({@skillPerception}) checks that rely on smell."
+					]
+				},
+				{
+					"name": "Blood Frenzy",
+					"entries": [
+						"The demogorgon avantage on melee attack rolls against any creature that doesn't have all itstouché points."
+					]
+				},
+				{
+					"name": "Régénération",
+					"entries": [
+						"The demogorgon regains 10touché points at the start of its turn. Si  demogorgon takes acid or firedgts, this trait doesn't function at the start of the demogorgon's next turn. The demogorgon dies only if it starts its turn with 0touché points and doesn't regenerate."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The demogorgon makes three attacks: one with its bite and two with its claws."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d8 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}12 ({@dégât 2d8 + 3}) slashingdgts."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses",
+				"Regeneration"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Evil Mage",
+			"source": "HftT",
+			"page": 42,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"formula": "5d8",
+				"average": 22
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 9,
+			"dex": 14,
+			"con": 11,
+			"int": 17,
+			"wis": 12,
+			"cha": 11,
+			"save": {
+				"int": "+5",
+				"wis": "+3"
+			},
+			"skill": {
+				"arcana": "+5",
+				"history": "+5"
+			},
+			"passive": 11,
+			"languages": [
+				"Common",
+				"Draconic",
+				"Dwarvish",
+				"Elvish"
+			],
+			"cr": "1",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The mage is a 4th-level spellcaster that uses Intelligence as its spellcasting ability (spell save {@dc 13}, {@hit 5} to hit with spell attacks). The mage knows the following spells from the wizard's spell list:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell light}",
+								"{@spell mage hand}",
+								"{@spell shocking grasp}"
+							]
+						},
+						"1": {
+							"spells": [
+								"{@spell charm person}",
+								"{@spell magic missile}"
+							],
+							"slots": 4
+						},
+						"2": {
+							"spells": [
+								"{@spell hold person}",
+								"{@spell misty step}"
+							],
+							"slots": 3
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"action": [
+				{
+					"name": "Quarterstaff",
+					"entries": [
+						"{@atk mw} {@hit 1} pour toucher, allonge 5 m,, une cible. {@h}3 ({@dégât 1d8 -1}) bludgeoningdgts."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
+			"languageTags": [
+				"C",
+				"D",
+				"DR",
+				"E"
+			],
+			"damageTags": [
+				"B"
+			],
+			"damageTagsSpell": [
+				"L",
+				"O"
+			],
+			"spellcastingTags": [
+				"CW"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Thessalhydra",
+			"source": "HftT",
+			"page": 41,
+			"referenceSources": [
+				"IMR"
+			],
+			"size": [
+				"H"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 69,
+				"formula": "6d12 + 30"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"str": 19,
+			"dex": 12,
+			"con": 20,
+			"int": 5,
+			"wis": 10,
+			"cha": 7,
+			"skill": {
+				"perception": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"immune": [
+				"acid"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"frightened",
+				"stunned"
+			],
+			"cr": "4",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The thessalhydra makes one maw attack and one Flurry of Bites."
+					]
+				},
+				{
+					"name": "Flurry of Bites",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 10 m,, une cible. {@h}7 ({@dégât 1d6 + 4}) piercingdgts plus 10 ({@dégât 4d4}) poisondgts."
+					]
+				},
+				{
+					"name": "Maw",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}9 ({@dégât 1d10 + 4}) piercingdgts plus 5 ({@dégât 1d10}) aciddgts."
+					]
+				},
+				{
+					"name": "Tail Pincer",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 10 m,, une cible. {@h}10 ({@dégât 1d12 + 4}) slashingdgts, and la cible is {@condition agrippé}. As an action, la cible can escape the grapple by succeeding on a {@dd 14}Force ({@skill Athlétisme}) orDextérité ({@skill Acrobaties}) check (its choice). Until this grapple ends, the thessalhydra can't use its tail pincer."
+					]
+				},
+				{
+					"name": "Acid Saliva {@recharge 5}",
+					"entries": [
+						"The thessalhydra spits a glob of acid at a point it can see within 30 mètres of it. Each creature within 10 mètres of that point doit faire a {@dd 15}Dextérité saving throw, taking 18 ({@dégât 4d8}) aciddgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"legendaryActions": 2,
+			"legendary": [
+				{
+					"name": "Detect",
+					"entries": [
+						"The thessalhydra makes aSagesse ({@skillPerception}) check with advantage."
+					]
+				},
+				{
+					"name": "Tail Swipe",
+					"entries": [
+						"The thessalhydra makes a tail pincer attack."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"A",
+				"I",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

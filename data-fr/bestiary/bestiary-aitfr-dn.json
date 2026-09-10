@@ -1,0 +1,510 @@
+{
+	"monster": [
+		{
+			"name": "Giant Zombie Constrictor Snake",
+			"source": "AitFR-DN",
+			"page": 11,
+			"size": [
+				"H"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 187,
+				"formula": "22d12 + 44"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 20,
+				"swim": 30
+			},
+			"str": 19,
+			"dex": 16,
+			"con": 14,
+			"int": 1,
+			"wis": 15,
+			"cha": 4,
+			"skill": {
+				"perception": "+5",
+				"stealth": "+6"
+			},
+			"senses": [
+				"blindsight 15 ft.",
+				"darkvision 60 ft."
+			],
+			"passive": 15,
+			"vulnerable": [
+				"poison"
+			],
+			"cr": "8",
+			"trait": [
+				{
+					"name": "Sunlight Vulnerability",
+					"entries": [
+						"While in sunlight, the snake désavantage aux jets d'attaque and onSagesse ({@skillPerception}) checks that rely on sight. When the snake begins its turn in sunlight, it immediately suffers 10 radiantdgts."
+					]
+				},
+				{
+					"name": "Undead Fortitude",
+					"entries": [
+						"Ifdgts reduces the snake to 0touché points, it doit faire ajet de sauvegarde Constitution with a DD of 5 + thedgts taken, unless thedgts is radiant or from a criticaltouché. On a success, the snake drops to 1touché point instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The snake makes two attacks: one with its bite and one with a constrict attack."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 10 m,, une cible. {@h}17 ({@dégât 3d8 + 4}) piercingdgts, and la cible doit faire a {@dd 15}jet de sauvegarde Constitution, taking 17 ({@dégât 5d6}) poisondgts on a failed save, or half as muchdgts on a successful one."
+					]
+				},
+				{
+					"name": "Étrangler",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}17 ({@dégât 3d8 + 4}) bludgeoningdgts, and la cible is {@condition agrippé} (escape {@dd 16}). Until this grapple ends, la créature is {@condition entravé} and the snake cannot constrict another target."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Undead Fortitude"
+			],
+			"senseTags": [
+				"B",
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"B",
+				"I",
+				"P",
+				"R"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled",
+				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Hamish Hewland",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "AitFR-DN",
+			"page": 11,
+			"size": [
+				"H"
+			],
+			"type": "géant",
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 85,
+				"formula": "10d12 + 20"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 23,
+			"dex": 11,
+			"con": 15,
+			"int": 10,
+			"wis": 14,
+			"cha": 10,
+			"save": {
+				"str": "+9",
+				"wis": "+5"
+			},
+			"skill": {
+				"athletics": "+9",
+				"history": "+3",
+				"insight": "+5",
+				"perception": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"Common",
+				"Dwarvish",
+				"Giant"
+			],
+			"cr": "5",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Hamish makes two attacks with his axe or throws two rocks."
+					]
+				},
+				{
+					"name": "Axe",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 5 m,, une cible. {@h}17 ({@dégât 2d10 + 6}) slashingdgts."
+					]
+				},
+				{
+					"name": "Rock",
+					"entries": [
+						"{@atk rw} {@hit 9} pour toucher, portée 60/240 m,, une cible. {@h}17 ({@dégât 2d10 + 6}) bludgeoningdgts."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Parry",
+					"entries": [
+						"Hamish adds 2 to his AC against one melee attack that would hit him. To do so, he must see the attacker and be wielding a melee weapon or a shield."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			],
+			"languageTags": [
+				"C",
+				"D",
+				"GI"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Kyrilla, Accursed Gorgon",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "AitFR-DN",
+			"page": 12,
+			"size": [
+				"L"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 127,
+				"formula": "15d10 + 45"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 11,
+			"dex": 16,
+			"con": 16,
+			"int": 14,
+			"wis": 14,
+			"cha": 15,
+			"save": {
+				"wis": "+6",
+				"cha": "+6"
+			},
+			"skill": {
+				"deception": "+6",
+				"insight": "+6",
+				"perception": "+6",
+				"stealth": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 16,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed"
+			],
+			"languages": [
+				"Common",
+				"Draconic",
+				"Primordial"
+			],
+			"cr": "10",
+			"trait": [
+				{
+					"name": "Feed on Pain (2/Day)",
+					"entries": [
+						"The first time shetouchés with a weapon attack on her turn, Kyrilla can deal an extra 16 ({@dégât 3d10}) poisondgts to la cible and regains a number oftouché points equal to half thedgts dealt."
+					]
+				},
+				{
+					"name": "Legendary Resistance (2/Day)",
+					"entries": [
+						"If she fails a saving throw, Kyrilla can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Petrifying Gaze",
+					"entries": [
+						"When une créature that can see Kyrilla's eyes starts its turn within 30 mètres of her, Kyrilla can force it to make a {@dd 14}jet de sauvegarde Constitution if Kyrilla isn't {@conditionincapacité} and can see la créature. Si  saving throw fails by 5 or more, la créature is instantly {@condition pétrifié}. Otherwise, une créature that fails the save begins to turn to stone and is {@condition entravé}. The {@condition entravé} creature must repeat the saving throw at la fin de son prochain tour, becoming {@condition pétrifié} on a failure or ending the effect on a success. The petrification lasts until la créature is freed by the {@spell greater restoration} spell or other magic.",
+						"Unless {@status surprised}, une créature can avert its eyes to avoid the saving throw at the start of its turn. If la créature does so, it can't see Kyrilla until the start of its next turn, lorsque it can avert its eyes again. If la créature looks at Kyrilla in the meantime, it must immediately make the save.",
+						"Kyrilla's accursed gaze does not affect undead or constructs. If Kyrilla sees herself reflected on a polished surface within 30 mètres of her and in an area of bright light, she is, due to her curse, affected by her own gaze."
+					]
+				},
+				{
+					"name": "Sensibilité à la lumière du soleil",
+					"entries": [
+						"While in sunlight, Kyrilla désavantage aux jets d'attaque and onSagesse ({@skillPerception}) checks that rely on sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Kyrilla makes one attack to constrict and two attacks with her claws, or she makes three attacks with her longbow."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}13 ({@dégât 3d6 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Étrangler",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 10 m,, une cible. {@h}10 ({@dégât 3d6}) bludgeoningdgts, and la cible is {@condition agrippé} (escape {@dd 13}) if it is a Large or smaller creature. Until this grapple ends, la cible is {@condition entravé}, and Kyrilla can't constrict another target."
+					]
+				},
+				{
+					"name": "Longbow",
+					"entries": [
+						"{@atk rw} {@hit 7} pour toucher, portée 150/600 m,, une cible. {@h}16 ({@dégât 3d8 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Summon Swarm of Poisonous Snakes {@recharge 5}",
+					"entries": [
+						"Kyrilla conjures a swarm of poisonous snakes into an empty space within 10 mètres of her. The swarm is under Kyrilla's control and acts on her turn, immediately after her in the initiative order.",
+						"It remains in existence for up to 1 heure. She can summon no more than three swarms per day. Kyrilla can banish any or all of her summoned swarms with a bonus action."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Claw",
+					"entries": [
+						"Kyrilla or a swarm of poisonous snakes makes a weapon attack."
+					]
+				},
+				{
+					"name": "Detect",
+					"entries": [
+						"Kyrilla makes aSagesse ({@skillPerception}) check."
+					]
+				},
+				{
+					"name": "Slither",
+					"entries": [
+						"Kyrilla moves up to her speed without provoking opportunity attacks."
+					]
+				}
+			],
+			"legendaryGroup": {
+				"name": "Kyrilla, Accursed Gorgon",
+				"source": "AitFR-DN"
+			},
+			"tokenCustom": true,
+			"attachedItems": [
+				"longbow|phb"
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Sunlight Sensitivity"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"P"
+			],
+			"damageTags": [
+				"B",
+				"I",
+				"P",
+				"S"
+			],
+			"damageTagsLegendary": [
+				"R",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RCH",
+				"RNG",
+				"RW"
+			],
+			"conditionInflict": [
+				"grappled",
+				"petrified",
+				"restrained"
+			],
+			"conditionInflictLegendary": [
+				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedLegendary": [
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Skeletal Horror",
+			"source": "AitFR-DN",
+			"page": 13,
+			"size": [
+				"L"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 150,
+				"formula": "20d10 + 40"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 14,
+			"con": 15,
+			"int": 6,
+			"wis": 10,
+			"cha": 5,
+			"skill": {
+				"perception": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 16,
+			"immune": [
+				"poison"
+			],
+			"vulnerable": [
+				"bludgeoning"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"cr": "6",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The horror makes two attacks with its claws."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}19 ({@dégât 3d10 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Wave of Bones {@recharge 5}",
+					"entries": [
+						"The horror crashes into foes like a wave before quickly reforming. Each creature within 10 mètres of the horror doit faire a {@dd 15}Dextérité saving throw, taking 18 ({@dégât 4d8}) bludgeoningdgts on a failed save, or half as muchdgts on a successful one. A creature that fails this saving throw is also knocked {@condition à terre}."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		}
+	]
+}

@@ -1,0 +1,3329 @@
+{
+	"monster": [
+		{
+			"name": "Archon of Boundaries",
+			"source": "MCV4EC",
+			"size": [
+				"H"
+			],
+			"type": "céleste",
+			"alignment": [
+				"L",
+				"G"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 195,
+				"formula": "17d12 + 85"
+			},
+			"speed": {
+				"walk": 60,
+				"fly": 90
+			},
+			"str": 23,
+			"dex": 17,
+			"con": 20,
+			"int": 14,
+			"wis": 18,
+			"cha": 18,
+			"save": {
+				"con": "+10",
+				"wis": "+9"
+			},
+			"skill": {
+				"insight": "+9",
+				"perception": "+9"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 19,
+			"resist": [
+				"radiant"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"languages": [
+				"understands Common and Celestial but can't speak"
+			],
+			"cr": "15",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The archon casts one of the following spells, using Charisma as the spellcasting ability:"
+					],
+					"daily": {
+						"1e": [
+							"{@spell daylight}",
+							"{@spell lesser restoration}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  archon fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The archon avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The archon makes one Hooves attack and one Radiant Lance attack."
+					]
+				},
+				{
+					"name": "Sabots",
+					"entries": [
+						"{@atk mw} {@hit 11} pour toucher, allonge 5 m,, une cible. {@h}20 ({@dégât 4d6 + 6}) bludgeoningdgts plus 10 ({@dégât 3d6}) radiantdgts. If la cible is a Medium or smaller creature, it doit réussir on a {@dd 19}Force saving throw or have the {@condition à terre} condition."
+					]
+				},
+				{
+					"name": "Radiant Lance",
+					"entries": [
+						"{@atk mw} {@hit 11} pour toucher, allonge 10 m,, une cible. {@h}12 ({@dégât 1d12 + 6}) piercingdgts plus 28 ({@dégât 8d6}) radiantdgts, and la cible is marked until the start of the archon's next turn. While it is marked, la cible désavantage aux jets d'attaque against creatures other than the archon."
+					]
+				}
+			],
+			"reactionHeader": [
+				"The archon can take up to three reactions per round but only one per turn."
+			],
+			"reaction": [
+				{
+					"name": "Archon's Pursuit",
+					"entries": [
+						"When a creature marked by the archon's Radiant Lance ends its turn within 120 feet of the archon, the archon teleports to an unoccupied space it can see within 5 feet of the creature."
+					]
+				},
+				{
+					"name": "Haunting Radiance",
+					"entries": [
+						"Immediately after a creature within 120 feet of the archon forces it to make a saving throw, the archon responds with a burst of light. The creature must succeed on a {@dc 17} Constitution saving throw or have the {@condition blinded} condition until the end of the creature's next turn."
+					]
+				},
+				{
+					"name": "Parry",
+					"entries": [
+						"The archon adds 5 to its AC against one melee attack that would hit it, provided it can see the attacker."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Parry"
+			],
+			"languageTags": [
+				"C",
+				"CE",
+				"CS"
+			],
+			"damageTags": [
+				"B",
+				"P",
+				"R"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Beanstalk Wurm",
+			"source": "MCV4EC",
+			"size": [
+				"G"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 231,
+				"formula": "14d20 + 84"
+			},
+			"speed": {
+				"walk": 50,
+				"climb": 50
+			},
+			"str": 27,
+			"dex": 18,
+			"con": 22,
+			"int": 4,
+			"wis": 14,
+			"cha": 10,
+			"save": {
+				"str": "+14",
+				"con": "+12"
+			},
+			"passive": 12,
+			"cr": "18",
+			"trait": [
+				{
+					"name": "Fausse apparence",
+					"entries": [
+						"Si  wurm is motionless at the start of combat, it avantage on its initiative roll. Moreover, if une créature hasn't observed the wurm move or act, that creature doit réussir on a {@dd 18}Intelligence ({@skill Investigation}) check to discern that the wurm is animate."
+					]
+				},
+				{
+					"name": "Leafy Handholds",
+					"entries": [
+						"Creatures have advantage aux tests de caractéristique made to climb the wurm."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  wurm fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Régénération",
+					"entries": [
+						"The wurm regains 20touché points at the start of its turn if it has at least 1touché point. Si  wurm takes fire or lightningdgts, this trait doesn't function at the start of the wurm's next turn."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The wurm makes two Bite attacks."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 14} pour toucher, allonge 15 m,, une cible. {@h}30 ({@dégât 5d8 + 8}) piercingdgts. If la cible is a Large or smaller creature, it doit réussir on a {@dd 22}Dextérité saving throw or be swallowed by the wurm. A swallowed creature has the {@condition entravé} condition, has {@quickref Cover||3||total cover} against attacks and other effects outside the wurm, and takes 28 ({@dégât 8d6}) piercingdgts at the start of each of the wurm's turns from thorns in the wurm's gullet.",
+						"The wurm's stomach can hold up to two creatures at a time. Si  wurm takes 30dgts or more on a single turn from une créature inside it, the wurm doit réussir on a {@dd 22}jet de sauvegarde Constitution at the end of that turn or regurgitate all swallowed creatures, each of which falls in a space within 10 mètres of the wurm and has the {@condition à terre} condition. Si  wurm dies, a swallowed creature no longer has the {@condition entravé} condition and can escape from the corpse by using 10 mètres of movement, exiting with the {@condition à terre} condition."
+					]
+				}
+			],
+			"traitTags": [
+				"False Appearance",
+				"Legendary Resistances",
+				"Regeneration"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Swallow"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Deathless Rider",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"{@item chain mail|PHB}",
+						"{@item shield|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 84,
+				"formula": "13d8 + 26"
+			},
+			"speed": {
+				"walk": 20
+			},
+			"str": 18,
+			"dex": 10,
+			"con": 14,
+			"int": 6,
+			"wis": 6,
+			"cha": 5,
+			"save": {
+				"str": "+7",
+				"con": "+5"
+			},
+			"skill": {
+				"athletics": "+7",
+				"perception": "+1"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"resist": [
+				"necrotic"
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"understands the languages it knew in life but can't speak"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Mounted Adept",
+					"entries": [
+						"While mounted and without the {@conditionincapacité} condition, the rider avantage on melee attack rolls against any unmounted creature smaller than its mount, the rider and its mount have advantage onDextérité saving throws, and the rider can force an attack targeted at its mount to target the rider instead."
+					]
+				},
+				{
+					"name": "Undead Fortitude",
+					"entries": [
+						"Ifdgts reduces the rider to 0touché points, it doit faire ajet de sauvegarde Constitution with a DD equal to 5 + thedgts taken, unless thedgts is radiant or from a criticaltouché. On a success, the rider drops to 1touché point instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The rider makes two Axe attacks. It can replace one of these attacks with Fell Glare."
+					]
+				},
+				{
+					"name": "Axe",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}13 ({@dégât 2d8 + 4}) slashingdgts."
+					]
+				},
+				{
+					"name": "Fell Glare",
+					"entries": [
+						"The rider gazes at une créature within 30 mètres of itself. The creature doit réussir on a {@dd 13}Sagesse saving throw or have the {@condition effrayé} condition for 1 minute. The {@condition effrayé} creature can repeat the saving throw at the end of each of its turns, with disadvantage if it can see the rider, ending the condition on itself on a success."
+					]
+				}
+			],
+			"traitTags": [
+				"Undead Fortitude"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"CS",
+				"LF"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Dunbarrow Witch",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				12,
+				{
+					"ac": 15,
+					"condition": "with {@spell mage armor}",
+					"braces": true
+				}
+			],
+			"hp": {
+				"average": 72,
+				"formula": "16d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 12,
+			"dex": 14,
+			"con": 11,
+			"int": 16,
+			"wis": 15,
+			"cha": 20,
+			"save": {
+				"wis": "+5",
+				"cha": "+8"
+			},
+			"skill": {
+				"arcana": "+6",
+				"nature": "+6"
+			},
+			"passive": 12,
+			"languages": [
+				"Common",
+				"Sylvan",
+				"and any one language"
+			],
+			"cr": "5",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The witch casts one of the following spells, using Charisma as the spellcasting ability (spell save {@dc 16}):"
+					],
+					"will": [
+						"{@spell mage armor} (self only)",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell animal messenger}",
+							"{@spell charm person}",
+							"{@spell Tasha's hideous laughter}"
+						],
+						"1e": [
+							"{@spell bestow curse}",
+							"{@spell dispel magic}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The witch makes two Poison Dagger attacks. It can replace one of these attacks with Spellcasting."
+					]
+				},
+				{
+					"name": "Poison Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) piercingdgts plus 21 ({@dégât 6d6}) poisondgts."
+					]
+				},
+				{
+					"name": "Polymorph Concoction (1/Day)",
+					"entries": [
+						"The witch hurls a bottle of liquid at a point up to 20 mètres away from itself, which shatters into a cloud of magical smoke that fills a 10-foot-radius sphere. Each creature in that area doit réussir on a {@dd 16}Sagesse saving throw or transform into une créature, comme si under the effects of a {@spell polymorph} spell, transforming into one of the following forms (roll a {@dice d4}): 1, bat; 2, frog; 3, lizard; or 4, rat. This transformation lasts for 1 heure or until la créature drops to 0touché points in its new form."
+					]
+				},
+				{
+					"name": "Shattered Shards",
+					"entries": [
+						"The witch targets a point it can see within 30 mètres of itself. The air there magically solidifies into a mirrorlike pane, then shatters in a 15-foot cone originating from that point. Each creature in that area doit faire a {@dd 16}Dextérité saving throw, taking 25 ({@dégât 10d4}) forcedgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S",
+				"X"
+			],
+			"damageTags": [
+				"I",
+				"O",
+				"P"
+			],
+			"damageTagsSpell": [
+				"N"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"conditionInflictSpell": [
+				"charmed",
+				"incapacitated",
+				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Faerie Borrower",
+			"source": "MCV4EC",
+			"size": [
+				"T"
+			],
+			"type": "féerique",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 12,
+				"formula": "5d4"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 30
+			},
+			"str": 2,
+			"dex": 20,
+			"con": 10,
+			"int": 13,
+			"wis": 12,
+			"cha": 16,
+			"skill": {
+				"sleight of hand": "+7",
+				"stealth": "+7"
+			},
+			"passive": 11,
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "1/2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 13}):"
+					],
+					"will": [
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"1": [
+							"{@spell silent image}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Vol en piqué",
+					"entries": [
+						"The faerie doesn't provoke opportunity attacks lorsque it flies out of an enemy's allonge."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Needle Blade",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d4 + 5}) piercingdgts."
+					]
+				},
+				{
+					"name": "Magic Mockery",
+					"entries": [
+						"The faerie hurls magical taunts at une créature it can see within 60 mètres of itself. The creature doit réussir on a {@dd 13}Sagesse saving throw or take 3 ({@dégât 1d6}) psychicdgts and have disadvantage aux jets d'attaque and ability checks until the start of the faerie's next turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Tricksy Parry",
+					"entries": [
+						"Immediately after taking damage, the faerie reduces the damage taken by 2 ({@dice 1d4})."
+					]
+				}
+			],
+			"traitTags": [
+				"Flyby"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"P",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Faerie Pathlighter",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"C",
+				"G"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 38,
+				"formula": "7d8 + 7"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 10,
+			"dex": 14,
+			"con": 12,
+			"int": 13,
+			"wis": 17,
+			"cha": 18,
+			"skill": {
+				"insight": "+5",
+				"perception": "+5",
+				"survival": "+5"
+			},
+			"passive": 15,
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "2",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability:"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell detect magic}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"1": [
+							"{@spell locate creature}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Faerie Illumination",
+					"entries": [
+						"The faerie sheds dim light in a 15-foot radius."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The faerie makes two Shining Strike attacks."
+					]
+				},
+				{
+					"name": "Shining Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 6} pour toucher, allonge 5 m, or portée 30 m,, une cible. {@h}7 ({@dégât 2d6}) radiantdgts, and if la cible is une créature, it doit réussir on a {@dd 14}Dextérité saving throw or be wreathed in light until the end of the faerie's next turn. While une créature is wreathed in light, attack rolls against la créature have advantage, and la créature can't benefit from the {@condition invisible} condition."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Guiding Light (2/Day)",
+					"entries": [
+						"The faerie summons a 30-foot-radius sphere of magical light centered on itself, which lasts for 1 minute or until the faerie has the {@condition incapacitated} condition. Each creature of the faerie's choice (other than the faerie) that starts its turn in that area gains 5 temporary hit points and has advantage on Wisdom saving throws and Wisdom checks until the start of its next turn.",
+						"The sphere is bright light, sheds dim light for an additional 30 feet, and moves with the faerie. If any of the sphere's area overlaps with an area of darkness created by a spell of 3rd level or lower, the spell that created the darkness is dispelled."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"R"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Faerie Pest",
+			"source": "MCV4EC",
+			"size": [
+				"S"
+			],
+			"type": "féerique",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 22,
+				"formula": "5d6 + 5"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 30
+			},
+			"str": 8,
+			"dex": 16,
+			"con": 12,
+			"int": 10,
+			"wis": 12,
+			"cha": 14,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "1",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The faerie casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 12}):"
+					],
+					"daily": {
+						"1": [
+							"{@spell blindness/deafness}"
+						],
+						"2e": [
+							"{@spell bane}",
+							"{@spell grease}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Stingblade",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) slashingdgts plus 5 ({@dégât 2d4}) poisondgts. Si  faerie had advantage on the attack roll, la cible takes an additional 3 ({@dégât 1d6}) slashingdgts."
+					]
+				},
+				{
+					"name": "Theft of Nerves (1/Day)",
+					"entries": [
+						"The faerie unleashes a burst of mind-muddling magic in a 15-foot cone. Each creature in that area doit réussir on a {@dd 12}jet de sauvegarde Intelligence or have the {@condition effrayé} condition for 1 minute. A {@condition effrayé} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Mischievous Stealth",
+					"entries": [
+						"The faerie takes the {@action Hide} action."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"I",
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"blinded",
+				"deafened",
+				"prone"
+			],
+			"savingThrowForced": [
+				"intelligence"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Gingerbrute",
+			"source": "MCV4EC",
+			"size": [
+				"T"
+			],
+			"type": "construct",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 18,
+				"formula": "4d4 + 8"
+			},
+			"speed": {
+				"walk": 60
+			},
+			"str": 13,
+			"dex": 18,
+			"con": 14,
+			"int": 7,
+			"wis": 10,
+			"cha": 12,
+			"skill": {
+				"acrobatics": "+6",
+				"athletics": "+3"
+			},
+			"passive": 10,
+			"vulnerable": [
+				"bludgeoning"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"languages": [
+				"one language of its creator"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Can't Catch Me",
+					"entries": [
+						"The gingerbrute avantage on any ability checks or saving throws it makes to avoid or end the {@condition agrippé} or the {@condition entravé} condition on itself."
+					]
+				},
+				{
+					"name": "Sweet Victory",
+					"entries": [
+						"Once the gingerbrute is destroyed, une créature can use its action to eat all the remains and gain 5 temporarytouché points. The remains crumble away after 24 heures if not eaten."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The gingerbrute makes two Fork attacks, two Gumdrop Slingshot attacks, or one of each."
+					]
+				},
+				{
+					"name": "Fork",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d4 + 4}) piercingdgts."
+					]
+				},
+				{
+					"name": "Gumdrop Slingshot",
+					"entries": [
+						"{@atk rw} {@hit 6} pour toucher, portée 30/120 m,, une cible. {@h}6 ({@dégât 1d4 + 4}) bludgeoningdgts."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Goose Mother",
+			"source": "MCV4EC",
+			"size": [
+				"H"
+			],
+			"type": "féerique",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 114,
+				"formula": "12d12 + 36"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 40
+			},
+			"str": 17,
+			"dex": 15,
+			"con": 17,
+			"int": 12,
+			"wis": 18,
+			"cha": 15,
+			"save": {
+				"str": "+6",
+				"int": "+4"
+			},
+			"skill": {
+				"insight": "+7",
+				"investigation": "+4",
+				"perception": "+10"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 20,
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"frightened",
+				"stunned",
+				"unconscious"
+			],
+			"cr": "7",
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  Goose Mother fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Multiple Heads",
+					"entries": [
+						"The Goose Mother has five heads. Whenever the Goose Mother takes 25 or moredgts in a single turn, one of its heads dies. If all its heads die, the Goose Mother dies.",
+						"At the end of its turn, the Goose Mother grows two heads for each of its heads that died since its last turn, unless it has taken poisondgts since its last turn. The Goose Mother regains 10touché points for each head lorsque it regrows."
+					]
+				},
+				{
+					"name": "Reactive Heads",
+					"entries": [
+						"For each head the Goose Mother has beyond one, it gets an extra reaction that can be used only for opportunity attacks."
+					]
+				},
+				{
+					"name": "Wakeful",
+					"entries": [
+						"While the Goose Mother sleeps, at least one of its heads is awake."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Goose Mother makes as many Beak attacks as it has heads and one Wing attack."
+					]
+				},
+				{
+					"name": "Beak",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Wing",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une cible. {@h}9 ({@dégât 1d12 + 3}) bludgeoningdgts. If la cible is a Large or smaller creature, it doit réussir on a {@dd 15}Force saving throw or have the {@condition à terre} condition."
+					]
+				},
+				{
+					"name": "Lullaby of Honks {@recharge 5}",
+					"entries": [
+						"The Goose Mother's heads honk a discordant lullaby. Each creature of the Goose Mother's choice within 10 mètres of it doit faire a {@dd 15}jet de sauvegarde Constitution. On a failed save, une créature takes 7 ({@dégât 2d6}) thunderdgts and falls into a magical slumber. On a successful save, la cible takes half as muchdgts only. The honks can be heard up to 300 mètres away.",
+						"A creature under magical slumber has the {@condition inconscient} condition for 8 hours. This effect ends early for une créature if it takesdgts or another creature uses an action to shake it awake."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"B",
+				"T"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "High Fae Impostor",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 149,
+				"formula": "23d8 + 46"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 13,
+			"dex": 21,
+			"con": 15,
+			"int": 18,
+			"wis": 16,
+			"cha": 23,
+			"save": {
+				"dex": "+9",
+				"wis": "+7"
+			},
+			"skill": {
+				"deception": "+14",
+				"performance": "+10",
+				"stealth": "+13"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "11",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The high fae casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 18}):"
+					],
+					"will": [
+						"{@spell friends}",
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell enthrall}",
+							"{@spell Nystul's magic aura}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The high fae avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The high fae makes two Fae Blade attacks and uses Vexing Prank once."
+					]
+				},
+				{
+					"name": "Fae Blade",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 5 m,, une cible. {@h}18 ({@dégât 3d8 + 5}) forcedgts."
+					]
+				},
+				{
+					"name": "Vexing Prank",
+					"entries": [
+						"The high fae targets une créature it can see within 60 mètres of itself with a magical trick. The target doit faire a {@dd 18}Sagesse saving throw. On a failed save, la cible takes 21 ({@dégât 6d6}) psychicdgts and has the {@condition effrayé} condition until the start of the high fae's next turn. On a successful save, la cible takes half as muchdgts only."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Loot Likeness",
+					"entries": [
+						"The high fae magically transforms into a duplicate of a Small or Medium creature it can see. While transformed, the high fae retains its game statistics (other than its size) but gains access to enough general information about the imitated creature, such as background and personality, to reasonably pass itself off as the creature. This transformation ends if the high fae is reduced to 0 hit points, uses this bonus action again, or uses a bonus action to revert to its true form."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"O",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "High Fae Kindguard",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 156,
+				"formula": "24d8 + 48"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 60,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 22,
+			"dex": 23,
+			"con": 15,
+			"int": 14,
+			"wis": 17,
+			"cha": 13,
+			"save": {
+				"str": "+10",
+				"dex": "+10"
+			},
+			"skill": {
+				"acrobatics": "+10",
+				"athletics": "+10",
+				"perception": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 17,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "12",
+			"trait": [
+				{
+					"name": "Évasion",
+					"entries": [
+						"Si  high fae is subjected to an effect that allows it to make aDextérité saving throw to take only halfdgts, it instead takes nodgts if it succeeds on the saving throw and only halfdgts if it fails, provided it doesn't have the {@conditionincapacité} condition."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The high fae avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The high fae makes two Fae Claymore attacks and uses Tripping Feint."
+					]
+				},
+				{
+					"name": "Fae Claymore",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 10 m,, une cible. {@h}20 ({@dégât 4d6 + 6}) forcedgts, and la cible's speed is reduced by 10 mètres, to a minimum speed of 5 mètres. The reduction lasts until the start of the high fae's next turn."
+					]
+				},
+				{
+					"name": "Tripping Feint",
+					"entries": [
+						"The high fae targets one Large or smaller creature it can see within 10 mètres of itself. The target doit réussir on a {@dd 18}Dextérité saving throw or have the {@condition à terre} condition."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Darting Flight",
+					"entries": [
+						"The high fae moves up to its speed. This movement doesn't provoke opportunity attacks."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Parry and Riposte",
+					"entries": [
+						"The high fae adds 4 to its AC against one melee attack roll that would hit it, provided it can see the attacker. After the attack hits or misses, the high fae then makes one Fae Claymore attack against the attacker."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "High Fae Mage",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "féerique",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				14,
+				{
+					"ac": 17,
+					"condition": "with {@spell mage armor}",
+					"braces": true
+				}
+			],
+			"hp": {
+				"average": 148,
+				"formula": "27d8 + 27"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": {
+					"number": 30,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 11,
+			"dex": 18,
+			"con": 12,
+			"int": 17,
+			"wis": 15,
+			"cha": 24,
+			"save": {
+				"int": "+7",
+				"wis": "+6",
+				"cha": "+11"
+			},
+			"skill": {
+				"arcana": "+11",
+				"investigation": "+7",
+				"nature": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "12",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The high fae casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell detect magic}",
+						"{@spell druidcraft}",
+						"{@spell mage armor} (self only)"
+					],
+					"daily": {
+						"2e": [
+							"{@spell faerie fire}",
+							"{@spell gust of wind}",
+							"{@spell mirror image}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The high fae avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The high fae makes two Elemental Strike attacks."
+					]
+				},
+				{
+					"name": "Elemental Strike",
+					"entries": [
+						"{@atk ms,rs} {@hit 11} pour toucher, allonge 5 m, or portée 60 m,, une cible. {@h}18 ({@dégât 2d10 + 7}) acid, cold, fire, force, lightning, or thunderdgts (the high fae's choice)."
+					]
+				},
+				{
+					"name": "Negotiate Life {@recharge 5}",
+					"entries": [
+						"The high fae enacts a magical bargain, siphoning energy from its opponents to heal its wounds. The high fae targets up to three creatures it can see within 60 mètres of itself. Each target doit faire a {@dd 19}jet de sauvegarde Constitution, taking 26 ({@dégât 4d12}) necroticdgts on a failed save, or half as muchdgts on a successful one. The high fae then regains 30touché points."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Fae Counterspell",
+					"entries": [
+						"The high fae interrupts a creature it can see that is casting a spell with verbal, somatic, or material components. The caster takes 10 ({@damage 3d6}) psychic damage and must make a {@dc 19} Charisma saving throw. On a failed save, the spell fails and has no effect, but the spell slot used to cast it is not expended."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"N",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "High Fae Noble",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				17
+			],
+			"hp": {
+				"average": 175,
+				"formula": "27d8 + 54"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": {
+					"number": 40,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 13,
+			"dex": 25,
+			"con": 15,
+			"int": 19,
+			"wis": 18,
+			"cha": 22,
+			"save": {
+				"dex": "+12",
+				"int": "+9",
+				"wis": "+9",
+				"cha": "+11"
+			},
+			"skill": {
+				"history": "+9",
+				"insight": "+14",
+				"perception": "+9"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 19,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Sylvan",
+				"telepathy 120 ft."
+			],
+			"cr": "13",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The high fae casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 19}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell prestidigitation}",
+						"{@spell suggestion}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell major image}",
+							"{@spell zone of truth}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Aura of Overwhelming Splendor",
+					"entries": [
+						"The high fae radiates dazzling and mollifying magic. Each creature of the high fae's choice that starts its turn within 5 mètres of the high fae doit réussir on a {@dd 19}Sagesse saving throw or have the {@condition charmé} condition until the start of its next turn. While {@condition charmé}, la créature also has the {@conditionincapacité} condition."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  high fae fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The high fae avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The high fae makes two Fae Blade attacks. It can replace one of these attacks with Stunning Soliloquy if available."
+					]
+				},
+				{
+					"name": "Fae Blade",
+					"entries": [
+						"{@atk mw} {@hit 12} pour toucher, allonge 5 m,, une cible. {@h}20 ({@dégât 3d8 + 7}) forcedgts."
+					]
+				},
+				{
+					"name": "Stunning Soliloquy {@recharge 5}",
+					"entries": [
+						"The high fae unleashes a string of magical words. Each creature of the high fae's choice within 30 mètres of itself doit réussir on a {@dd 19}Sagesse saving throw or have the {@condition étourdi} condition for 1 minute. A {@condition étourdi} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				}
+			],
+			"reactionHeader": [
+				"The high fae can take up to three reactions per round but only one per turn."
+			],
+			"reaction": [
+				{
+					"name": "Capricious Step",
+					"entries": [
+						"Immediately after taking damage, the high fae magically has the {@condition invisible} condition and teleports, along with any equipment it is wearing or carrying, to an unoccupied space it can see within 30 feet of itself. The invisibility lasts until the end of the high fae's next turn."
+					]
+				},
+				{
+					"name": "Ridicule",
+					"entries": [
+						"When a creature misses the high fae with an attack roll, the high fae magically mocks the creature, dealing 5 ({@damage 2d4}) psychic damage to the attacker."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S",
+				"TP"
+			],
+			"damageTags": [
+				"O",
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Knight of Eldraine",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"{@item plate armor|PHB|plate}",
+						"{@item shield|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 78,
+				"formula": "12d8 + 24"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 12,
+			"con": 14,
+			"int": 13,
+			"wis": 11,
+			"cha": 13,
+			"save": {
+				"con": "+4",
+				"wis": "+2"
+			},
+			"passive": 10,
+			"languages": [
+				"Common"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Knightly Virtue",
+					"entries": [
+						"The knight has one of the following traits, depending on the court it serves:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Courage (Embereth)",
+									"entries": [
+										"The knight has advantage on Wisdom checks and Wisdom saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Knowledge (Vantress)",
+									"entries": [
+										"The knight has advantage on Intelligence checks and Intelligence saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Loyalty (Ardenvale)",
+									"entries": [
+										"The knight has advantage on Charisma checks and Charisma saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Persistence (Locthwain)",
+									"entries": [
+										"The knight has advantage on Constitution saving throws."
+									]
+								},
+								{
+									"type": "item",
+									"name": "Strength (Garenbrig)",
+									"entries": [
+										"The knight has advantage on Strength checks and Strength saving throws."
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Lance",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 10 m,, une cible. {@h}9 ({@dégât 1d12 + 3}) piercingdgts plus 9 ({@dégât 2d8}) radiantdgts."
+					]
+				},
+				{
+					"name": "Longsword",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d8 + 3}) slashingdgts, or 8 ({@dégât 1d10 + 3}) slashingdgts if used with two hands, plus 9 ({@dégât 2d8}) radiantdgts."
+					]
+				},
+				{
+					"name": "Heavy Crossbow",
+					"entries": [
+						"{@atk rw} {@hit 3} pour toucher, portée 100/400 m,, une cible. {@h}6 ({@dégât 1d10 + 1}) piercingdgts plus 9 ({@dégât 2d8}) radiantdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"lance|phb",
+				"longsword|phb"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P",
+				"R",
+				"S"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Nightmare Haunt",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 14,
+			"dex": 17,
+			"con": 13,
+			"int": 9,
+			"wis": 12,
+			"cha": 17,
+			"senses": [
+				"blindsight 120 ft. (can't see beyond this radius)"
+			],
+			"passive": 11,
+			"immune": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"exhaustion",
+				"frightened"
+			],
+			"languages": [
+				"Deep Speech",
+				"telepathy 120 ft."
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The nightmare haunt avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Somnophage",
+					"entries": [
+						"At the start of its turn, the nightmare haunt gains a number of temporarytouché points equal to 5 times the number of {@condition inconscient} creatures within 30 mètres of itself."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The nightmare haunt makes two Claw attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) slashingdgts plus 9 ({@dégât 2d8}) psychicdgts."
+					]
+				},
+				{
+					"name": "Tendrils of Slumber {@recharge 5}",
+					"entries": [
+						"The nightmare haunt creates spectral tendrils that cover the ground in a 20-foot square that it can see within 30 mètres of itself for 1 minute or until it uses this action again. When une créature other than the nightmare haunt enters the affected area for the first time or starts its turn there, la créature doit réussir on a {@dd 14}Force saving throw or take 11 ({@dégât 2d10}) necroticdgts and have the {@condition entravé} condition. The affected ground is also considered difficult terrain for creatures other than the nightmare haunt for the duration of its effect.",
+						"A creature that starts its turn in the area and is already {@condition entravé} by the tendrils must repeat the saving throw. On a failed save, it has the {@condition inconscient} condition and instead of the {@condition entravé} condition caused by the tendrils. On a successful save, the effect ends on la créature. An {@condition inconscient} creature remains asleep until it is no longer in the area with tendrils, takes anydgts, or is targeted by a {@spell remove curse} spell or similar magic."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Shadow Stealth",
+					"entries": [
+						"While in dim light or darkness, the nightmare haunt takes the {@action Hide} action."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"N",
+				"S",
+				"Y"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"restrained"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Ogre Chitterlord",
+			"source": "MCV4EC",
+			"size": [
+				"L"
+			],
+			"type": {
+				"type": "géant",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 12,
+					"from": [
+						"{@item hide armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 52,
+				"formula": "7d10 + 14"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 19,
+			"dex": 10,
+			"con": 15,
+			"int": 5,
+			"wis": 12,
+			"cha": 9,
+			"save": {
+				"wis": "+3"
+			},
+			"skill": {
+				"animal handling": "+3",
+				"nature": "+1"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 11,
+			"languages": [
+				"Common",
+				"Giant"
+			],
+			"cr": "3",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The ogre casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 11}):"
+					],
+					"will": [
+						"{@spell beast sense} (rats only)",
+						"{@spell druidcraft}",
+						"{@spell entangle}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell animal messenger} (rats only)",
+							"{@spell stinking cloud}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Speak with Rats",
+					"entries": [
+						"The ogre can verbally communicate simple concepts to ordinary rats and giant rats."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The ogre makes two Club attacks, two Rat-Tail Whip attacks, or one of each."
+					]
+				},
+				{
+					"name": "Club",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}15 ({@dégât 2d10 + 4}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Rat-Tail Whip",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une cible. {@h}13 ({@dégât 2d8 + 4}) slashingdgts, and if la cible is Large or smaller, it is pulled 5 mètres toward the ogre."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Call Rats (1/Day)",
+					"entries": [
+						"The ogre magically calls {@dice 1d4} giant rats. Each rat appears in an unoccupied space within 30 feet of the ogre that the ogre can see. The rats act as the ogre's allies, obey its spoken commands, and take their turns immediately after the ogre's turn on the same initiative count. The rats remain for 1 hour, until the ogre dies, or until the ogre dismisses them as a bonus action."
+					]
+				}
+			],
+			"attachedItems": [
+				"club|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GI"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RCH"
+			],
+			"conditionInflictSpell": [
+				"restrained"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Redtooth Werefox",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "monstruosité",
+				"tags": [
+					"elf"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 60,
+				"formula": "11d8 + 11"
+			},
+			"speed": {
+				"walk": {
+					"number": 30,
+					"condition": "(in elf form; 40 ft. in fox and hybrid form)"
+				}
+			},
+			"str": 16,
+			"dex": 17,
+			"con": 12,
+			"int": 11,
+			"wis": 13,
+			"cha": 10,
+			"skill": {
+				"acrobatics": "+5",
+				"perception": "+5",
+				"survival": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 15,
+			"languages": [
+				"Common",
+				"Elvish (can't speak in fox form)"
+			],
+			"cr": "3",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The werefox makes two Bite attacks, two Lance attacks, or one Bite attack and one Lance attack."
+					]
+				},
+				{
+					"name": "Bite (Fox or Hybrid Form Only)",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}8 ({@dégât 1d10 + 3}) piercingdgts. Si  werefox moved at least 20 mètres straight toward la cible immediately before thetouché and la cible is a Medium or smaller creature, la cible doit réussir on a {@dd 13}Force saving throw or have the {@condition à terre} condition."
+					]
+				},
+				{
+					"name": "Lance (Elf or Hybrid Form Only)",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 10 m,, une cible. {@h}9 ({@dégât 1d12 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Entangling Arrow (Elf or Hybrid Form Only)",
+					"entries": [
+						"{@atk rw} {@hit 5} pour toucher, portée 150/600 m,, une cible. {@h}10 ({@dégât 2d6 + 3}) piercingdgts, and la cible doit réussir on a {@dd 11}Dextérité saving throw or have the {@condition entravé} condition until the start of the werefox's next turn."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Change Shape",
+					"entries": [
+						"The werefox polymorphs into a fox-elf hybrid, into a fox, or back into its elf form. Its game statistics, other than its speed, are the same in each form. Any equipment it is wearing or carrying isn't transformed. It reverts to its elf form if it dies."
+					]
+				},
+				{
+					"name": "Vulpine Nimbleness (Fox or Hybrid Form Only)",
+					"entries": [
+						"The werefox takes the {@action Dash} or {@action Disengage} action."
+					]
+				}
+			],
+			"attachedItems": [
+				"lance|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Shapechanger"
+			],
+			"languageTags": [
+				"C",
+				"CS",
+				"E"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"conditionInflict": [
+				"prone",
+				"restrained"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sewer King",
+			"source": "MCV4EC",
+			"size": [
+				"M"
+			],
+			"type": "fiélon",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d8 + 16"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 18,
+			"dex": 13,
+			"con": 14,
+			"int": 8,
+			"wis": 12,
+			"cha": 11,
+			"skill": {
+				"perception": "+5",
+				"stealth": "+3"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 15,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"Infernal",
+				"telepathy 30 ft."
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Beast Speech",
+					"entries": [
+						"The sewer king can comprehend and verbally communicate with any Beast."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Rancid Bite",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}8 ({@dégât 1d8 + 4}) piercingdgts plus 7 ({@dégât 2d6}) aciddgts. If la cible is une créature, it doit réussir on a {@dd 12}jet de sauvegarde Constitution or have the {@condition empoisonné} condition until the start of the sewer king's next turn."
+					]
+				},
+				{
+					"name": "Summon Swarm (1/Day)",
+					"entries": [
+						"The sewer king chitters and summons a swarm of rats to its aid. The swarm appears in an unoccupied space within 30 mètres of the sewer king that the sewer king can see. It acts as the sewer king's ally, obeys the sewer king's commands, and takes its turn immediately after the sewer king's. The swarm remains until it dies, the sewer king dies, or until the sewer king dismisses it as an action."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Skitter",
+					"entries": [
+						"The sewer king moves up to its speed without provoking opportunity attacks."
+					]
+				}
+			],
+			"senseTags": [
+				"SD"
+			],
+			"languageTags": [
+				"I",
+				"TP"
+			],
+			"damageTags": [
+				"A",
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Snapping Hydra",
+			"source": "MCV4EC",
+			"size": [
+				"H"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 149,
+				"formula": "13d12 + 65"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 40
+			},
+			"str": 21,
+			"dex": 5,
+			"con": 21,
+			"int": 2,
+			"wis": 16,
+			"cha": 7,
+			"skill": {
+				"perception": "+11"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 21,
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"deafened",
+				"frightened",
+				"stunned",
+				"unconscious"
+			],
+			"cr": "11",
+			"trait": [
+				{
+					"name": "Amphibie",
+					"entries": [
+						"The hydra can breathe air and water."
+					]
+				},
+				{
+					"name": "Multiple Heads",
+					"entries": [
+						"The hydra has five heads. Whenever the hydra takes 30 or moredgts in a single turn, one of its heads dies. If all its heads die, the hydra dies.",
+						"At the end of its turn, the hydra grows two heads for each of its heads that died since its last turn, unless it has taken colddgts since its last turn. The hydra regains 10touché points for each head regrown this way."
+					]
+				},
+				{
+					"name": "Reactive Heads",
+					"entries": [
+						"For each head the hydra has beyond one, it gets an extra reaction that can be used only for opportunity attacks."
+					]
+				},
+				{
+					"name": "Wakeful",
+					"entries": [
+						"While the hydra sleeps, at least one of its heads is awake."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The hydra makes as many Bite attacks as it has heads."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 10 m,, une cible. {@h}14 ({@dégât 2d8 + 5}) piercingdgts."
+					]
+				},
+				{
+					"name": "Shell Defense",
+					"entries": [
+						"The hydra withdraws its limbs and heads into its shell. Until it emerges as a bonus action, it gains a +4 bonus to AC and avantage onForce andjet de sauvegarde Constitutions. While in its shell, the hydra has the {@condition à terre} condition, its speed is 0 and can't increase, its heads can't die, it désavantage onDextérité saving throws, and it can't take any other actions or reactions."
+					]
+				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Specter of Night",
+			"source": "MCV4EC",
+			"size": [
+				"H"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 142,
+				"formula": "15d12 + 45"
+			},
+			"speed": {
+				"walk": 60,
+				"fly": 60
+			},
+			"str": 22,
+			"dex": 18,
+			"con": 17,
+			"int": 12,
+			"wis": 13,
+			"cha": 12,
+			"save": {
+				"dex": "+8",
+				"wis": "+5"
+			},
+			"skill": {
+				"perception": "+5"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 15,
+			"resist": [
+				"necrotic"
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"poisoned"
+			],
+			"languages": [
+				"understands Common but can't speak"
+			],
+			"cr": "12",
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  specter fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The specter avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The specter uses Mournful Keening if available, then makes one Hooves attack and one Reaping Scythe attack."
+					]
+				},
+				{
+					"name": "Sabots",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 10 m,, une cible. {@h}16 ({@dégât 3d6 + 6}) bludgeoningdgts plus 28 ({@dégât 8d6}) necroticdgts. If la cible is a Medium or smaller creature, it doit réussir on a {@dd 18}Force saving throw or have the {@condition à terre} condition."
+					]
+				},
+				{
+					"name": "Mournful Keening {@recharge}",
+					"entries": [
+						"The specter utters a keening wail, calling to those close to death. Each non-Undead creature within 120 mètres of the specter doit faire a {@dd 15}jet de sauvegarde Constitution. On a failure, la créature hears the wail and is marked for death.",
+						"A creature marked for death can't regaintouché points, désavantage on death saving throws, and all attack rolls against it are made with advantage. This effect lasts for 1 minute or until la créature is targeted by a {@spell remove curse} spell or similar magic."
+					]
+				},
+				{
+					"name": "Reaping Scythe",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 10 m,, une cible. {@h}12 ({@dégât 1d12 + 6}) slashingdgts plus 28 ({@dégât 8d6}) necroticdgts. If la cible is une créature, it doit réussir on a {@dd 15}jet de sauvegarde Constitution or gain a level of {@condition épuisement}."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"CS"
+			],
+			"damageTags": [
+				"B",
+				"N",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"exhaustion"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sweettooth Horror",
+			"source": "MCV4EC",
+			"size": [
+				"L"
+			],
+			"type": "fiélon",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 58,
+				"formula": "9d10 + 9"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 15,
+			"dex": 18,
+			"con": 12,
+			"int": 6,
+			"wis": 8,
+			"cha": 12,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 9,
+			"immune": [
+				"poison"
+			],
+			"vulnerable": [
+				"bludgeoning"
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"poisoned"
+			],
+			"cr": "4",
+			"trait": [
+				{
+					"name": "Caramelization",
+					"entries": [
+						"Si  horror takes firedgts, it releases a sweet, mesmerizing scent. Each creature within 30 mètres of the horror doit réussir on a {@dd 11}Sagesse saving throw or have the {@condition charmé} condition. A {@condition charmé} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The horror avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The horror makes one Bite attack and two Candy Cane attacks."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) piercingdgts plus 10 ({@dégât 3d6}) aciddgts."
+					]
+				},
+				{
+					"name": "Candy Cane",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une cible. {@h}8 ({@dégât 1d8 + 4}) bludgeoningdgts. If la cible is a Large or smaller creature, the horror can choose to deal nodgts; instead, la cible has the {@condition à terre} condition, and the horror can pull la cible up to 5 mètres toward itself."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"A",
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tempest Hart",
+			"source": "MCV4EC",
+			"size": [
+				"H"
+			],
+			"type": "élémentaire",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 147,
+				"formula": "14d12 + 56"
+			},
+			"speed": {
+				"walk": 50,
+				"fly": 50
+			},
+			"str": 21,
+			"dex": 17,
+			"con": 18,
+			"int": 3,
+			"wis": 18,
+			"cha": 14,
+			"save": {
+				"dex": "+7",
+				"wis": "+8"
+			},
+			"skill": {
+				"perception": "+12"
+			},
+			"passive": 22,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"lightning",
+				"thunder"
+			],
+			"conditionImmune": [
+				"exhaustion"
+			],
+			"cr": "11",
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  hart fails a saving throw, it can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The hart makes a Lightning Antlers attack and a Thunder Hooves attack."
+					]
+				},
+				{
+					"name": "Lightning Antlers",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 15 m,, une cible. {@h}16 ({@dégât 2d10 + 5}) lightningdgts. If la cible is une créature, it doit réussir on a {@dd 16}jet de sauvegarde Constitution or have the {@condition étourdi} condition until the start of the hart's next turn."
+					]
+				},
+				{
+					"name": "Thunder Hooves",
+					"entries": [
+						"{@atk mw} {@hit 9} pour toucher, allonge 5 m,, une cible. {@h}14 ({@dégât 2d8 + 5}) thunderdgts."
+					]
+				}
+			],
+			"reactionHeader": [
+				"The hart can take up to two reactions per round but only one per turn."
+			],
+			"reaction": [
+				{
+					"name": "Entangling Growth",
+					"entries": [
+						"Immediately after a creature the hart can see within 120 feet of itself hits it with an attack roll, the hart reduces the damage to itself by half. The attacker must immediately make a {@dc 16} Strength saving throw as beanstalks coil around it in its space. On a failed save, the creature has the {@condition grappled} condition (escape {@dc 16}) and has the {@condition restrained} condition as long as it is {@condition grappled}. The beanstalks vanish after 1 minute, if the hart has the {@condition incapacitated} condition, or when the hart dies."
+					]
+				},
+				{
+					"name": "Lightning Call",
+					"entries": [
+						"In response to making a saving throw, the hart calls down a bolt of lightning that targets a creature it can see within 120 feet of itself. The target must make a {@dc 16} Dexterity saving throw, taking 19 ({@damage 3d12}) lightning damage on a failed save, or half as much damage on a successful one."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"damageTags": [
+				"L",
+				"T"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity",
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Treefolk",
+			"source": "MCV4EC",
+			"size": [
+				"L"
+			],
+			"type": {
+				"type": "plante",
+				"tags": [
+					"druid"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 171,
+				"formula": "18d10 + 72"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 23,
+			"dex": 12,
+			"con": 18,
+			"int": 10,
+			"wis": 20,
+			"cha": 11,
+			"save": {
+				"con": "+8",
+				"int": "+4",
+				"wis": "+9"
+			},
+			"skill": {
+				"insight": "+9",
+				"nature": "+8",
+				"perception": "+9"
+			},
+			"senses": [
+				"blindsight 30 ft."
+			],
+			"passive": 19,
+			"resist": [
+				"bludgeoning",
+				"piercing"
+			],
+			"vulnerable": [
+				"fire"
+			],
+			"languages": [
+				"Common",
+				"Druidic",
+				"Sylvan"
+			],
+			"cr": "11",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The treefolk casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect poison and disease}",
+						"{@spell druidcraft}"
+					],
+					"daily": {
+						"1": [
+							"{@spell commune with nature} (as an action)"
+						],
+						"2e": [
+							"{@spell enlarge/reduce}",
+							"{@spell speak with plants}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Plant Camouflage",
+					"entries": [
+						"The treefolk avantage onDextérité ({@skill Discrétion}) checks it makes in forest terrain."
+					]
+				},
+				{
+					"name": "Tree Stride",
+					"entries": [
+						"Once on each of its turns, the treefolk can use 10 mètres of its movement to step magically into one living tree within 5 mètres of itself and emerge from a second living tree within 60 mètres of itself that it can see, appearing in an unoccupied space within 5 mètres of the second tree. Both trees must be at least as large as the treefolk."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The treefolk makes two Crushing Vine attacks, two Nightshade Bolt attacks, or one of each."
+					]
+				},
+				{
+					"name": "Crushing Vine",
+					"entries": [
+						"{@atk mw} {@hit 10} pour toucher, allonge 10 m,, une cible. {@h}25 ({@dégât 3d12 + 6}) bludgeoningdgts. If la cible is une créature, it has the {@condition agrippé} condition (escape {@dd 18}). While {@condition agrippé}, la créature also has the {@condition entravé} condition. The treefolk can grapple up to six creatures this way."
+					]
+				},
+				{
+					"name": "Nightshade Bolt",
+					"entries": [
+						"{@atk rs} {@hit 9} pour toucher, portée 60 m,, une cible. {@h}33 ({@dégât 6d10}) poisondgts."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Oaken Boon",
+					"entries": [
+						"The treefolk blesses one creature other than itself that it can see within 60 feet of itself with the might and wisdom of the forest. While blessed in this way, a creature can use the treefolk's Tree Stride trait and gains 5 ({@dice 2d4}) temporary hit points at the start of each of its turns. This blessing lasts for 1 minute, until the treefolk has the {@condition incapacitated} condition, or until the treefolk uses this bonus action again."
+					]
+				}
+			],
+			"traitTags": [
+				"Camouflage",
+				"Tree Stride"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DU",
+				"S"
+			],
+			"damageTags": [
+				"B",
+				"I"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"savingThrowForcedSpell": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Witchkite",
+			"source": "MCV4EC",
+			"size": [
+				"H"
+			],
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"warlock"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 220,
+				"formula": "21d12 + 84"
+			},
+			"speed": {
+				"walk": 40,
+				"fly": 80
+			},
+			"str": 23,
+			"dex": 10,
+			"con": 18,
+			"int": 15,
+			"wis": 17,
+			"cha": 19,
+			"save": {
+				"dex": "+5",
+				"wis": "+8",
+				"cha": "+9"
+			},
+			"skill": {
+				"arcana": "+7",
+				"perception": "+8",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 120 ft."
+			],
+			"passive": 18,
+			"resist": [
+				"fire",
+				"psychic"
+			],
+			"languages": [
+				"Draconic"
+			],
+			"cr": "15",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The witchkite casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 17}):"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell minor illusion}",
+						"{@spell speak with dead}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell detect thoughts}",
+							"{@spell dimension door}",
+							"{@spell hold monster}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"Si  witchkite fails a saving throw, it can choose to succeed instead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The witchkite makes two Rend attacks and uses Malevolent Flare once."
+					]
+				},
+				{
+					"name": "Rend",
+					"entries": [
+						"{@atk mw} {@hit 11} pour toucher, allonge 10 m,, une cible. {@h}16 ({@dégât 3d6 + 6}) slashingdgts."
+					]
+				},
+				{
+					"name": "Malevolent Flare",
+					"entries": [
+						"The witchkite spits magical, green-tinged flame at une créature it can see within 60 mètres of itself. The target doit faire a {@dd 17}Dextérité saving throw. On a failed save, la cible takes 22 ({@dégât 5d8}) firedgts and suffers one of the following effects of the witchkite's choice:",
+						{
+							"type": "list",
+							"items": [
+								"The target must use its reaction to make a melee attack against another creature of the witchkite's choice that is within the target's reach.",
+								"The target takes 13 ({@damage 2d12}) psychic damage."
+							]
+						},
+						"On a successful save, la cible takes half as muchdgts only."
+					]
+				}
+			],
+			"reactionHeader": [
+				"The witchkite can take up to two reactions per round but only one per turn."
+			],
+			"reaction": [
+				{
+					"name": "Enchanting Gaze",
+					"entries": [
+						"When a creature the witchkite can see moves within 10 feet of it, the witchkite emits an enchanting gaze at the creature. The creature must succeed on a {@dc 17} Wisdom saving throw or take 10 ({@damage 3d6}) psychic damage and have the {@condition charmed} condition until the end of its next turn."
+					]
+				},
+				{
+					"name": "Retribution",
+					"entries": [
+						"Immediately after taking damage from a melee attack, the witchkite makes one Rend attack against the attacker."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"SD"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"DR"
+			],
+			"damageTags": [
+				"F",
+				"S",
+				"Y"
+			],
+			"damageTagsSpell": [
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"charmed"
+			],
+			"conditionInflictSpell": [
+				"paralyzed"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Witchstalker",
+			"source": "MCV4EC",
+			"size": [
+				"L"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 82,
+				"formula": "11d10 + 22"
+			},
+			"speed": {
+				"walk": 60
+			},
+			"str": 18,
+			"dex": 16,
+			"con": 15,
+			"int": 8,
+			"wis": 12,
+			"cha": 6,
+			"save": {
+				"str": "+7",
+				"wis": "+4"
+			},
+			"skill": {
+				"perception": "+7",
+				"stealth": "+6"
+			},
+			"senses": [
+				"truesight 60 ft."
+			],
+			"passive": 17,
+			"languages": [
+				"understands Common but can't speak"
+			],
+			"cr": "6",
+			"trait": [
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The witchstalker avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Smell Magic",
+					"entries": [
+						"The witchstalker can sense the presence and location of magic within 120 mètres of itself. It also avantage aux jets d'attaque against creatures that have cast a spell since the end of the witchstalker's last turn."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The witchstalker makes two Bite attacks."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}14 ({@dégât 3d6 + 4}) piercingdgts. If la cible is a Large or smaller creature, it doit réussir on a {@dd 15}Force saving throw or have the {@condition à terre} condition."
+					]
+				},
+				{
+					"name": "Mind-Wracking Howl {@recharge 5}",
+					"entries": [
+						"The witchstalker unleashes a terrible howl, and each creature within 30 mètres of it that isn't a Monstrosity doit faire a {@dd 13}Sagesse saving throw. On a failed save, une créature takes 24 ({@dégât 7d6}) psychicdgts and désavantage onjet de sauvegarde Constitutions to maintain {@status concentration} on spells until la fin de son prochain tour. On a successful save, une créature takes half as muchdgts only."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Spell Stalk",
+					"entries": [
+						"Immediately after a creature within 120 feet of the witchstalker casts a spell, the witchstalker magically teleports to an unoccupied space within 5 feet of the creature and can make one Bite attack against the creature."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"CS"
+			],
+			"damageTags": [
+				"P",
+				"Y"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"savingThrowForced": [
+				"strength",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

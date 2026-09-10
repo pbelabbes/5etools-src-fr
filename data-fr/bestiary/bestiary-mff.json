@@ -1,0 +1,2093 @@
+{
+	"monster": [
+		{
+			"name": "Assassin Bug",
+			"source": "MFF",
+			"page": 4,
+			"size": [
+				"M"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 55,
+				"formula": "10d8 + 10"
+			},
+			"speed": {
+				"walk": 10,
+				"fly": 50
+			},
+			"str": 13,
+			"dex": 14,
+			"con": 13,
+			"int": 4,
+			"wis": 12,
+			"cha": 6,
+			"skill": {
+				"perception": "+3",
+				"stealth": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"poison"
+			],
+			"conditionImmune": [
+				"paralyzed"
+			],
+			"languages": [
+				"understands Druidic but can't speak"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Odorat fin",
+					"entries": [
+						"The assassin bug avantage onSagesse ({@skillPerception}) checks that rely on smell."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The assassin bug makes two bite attacks."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une créature. {@h}7 ({@dégât 1d10 + 2}) piercingdgts, and la cible doit réussir on a {@dd 11}jet de sauvegarde Constitution or be {@condition empoisonné} for 1 minute. While {@condition empoisonné} this way, la cible is {@condition paralisé}. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+					]
+				},
+				{
+					"name": "Ovipositor",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. {@h}The target is infested with {@dice 1d3} assassin bug eggs, which immediately hatch into assassin bug maggots. At the start of each of la cible's turns, la cible takes {@dégât 1d6} piercingdgts per maggot infesting it. Applying fire to the bite wound before the end of la cible's next turn deals 1 firedgts to la cible and kills these assassin bug maggots. After this time, the maggots are too far under the skin to be burned.",
+						"If a target infested by assassin bug maggots ends its turn with 0touché points, it dies as the maggots burrow into its heart and kill it. Any effect that cures disease kills all assassin bug maggots infesting la cible."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"CS",
+				"DU"
+			],
+			"damageTags": [
+				"F",
+				"P"
+			],
+			"miscTags": [
+				"DIS",
+				"MW"
+			],
+			"conditionInflict": [
+				"paralyzed",
+				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Blindheim",
+			"source": "MFF",
+			"page": 5,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"blindheim"
+				]
+			},
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 26,
+				"formula": "4d8 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 13,
+			"dex": 16,
+			"con": 15,
+			"int": 8,
+			"wis": 10,
+			"cha": 9,
+			"skill": {
+				"athletics": "+3",
+				"perception": "+2"
+			},
+			"passive": 12,
+			"languages": [
+				"Undercommon"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Radiant Eyes",
+					"entries": [
+						"While its eyes are open, a blindheim projects bright light in a 60-foot cone and dim light for an additional 60 mètres. It sets the orientation of this cone at the end of each of its turns. All creatures that can see the blindheim have disadvantage aux jets d'attaque while in the area of bright light and within 15 mètres of the blindheim. Creatures with the Sunlight Sensitivity trait that can see the blindheim have disadvantage aux jets d'attaque anywhere in the area of bright light."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. Touché: 5 ({@dégât 1d6 + 2}) piercingdgts."
+					]
+				},
+				{
+					"name": "Radiant Blast",
+					"entries": [
+						"Radiant energy erupts from the blindheim's eyes in a 15-foot cone. Each creature in that area doit réussir on a {@dd 12}jet de sauvegarde Constitution or take 7 ({@dégât 2d6}) radiantdgts and be {@condition aveuglé} until the end of the blindheim's next turn. Creatures with the Sunlight Sensitivity trait have disadvantage on this saving throw."
+					]
+				}
+			],
+			"languageTags": [
+				"U"
+			],
+			"damageTags": [
+				"P",
+				"R"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Crab Folk",
+			"source": "MFF",
+			"page": 6,
+			"size": [
+				"L"
+			],
+			"type": "géant",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 68,
+				"formula": "8d10 + 24"
+			},
+			"speed": {
+				"walk": 40,
+				"swim": 40
+			},
+			"str": 19,
+			"dex": 10,
+			"con": 17,
+			"int": 7,
+			"wis": 9,
+			"cha": 9,
+			"passive": 9,
+			"languages": [
+				"Common",
+				"Giant"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Limited Amphibiousness",
+					"entries": [
+						"The crab folk can breathe air and water, but it needs to be submerged once every 24 heures to avoid suffocating."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The crab folk makes two claw attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une cible. {@h}7 ({@dégât 1d6 + 4}) bludgeoningdgts and la cible is {@condition agrippé} (escape {@dd 14}). Until this grapple ends, the crab folk can automaticallytouché la cible with its claw, and the crab folk can't make attacks with that claw against other targets. The crab folk has two claws, each of which can grapple only une cible."
+					]
+				}
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GI"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Dire Corby",
+			"source": "MFF",
+			"page": 7,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"dire corby"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 16,
+				"formula": "3d8 + 3"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40
+			},
+			"str": 13,
+			"dex": 14,
+			"con": 13,
+			"int": 6,
+			"wis": 8,
+			"cha": 7,
+			"skill": {
+				"acrobatics": "+4",
+				"perception": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"vulnerable": [
+				"thunder"
+			],
+			"conditionImmune": [
+				"frightened"
+			],
+			"languages": [
+				"Undercommon"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Dire Cacophony",
+					"entries": [
+						"Any creature other than a dire corby that starts its turn within 60 mètres of a dire corby and can hear it doit faire a {@dd 11}Sagesse saving throw. On a failed save, la créature is unable to use the {@action Dash} action, cannot climb, or cast spells other than cantrips until the start of its next turn."
+					]
+				},
+				{
+					"name": "Ouïe fine",
+					"entries": [
+						"The dire corby avantage onSagesse ({@skillPerception}) checks that rely on hearing."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The dire corby makes two claw attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d8 + 2}) slashingdgts."
+					]
+				}
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"U"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Eye of Fear and Flame",
+			"source": "MFF",
+			"page": 8,
+			"referenceSources": [
+				"IMR"
+			],
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 136,
+				"formula": "16d8 + 64"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 14,
+			"con": 18,
+			"int": 18,
+			"wis": 17,
+			"cha": 18,
+			"save": {
+				"str": "+7",
+				"con": "+8",
+				"wis": "+7",
+				"cha": "+8"
+			},
+			"skill": {
+				"perception": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 17,
+			"resist": [
+				"necrotic",
+				"psychic"
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"paralyzed",
+				"poisoned",
+				"stunned"
+			],
+			"languages": [
+				"Common",
+				"all languages known by any creature within 30 feet of it"
+			],
+			"cr": "9",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The eye of fear and flame's innate spellcasting ability is Intelligence (spell save {@dc 16}). It can innately cast the following spells, requiring no components:"
+					],
+					"will": [
+						"{@spell detect evil and good}",
+						"{@spell detect thoughts}"
+					],
+					"daily": {
+						"1e": [
+							"{@spell etherealness}",
+							"{@spell true seeing}"
+						]
+					},
+					"ability": "int"
+				}
+			],
+			"trait": [
+				{
+					"name": "Turn Immunity",
+					"entries": [
+						"The eye of fear and flame is immune to effects that turn undead."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The eye of fear and flame makes two claw attacks and uses its Gemstone Eyes."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}9 ({@dégât 1d12 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Gemstone Eyes",
+					"entries": [
+						"The eye of fear and flame shoots one of the following magical eye rays, choosing une cible it can see within 90 mètres of it.",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "Eye of Fear",
+									"entry": "The target and up to four other creatures of the eye of fear and flame's choice within 10 feet of the target must each succeed on a {@dc 16} Wisdom saving throw or be {@condition frightened} for 1 minute. An affected creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+								},
+								{
+									"type": "item",
+									"name": "Eye of Flame",
+									"entry": "The target must make a {@dc 16} Dexterity saving throw. On a failed save, the target takes 44 ({@damage 8d10}) fire damage, and if it is a creature or a flammable object, it ignites. On a successful save, the target takes half as much damage and does not ignite. A target that ignites takes 5 ({@damage 1d10}) fire damage at the start of each of its turns until a creature takes an action to douse the fire."
+								}
+							]
+						}
+					]
+				}
+			],
+			"traitTags": [
+				"Turn Immunity"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"XX"
+			],
+			"damageTags": [
+				"F",
+				"S"
+			],
+			"damageTagsSpell": [
+				"O"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"frightened"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Fog Giant",
+			"source": "MFF",
+			"page": 10,
+			"size": [
+				"H"
+			],
+			"type": "géant",
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"{@item chain mail|phb}"
+					]
+				}
+			],
+			"hp": {
+				"average": 200,
+				"formula": "16d12 + 96"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 27,
+			"dex": 10,
+			"con": 22,
+			"int": 12,
+			"wis": 16,
+			"cha": 16,
+			"save": {
+				"con": "+10",
+				"wis": "+7",
+				"cha": "+7"
+			},
+			"skill": {
+				"insight": "+7",
+				"perception": "+7",
+				"persuasion": "+7"
+			},
+			"passive": 17,
+			"languages": [
+				"Common",
+				"Giant"
+			],
+			"cr": "11",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The giant's innate spellcasting ability is Charisma. It can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell detect magic}",
+						"{@spell fog cloud}",
+						"{@spell light}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell feather fall}",
+							"{@spell misty step}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Denizen of the Mist",
+					"entries": [
+						"During its turn, the fog giant ignores the effects of {@spell fog cloud} spells cast by it or other allied fog giants."
+					]
+				},
+				{
+					"name": "Odorat fin",
+					"entries": [
+						"The giant avantage onSagesse ({@skillPerception}) checks that rely on smell."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The giant makes two greatsword attacks and casts {@spell fog cloud}."
+					]
+				},
+				{
+					"name": "Greatsword",
+					"entries": [
+						"{@atk mw} {@hit 12} pour toucher, allonge 10 m,, une cible. {@h}29 ({@dégât 6d6 + 8}) slashingdgts."
+					]
+				},
+				{
+					"name": "Rock",
+					"entries": [
+						"{@atk rw} {@hit 12} pour toucher, portée 60/240 m,, une cible. {@h}30 ({@dégât 4d10 + 8}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Petty Tyrant {@recharge}",
+					"entries": [
+						"The fog giant shouts bloodcurdling threats at la créatures that serve it. Each medium or smaller ally of the giant within 120 mètres of it that can see or hear it can use its reaction to make a melee attack."
+					]
+				}
+			],
+			"attachedItems": [
+				"greatsword|phb"
+			],
+			"traitTags": [
+				"Keen Senses"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GI"
+			],
+			"damageTags": [
+				"B",
+				"S"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Forlarren",
+			"source": "MFF",
+			"page": 9,
+			"size": [
+				"M"
+			],
+			"type": "féerique",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 45,
+				"formula": "6d8 + 18"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 14,
+			"dex": 16,
+			"con": 17,
+			"int": 12,
+			"wis": 11,
+			"cha": 18,
+			"skill": {
+				"acrobatics": "+5",
+				"deception": "+8",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 30 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Common",
+				"Sylvan"
+			],
+			"cr": "3",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The forlarren's innate spellcasting ability is Charisma (spell save {@dc 14}). It can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell expeditious retreat}",
+						"{@spell false life}",
+						"{@spell minor illusion}",
+						"{@spell prestidigitation}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell aid}",
+							"{@spell misty step}",
+							"{@spell Tasha's hideous laughter}"
+						],
+						"1e": [
+							"{@spell heal}",
+							"{@spell heat metal}",
+							"{@spell mirror image}"
+						]
+					},
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The forlarren avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The forlarren makes two claw attacks and one gore attack, or it makes three chromatic ray attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Corne",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d8 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Chromatic Ray",
+					"entries": [
+						"{@atk rs} {@hit 6} pour toucher, portée 60 m,, une cible. {@h}3 ({@dégât 1d6}) lightningdgts plus 3 ({@dégât 1d6}) firedgts plus 3 ({@dégât 1d6}) colddgts."
+					]
+				}
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"S"
+			],
+			"damageTags": [
+				"C",
+				"F",
+				"L",
+				"P",
+				"S"
+			],
+			"damageTagsSpell": [
+				"F"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Jermlaine",
+			"source": "MFF",
+			"page": 11,
+			"size": [
+				"T"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"jermlaine"
+				]
+			},
+			"alignment": [
+				"N",
+				"E"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 3,
+				"formula": "1d4 + 1"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 4,
+			"dex": 12,
+			"con": 13,
+			"int": 10,
+			"wis": 11,
+			"cha": 7,
+			"skill": {
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 30 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Undercommon"
+			],
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Lurkers in Shadow",
+					"entries": [
+						"Jermlaine are {@condition invisible} to vision dans le noir."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The jermlaine avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Vermin Friend",
+					"entries": [
+						"The jermlaine can speak to and understand rats and giant rats."
+					]
+				},
+				{
+					"name": "Swarming Rush",
+					"entries": [
+						"A jermlaine adds {@dégât 1d4} to its weapondgts rolls while within 5 mètres of another, conscious jermlaine."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Club",
+					"entries": [
+						"{@atk mw} {@hit -1} pour toucher, allonge 5 m,, une cible. {@h}1 ({@dégât 1d4 - 3}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Dart",
+					"entries": [
+						"{@atk rw} {@hit 3} pour toucher, portée 20/60 m,, une cible. {@h}3 ({@dégât 1d4 + 1}) piercingdgts."
+					]
+				}
+			],
+			"attachedItems": [
+				"club|phb",
+				"dart|phb"
+			],
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"U"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Khargra",
+			"source": "MFF",
+			"page": 12,
+			"size": [
+				"S"
+			],
+			"type": "élémentaire",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 11,
+				"formula": "2d6 + 4"
+			},
+			"speed": {
+				"walk": 5,
+				"fly": 30
+			},
+			"str": 13,
+			"dex": 10,
+			"con": 14,
+			"int": 5,
+			"wis": 11,
+			"cha": 6,
+			"skill": {
+				"perception": "+2",
+				"stealth": "+2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Terran"
+			],
+			"cr": "1/8",
+			"trait": [
+				{
+					"name": "Iron Scent",
+					"entries": [
+						"The khargra can scent the location of ferrous metal within 30 mètres of it."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 3} pour toucher, allonge 5 m,, une cible. {@h}3 ({@dégât 1d4 + 1}) piercingdgts, and if la cible is wearing metal armor or carrying a metal shield, the khargra attaches to that armor or shield. While attached, the khargra doesn't attack. Instead, at the start of each of the khargra's turns, roll a {@dice d20}. On a 10 or higher, the armor or shield takes a permanent and cumulative -1 penalty to the AC it offers. Armor reduced to an AC of 10 or a shield that drops to a +0 bonus is destroyed.",
+						"The khargra can detach itself by spending 5 mètres of its movement. A creature, including la cible, can use its action to detach the khargra."
+					]
+				},
+				{
+					"name": "Earth Phasing",
+					"entries": [
+						"Until la fin de son prochain tour, the khargra can fly through nonmagical earth and stone. While doing so, it doesn't disturb the material it moves through. It can end its movement within earth or stone, but if it remains within earth or stone lorsque this ability ends, it takes 14 ({@dégât 4d6}) forcedgts and immediately moves to the nearest unoccupied space."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Opportunistic Hunger",
+					"entries": [
+						"When a creature the khargra can see within 5 feet of it hits it with a metal weapon, the khargra can make a bite attack against that creature."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"T"
+			],
+			"damageTags": [
+				"O",
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Killmoulis",
+			"source": "MFF",
+			"page": 13,
+			"size": [
+				"T"
+			],
+			"type": "féerique",
+			"alignment": [
+				"N"
+			],
+			"ac": [
+				14
+			],
+			"hp": {
+				"average": 7,
+				"formula": "2d4 + 2"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 4,
+			"dex": 19,
+			"con": 13,
+			"int": 12,
+			"wis": 14,
+			"cha": 13,
+			"skill": {
+				"history": "+3",
+				"perception": "+4",
+				"stealth": "+8"
+			},
+			"senses": [
+				"darkvision 30 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"Common",
+				"Sylvan",
+				"telepathy 60 ft."
+			],
+			"cr": "0",
+			"action": [
+				{
+					"name": "Coup",
+					"entries": [
+						"{@atk mw} {@hit -1} pour toucher, allonge 5 m,, une cible. {@h}1 bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Blessing of Bountiful Generosity (1/Day)",
+					"entries": [
+						"The killmoulis targets up to eight creatures within 100 mètres of it that it can see. The next time a target finishes a long rest, it regains all spent Touché Dice and gains 10 temporarytouché points."
+					]
+				},
+				{
+					"name": "Curse of Poor Hospitality (1/Day)",
+					"entries": [
+						"The killmoulis targets up to eight creatures within 100 mètres of it that it can see. The next time a target completes a long rest, it does not regain spent Touché Dice."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"S",
+				"TP"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"CUR",
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Mite",
+			"source": "MFF",
+			"page": 14,
+			"size": [
+				"S"
+			],
+			"type": "féerique",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 7,
+				"formula": "2d6"
+			},
+			"speed": {
+				"walk": 30,
+				"burrow": 10,
+				"climb": 30
+			},
+			"str": 7,
+			"dex": 14,
+			"con": 11,
+			"int": 10,
+			"wis": 8,
+			"cha": 13,
+			"skill": {
+				"deception": "+3",
+				"stealth": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 9,
+			"languages": [
+				"Sylvan",
+				"Undercommon"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Vexing Presence",
+					"entries": [
+						"While within 30 mètres of a mite that can see it, a non-fey creature désavantage onDextérité checks andDextérité saving throws."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) piercingdgts."
+					]
+				},
+				{
+					"name": "Blood Boiling Hex {@recharge}",
+					"entries": [
+						"The mite places a hex on une créature it can see within 60 mètres of it for 1 minute. Si  mite is hidden, using this ability does not reveal its location. While la créature is affected by this hex, lorsqueever it makes an attack roll, an ability check, or a saving throw, it must roll a {@dice d6} and subtract the number rolled from the {@dice d20} roll. On any turn in which it suffers the effect of the hex, la cible can attack an ally as a reaction, ignoring the effect of the hex lorsque it does so. It can then ignore the effect of the hex until the end of its turn."
+					]
+				}
+			],
+			"attachedItems": [
+				"dagger|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"S",
+				"U"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Needle Lord",
+			"source": "MFF",
+			"page": 16,
+			"size": [
+				"L"
+			],
+			"type": "plante",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 45,
+				"formula": "6d10 + 12"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 18,
+			"dex": 11,
+			"con": 14,
+			"int": 11,
+			"wis": 15,
+			"cha": 12,
+			"skill": {
+				"athletics": "+6",
+				"perception": "+4",
+				"stealth": "+2"
+			},
+			"senses": [
+				"blindsight 30 ft."
+			],
+			"passive": 14,
+			"conditionImmune": [
+				"blinded",
+				"deafened",
+				"exhaustion"
+			],
+			"languages": [
+				"Sylvan"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Needle Defense",
+					"entries": [
+						"Each time une créature makes a melee attack against a needle lord, it takes 2 piercingdgts. A creature can choose to make an attack with disadvantage to avoid thisdgts."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The nettle lord makes 2 raking vine attacks."
+					]
+				},
+				{
+					"name": "Needle Volley",
+					"entries": [
+						"The needle lord makes up to {@dice 1d6} needle attacks, but it cannot attack the same target more than twice during its turn."
+					]
+				},
+				{
+					"name": "Raking Vine",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 10 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) piercingdgts, and la cible is {@condition agrippé} (escape {@dd 14}). Until this grapple ends, la cible takes 11 piercingdgts at the start of each of its turns. The needle lord has two raking vines, each of which can grapple only une cible."
+					]
+				},
+				{
+					"name": "Needle",
+					"entries": [
+						"{@atk rw} {@hit 2} pour toucher, portée 60 m,, une cible. {@h}2 ({@dégât 1d4}) piercingdgts."
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"S"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Needle Spawn",
+			"source": "MFF",
+			"page": 16,
+			"size": [
+				"M"
+			],
+			"type": "plante",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 16,
+				"formula": "3d8 + 3"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 20
+			},
+			"str": 13,
+			"dex": 17,
+			"con": 12,
+			"int": 6,
+			"wis": 13,
+			"cha": 6,
+			"skill": {
+				"stealth": "+5"
+			},
+			"senses": [
+				"blindsight 30 ft."
+			],
+			"passive": 11,
+			"conditionImmune": [
+				"blinded",
+				"deafened",
+				"exhaustion"
+			],
+			"languages": [
+				"Sylvan"
+			],
+			"cr": "1/2",
+			"trait": [
+				{
+					"name": "Close Quarters Shooting",
+					"entries": [
+						"The needle spawn does not suffer disadvantage on ranged attacks while within 5 mètres of a hostile creature that can see it and isn't {@conditionincapacité}, if la cible of the attack is also within 5 mètres of the needle spawn."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Needle Volley",
+					"entries": [
+						"The needle spawn makes up to {@dice 1d6} needle attacks, but it cannot attack the same target more than twice during its turn."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Needle",
+					"entries": [
+						"{@atk rw} {@hit 5} pour toucher, portée 60 m,, une cible. {@h}5 ({@dégât 1d4 + 3}) piercingdgts."
+					]
+				}
+			],
+			"senseTags": [
+				"B"
+			],
+			"languageTags": [
+				"S"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Norker",
+			"source": "MFF",
+			"page": 17,
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"goblinoid"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 16,
+				"formula": "3d8 + 3"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 13,
+			"dex": 10,
+			"con": 13,
+			"int": 8,
+			"wis": 8,
+			"cha": 7,
+			"skill": {
+				"athletics": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 9,
+			"languages": [
+				"Common",
+				"Goblin"
+			],
+			"cr": "1/2",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The norker makes one mace and one bite attack."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 3} pour toucher, allonge 5 m,, une cible. {@h}4 ({@dégât 1d6 + 1}) piercingdgts."
+					]
+				},
+				{
+					"name": "Mace",
+					"entries": [
+						"{@atk mw} {@hit 3} pour toucher, allonge 5 m,, une cible. {@h}4 ({@dégât 1d6 + 1}) bludgeoningdgts."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Defensive Rebuke",
+					"entries": [
+						"If a creature within 5 feet of the norker makes a melee attack against it, the norker can use its reaction to cause 4 piercing damage to it."
+					]
+				}
+			],
+			"attachedItems": [
+				"mace|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GO"
+			],
+			"damageTags": [
+				"B",
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Norker War Leader",
+			"source": "MFF",
+			"page": 17,
+			"size": [
+				"S"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"goblinoid"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 39,
+				"formula": "6d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 10,
+			"con": 15,
+			"int": 12,
+			"wis": 11,
+			"cha": 13,
+			"skill": {
+				"athletics": "+5",
+				"intimidation": "+3",
+				"perception": "+2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Common",
+				"Goblin"
+			],
+			"cr": "3",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The norker war leader makes one greataxe and one bite attack, and also uses Fight On, You Slugs."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts."
+					]
+				},
+				{
+					"name": "Greataxe",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}9 ({@dégât 1d12 + 3}) slashingdgts."
+					]
+				},
+				{
+					"name": "Fight On, You Slugs",
+					"entries": [
+						"The norker war leader picks up to three allied goblinoids within 60 mètres that can see it. The chosen creatures can each use their reactions to make a single melee attack."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Defensive Rebuke",
+					"entries": [
+						"If a creature within 5 feet of the norker makes a melee attack against it, the norker can use its reaction to cause 6 piercing damage to it."
+					]
+				}
+			],
+			"attachedItems": [
+				"greataxe|phb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"GO"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MLW",
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Screaming Devilkin",
+			"source": "MFF",
+			"page": 19,
+			"size": [
+				"S"
+			],
+			"type": "féerique",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 17,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 18,
+				"formula": "4d6 + 4"
+			},
+			"speed": {
+				"walk": 0,
+				"fly": 40
+			},
+			"str": 4,
+			"dex": 16,
+			"con": 13,
+			"int": 5,
+			"wis": 8,
+			"cha": 11,
+			"senses": [
+				"darkvision 30 ft."
+			],
+			"passive": 9,
+			"languages": [
+				"Sylvan"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Agile Flier",
+					"entries": [
+						"Opportunity attacks against the screaming devilkin have disadvantage while it is flying."
+					]
+				},
+				{
+					"name": "Ceaseless Screaming",
+					"entries": [
+						"Any creature other than a screaming devilkin that starts its turn within 30 mètres of one or more screaming devilkins and can hear it doit faire a {@dd 10}",
+						"Sagesse saving throw. On a failure la créature is {@conditionincapacité} until the start of its next turn. On a success, la créature suffers no effect."
+					]
+				},
+				{
+					"name": "Stunted Legs",
+					"entries": [
+						"The screaming devilkin désavantage aux jets d'attaque and all attack rolls made against it gain advantage while the devilkin isn't flying."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Barbed Tail",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}5 ({@dégât 1d4 + 3}) piercingdgts."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"S"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"incapacitated"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Xill",
+			"source": "MFF",
+			"page": 21,
+			"size": [
+				"M"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 33,
+				"formula": "6d8 + 6"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 14,
+			"dex": 18,
+			"con": 13,
+			"int": 11,
+			"wis": 14,
+			"cha": 9,
+			"skill": {
+				"acrobatics": "+6",
+				"athletics": "+4",
+				"perception": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"Common"
+			],
+			"cr": "3",
+			"trait": [
+				{
+					"name": "Ethereal Jaunt",
+					"entries": [
+						"As a bonus action, a xill can magically shift from the Material Plane to the Ethereal Plane, or vice versa."
+					]
+				},
+				{
+					"name": "Poison Stinger",
+					"entries": [
+						"The xill injects poison into une créature ittouché with its claws this turn. The chosen creature doit faire a {@dd 11}jet de sauvegarde Constitution, with disadvantage if the xilltouché it more than once this turn, taking 14 ({@dégât 4d6}) poisondgts on a failed save, or half as much on a successful one. Si  poisondgts reduces la cible to 0touché points, la cible is stable but {@condition empoisonné} for 1 heure, even after regainingtouché points, and is {@condition paralisé} while {@condition empoisonné} this way."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The xill makes four claw attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d4 + 4}) piercingdgts."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"I",
+				"P"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"paralyzed",
+				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Ygorl, Lord of Entropy",
+			"isNamedCreature": true,
+			"source": "MFF",
+			"page": 20,
+			"size": [
+				"L"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"N"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 325,
+				"formula": "26d10 + 182"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40,
+				"swim": 40
+			},
+			"str": 24,
+			"dex": 18,
+			"con": 24,
+			"int": 20,
+			"wis": 16,
+			"cha": 26,
+			"save": {
+				"str": "+14",
+				"con": "+14",
+				"cha": "+15"
+			},
+			"skill": {
+				"arcana": "+12",
+				"deception": "+15",
+				"intimidation": "+15",
+				"persuasion": "+15"
+			},
+			"senses": [
+				"truesight 120 ft."
+			],
+			"passive": 13,
+			"resist": [
+				"acid",
+				"cold",
+				"fire",
+				"lightning",
+				"thunder"
+			],
+			"immune": [
+				"necrotic",
+				"poison",
+				{
+					"immune": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"conditionImmune": [
+				"charmed",
+				"exhaustion",
+				"frightened",
+				"poisoned"
+			],
+			"languages": [
+				"all",
+				"telepathy 120 ft."
+			],
+			"cr": "23",
+			"spellcasting": [
+				{
+					"name": "Innate Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Ygorl's innate spellcasting ability is Charisma (spell save {@dc 23}, {@hit 15} to hit with spell attacks). It can innately cast the following spells, requiring no material components:"
+					],
+					"will": [
+						"{@spell blight}",
+						"{@spell blink}",
+						"{@spell chaos bolt|XGE}*",
+						"{@spell detect magic}",
+						"{@spell fly}",
+						"{@spell shield}"
+					],
+					"daily": {
+						"3e": [
+							"{@spell circle of death}",
+							"{@spell enervation|XGE}*",
+							"{@spell symbol} (discord only)"
+						],
+						"2e": [
+							"{@spell finger of death}",
+							"{@spell harm}",
+							"{@spell mental prison|XGE}*"
+						],
+						"1e": [
+							"{@spell power word kill}",
+							"{@spell power word stun}",
+							"{@spell symbol} (death only)",
+							"{@spell weird}"
+						]
+					},
+					"footerEntries": [
+						"* Spell from Xanathar's Guide to Everything"
+					],
+					"ability": "cha"
+				}
+			],
+			"trait": [
+				{
+					"name": "Entropic Aura",
+					"entries": [
+						"Each creature that is not a construct or undead that ends its turn within 15 mètres of Ygorl takes 14 ({@dégât 4d6}) necroticdgts."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Ygorl fails a saving throw, it can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"Ygorl avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Ygorl makes three attacks: two with its scythe, and one with its Entropic Touch."
+					]
+				},
+				{
+					"name": "Scythe",
+					"entries": [
+						"{@atk mw} {@hit 14} pour toucher, allonge 10 m,, une créature. {@h}18 ({@dégât 2d10 + 7}) slashingdgts plus 19 ({@dégât 3d12}) necroticdgts. Any creature reduced to 0touché points by this attack dies, with its body and everything it is wearing and carrying, except magic items, exploding into a cloud of ash. The creature can be restored to life only by means of a {@spell wish} spell."
+					]
+				},
+				{
+					"name": "Entropic Touch",
+					"entries": [
+						"{@atk mw} {@hit 14} pour toucher, allonge 5 m,, une cible. {@h}16 ({@dégât 2d8 + 7}) necroticdgts, and la cible doit réussir on a {@dd 22}jet de sauvegarde Constitution or gain one level of {@condition épuisement}."
+					]
+				},
+				{
+					"name": "Summon Slaadi (1/Day)",
+					"entries": [
+						"Ygorl summons {@dice 1d4 + 1} {@creature death slaad||death slaadi}. A summoned slaad appears in an unoccupied space within 60 mètres of Ygorl, acts as an ally of Ygorl, and can't summon other slaadi. It remains for 1 minute, until it or Ygorl dies, or until Ygorl dismisses it as an action."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"Ygorl teleports, along with any equipment it is wearing or carrying, up to 120 mètres to an unoccupied space it can see."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Scythe",
+					"entries": [
+						"Ygorl makes one attack with its scythe."
+					]
+				},
+				{
+					"name": "Teleport",
+					"entries": [
+						"Ygorl uses its Teleport action."
+					]
+				},
+				{
+					"name": "Call the Void (Costs 3 Actions)",
+					"entries": [
+						"Each creature that is not a construct or undead within 30 mètres of Ygorl doit faire a {@dd 22}jet de sauvegarde Constitution against the lord of entropy's attempt to unmake life, taking 42 ({@dégât 12d6}) necroticdgts on a failed save, or half as muchdgts on a successful one. Ygorl then regains a number oftouché points equal to half the totaldgts taken by all affected creatures."
+					]
+				}
+			],
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Teleport"
+			],
+			"languageTags": [
+				"TP",
+				"XX"
+			],
+			"damageTags": [
+				"N",
+				"S"
+			],
+			"damageTagsSpell": [
+				"A",
+				"C",
+				"F",
+				"I",
+				"L",
+				"N",
+				"O",
+				"T",
+				"Y"
+			],
+			"spellcastingTags": [
+				"I"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"exhaustion"
+			],
+			"conditionInflictSpell": [
+				"frightened",
+				"incapacitated",
+				"stunned",
+				"unconscious"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

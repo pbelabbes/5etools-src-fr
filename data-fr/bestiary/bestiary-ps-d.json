@@ -1,0 +1,372 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		}
+	},
+	"monster": [
+		{
+			"name": "Homarid",
+			"source": "PSD",
+			"page": 15,
+			"size": [
+				"M"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 44,
+				"formula": "8d8 + 8"
+			},
+			"speed": {
+				"walk": 20,
+				"swim": 30
+			},
+			"str": 13,
+			"dex": 8,
+			"con": 13,
+			"int": 9,
+			"wis": 14,
+			"cha": 10,
+			"skill": {
+				"perception": "+4",
+				"stealth": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"Homarid"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Amphibie",
+					"entries": [
+						"The homarid can breathe air and water."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The homarid makes two claw attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 3} pour toucher, allonge 5 m,, une cible. {@h}5 ({@dégât 1d8 + 1}) slashingdgts, and la cible is {@condition agrippé} (escape {@dd 11}). The homarid has two claws, each of which can grapple only une cible."
+					]
+				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"OTH"
+			],
+			"damageTags": [
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"grappled"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Kavu Predator",
+			"source": "PSD",
+			"page": 24,
+			"size": [
+				"L"
+			],
+			"type": "bête",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 75,
+				"formula": "10d10 + 20"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"str": 18,
+			"dex": 12,
+			"con": 15,
+			"int": 6,
+			"wis": 14,
+			"cha": 8,
+			"skill": {
+				"perception": "+4",
+				"stealth": "+5"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"understands Elvish"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Pounce",
+					"entries": [
+						"Si  kavu moves at least 20 mètres straight toward une créature and thentouchés it with a claw attack on the same turn, that target doit réussir on a {@dd 14}Force saving throw or be knocked {@condition à terre}. If la cible is {@condition à terre}, the kavu can make one bite attack against it as a bonus action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The kavu makes two claw attacks."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}9 ({@dégât 1d10 + 4}) piercingdgts."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}7 ({@dégât 1d6 + 4}) slashingdgts."
+					]
+				}
+			],
+			"traitTags": [
+				"Pounce"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"E"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Lyra",
+			"alias": [
+				"Perfidious Muderator"
+			],
+			"isNamedCreature": true,
+			"source": "PSD",
+			"page": 9,
+			"_copy": {
+				"name": "Planetar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the planetar",
+						"with": "Lyra",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Serra Angel",
+			"source": "PSD",
+			"page": 9,
+			"_copy": {
+				"name": "Deva",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "deva",
+						"with": "angel",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Shalai",
+			"isNamedCreature": true,
+			"source": "PSD",
+			"page": 9,
+			"_copy": {
+				"name": "Solar",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the solar",
+						"with": "Shalai",
+						"flags": "i"
+					}
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Steel Leaf Kavu",
+			"source": "PSD",
+			"page": 24,
+			"size": [
+				"L"
+			],
+			"type": "bête",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 142,
+				"formula": "15d10 + 60"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 20,
+			"dex": 12,
+			"con": 18,
+			"int": 6,
+			"wis": 14,
+			"cha": 8,
+			"skill": {
+				"perception": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"languages": [
+				"understands Elvish"
+			],
+			"cr": "4",
+			"trait": [
+				{
+					"name": "Raking Charge",
+					"entries": [
+						"Si  kavu moves at least 20 mètres straight toward une créature and thentouchés it with a bite attack on the same turn, that target doit réussir on a {@dd 15}Force saving throw or be knocked {@condition à terre}. If la cible is {@condition à terre}, the kavu can make one rend attack against it as a bonus action."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}14 ({@dégât 2d8 + 5}) piercingdgts."
+					]
+				},
+				{
+					"name": "Rend",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, one {@condition à terre} creature. {@h}23 ({@dégât 4d8 + 5}) slashingdgts."
+					]
+				}
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"E"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Zombie Horse",
+			"source": "PSD",
+			"page": 17,
+			"_copy": {
+				"name": "Zombie",
+				"source": "MM"
+			},
+			"size": [
+				"L"
+			],
+			"hasToken": true
+		}
+	]
+}

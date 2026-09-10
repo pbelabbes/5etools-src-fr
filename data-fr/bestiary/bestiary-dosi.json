@@ -1,0 +1,728 @@
+{
+	"_meta": {
+		"dependencies": {
+			"monster": [
+				"MM"
+			]
+		},
+		"internalCopies": [
+			"monster"
+		],
+		"otherSources": {
+			"monster": {
+				"MM": "DoSI"
+			}
+		}
+	},
+	"monster": [
+		{
+			"name": "Fume Drake",
+			"source": "DoSI",
+			"page": 41,
+			"size": [
+				"S"
+			],
+			"type": "élémentaire",
+			"alignment": [
+				"N"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 22,
+				"formula": "5d6 + 5"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 30
+			},
+			"str": 6,
+			"dex": 14,
+			"con": 12,
+			"int": 6,
+			"wis": 10,
+			"cha": 11,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"immune": [
+				"fire",
+				"poison"
+			],
+			"conditionImmune": [
+				"poisoned"
+			],
+			"languages": [
+				"Draconic",
+				"Ignan"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Death Burst",
+					"entries": [
+						"When the fume drake dies, it explodes in a cloud of noxious fumes. Each creature within 5 mètres of the fume drake doit réussir on a {@dd 11}jet de sauvegarde Constitution or take 4 ({@dégât 1d8}) poisondgts."
+					]
+				},
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The fume drake doesn't require food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) firedgts."
+					]
+				},
+				{
+					"name": "Scalding Breath {@recharge}",
+					"entries": [
+						"The fume drake exhales a 15-foot cone of scalding steam. Each creature in that area doit faire a {@dd 11}Dextérité saving throw, taking 4 ({@dégât 1d8}) firedgts on a failed save, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Death Burst",
+				"Unusual Nature"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Breath Weapon"
+			],
+			"languageTags": [
+				"DR",
+				"IG"
+			],
+			"damageTags": [
+				"F",
+				"I"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Kobold Tinkerer",
+			"source": "DoSI",
+			"page": 43,
+			"size": [
+				"S"
+			],
+			"type": "humanoïde",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 10,
+				"formula": "3d6"
+			},
+			"speed": {
+				"walk": 30,
+				"fly": 10
+			},
+			"str": 7,
+			"dex": 14,
+			"con": 10,
+			"int": 15,
+			"wis": 7,
+			"cha": 9,
+			"skill": {
+				"arcana": "+4",
+				"perception": "+0"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Common",
+				"Draconic"
+			],
+			"cr": "1/4",
+			"trait": [
+				{
+					"name": "Inquiring Mind (1/Day)",
+					"entries": [
+						"The kobold can cast {@spell detect magic}, requiring no spell components and usingIntelligence as the spellcasting ability."
+					]
+				},
+				{
+					"name": "Tactique de groupe",
+					"entries": [
+						"The kobold avantage on an attack roll against une créature if at least one of its allies is within 5 mètres of la créature and the ally isn't {@conditionincapacité}."
+					]
+				},
+				{
+					"name": "Sensibilité à la lumière du soleil",
+					"entries": [
+						"While in sunlight, the kobold désavantage aux jets d'attaque, as well as onSagesse ({@skillPerception}) checks that rely on sight."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 4} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}4 ({@dégât 1d4 + 2}) piercingdgts."
+					]
+				},
+				{
+					"name": "Alchemical Flame {@recharge}",
+					"entries": [
+						"The kobold unleashes fire in a 15-foot cone. Each creature in that area doit faire a {@dd 12}Dextérité saving throw, taking 10 ({@dégât 3d6}) firedgts on a failed saving throw, or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"attachedItems": [
+				"dagger|phb"
+			],
+			"traitTags": [
+				"Pack Tactics",
+				"Sunlight Sensitivity"
+			],
+			"senseTags": [
+				"D"
+			],
+			"languageTags": [
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"F",
+				"P"
+			],
+			"miscTags": [
+				"AOE",
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Merrow Extortionist",
+			"source": "DoSI",
+			"page": 0,
+			"size": [
+				"L"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 13,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 30,
+				"formula": "4d10 + 8"
+			},
+			"speed": {
+				"walk": 10,
+				"swim": 40
+			},
+			"str": 16,
+			"dex": 10,
+			"con": 15,
+			"int": 8,
+			"wis": 10,
+			"cha": 9,
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 10,
+			"languages": [
+				"Abyssal",
+				"Aquan",
+				"Common"
+			],
+			"cr": {
+				"cr": "1",
+				"xp": 100
+			},
+			"trait": [
+				{
+					"name": "Amphibie",
+					"entries": [
+						"The merrow can breathe air and water."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The merrow makes two Rend attacks."
+					]
+				},
+				{
+					"name": "Rend",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 10 m,, une cible. {@h}8 ({@dégât 2d4 + 3}) piercingdgts."
+					]
+				}
+			],
+			"traitTags": [
+				"Amphibious"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"AB",
+				"AQ",
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"hasToken": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Myla",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DoSI",
+			"page": 9,
+			"_copy": {
+				"name": "Kobold Tinkerer",
+				"source": "DoSI",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the kobold",
+						"with": "Myla",
+						"flags": "i"
+					}
+				}
+			},
+			"alignment": [
+				"L",
+				"G"
+			],
+			"hasToken": true
+		},
+		{
+			"name": "Runara",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DoSI",
+			"page": 40,
+			"_copy": {
+				"name": "Adult Bronze Dragon",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the dragon",
+						"with": "Runara",
+						"flags": "i"
+					},
+					"action": [
+						{
+							"mode": "removeArr",
+							"names": "Tail"
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Change Shape",
+							"items": {
+								"name": "Change Shape",
+								"type": "entries",
+								"entries": [
+									"Runara magically transforms into a Humanoid or Beast that is Medium or Small, while retaining her game statistics (other than her size). This transformation ends if Runara is reduced to 0 hit points or uses a bonus action to end it."
+								]
+							}
+						}
+					]
+				}
+			},
+			"cr": "13",
+			"legendary": null,
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Sinensa",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DoSI",
+			"page": 45,
+			"_copy": {
+				"name": "Myconid Sovereign",
+				"source": "MM",
+				"_mod": {
+					"*": {
+						"mode": "replaceTxt",
+						"replace": "the myconid",
+						"with": "Sinensa",
+						"flags": "i"
+					},
+					"action": [
+						{
+							"mode": "removeArr",
+							"names": [
+								"Animating Spores (3/Day)",
+								"Pacifying Spores"
+							]
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Multiattack",
+							"items": {
+								"name": "Multiattack",
+								"type": "entries",
+								"entries": [
+									"The myconid makes one Fist attack and uses its Hallucination Spores."
+								]
+							}
+						},
+						{
+							"mode": "replaceArr",
+							"replace": "Fist",
+							"items": {
+								"name": "Fist",
+								"type": "entries",
+								"entries": [
+									"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}8 ({@damage 3d4 + 1}) bludgeoning damage plus 7 ({@damage 2d4}) poison damage."
+								]
+							}
+						}
+					]
+				}
+			},
+			"tokenCustom": true,
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Spore Servant Octopus",
+			"source": "DoSI",
+			"page": 46,
+			"size": [
+				"L"
+			],
+			"type": "plante",
+			"alignment": [
+				"U"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 52,
+				"formula": "8d10 + 8"
+			},
+			"speed": {
+				"walk": 5,
+				"swim": 50
+			},
+			"str": 17,
+			"dex": 13,
+			"con": 13,
+			"int": 2,
+			"wis": 6,
+			"cha": 1,
+			"senses": [
+				"blindsight 30 ft. (blind beyond this radius)"
+			],
+			"passive": 8,
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"frightened",
+				"paralyzed"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Hold Breath",
+					"entries": [
+						"While out of water, the octopus can hold its breath for 1 heure."
+					]
+				},
+				{
+					"name": "Respiration aquatique",
+					"entries": [
+						"The octopus can breathe only underwater."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Tentacules",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 15 m,, une cible {@h}7 ({@dégât 1d8 + 3}) bludgeoningdgts."
+					]
+				}
+			],
+			"traitTags": [
+				"Hold Breath",
+				"Water Breathing"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Tentacles"
+			],
+			"damageTags": [
+				"B"
+			],
+			"miscTags": [
+				"MW",
+				"RCH"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Tarak",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DoSI",
+			"page": 47,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"N"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 27,
+				"formula": "6d8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 16,
+			"con": 10,
+			"int": 12,
+			"wis": 14,
+			"cha": 16,
+			"skill": {
+				"deception": "+5",
+				"insight": "+4",
+				"medicine": "+4",
+				"nature": "+3"
+			},
+			"passive": 12,
+			"languages": [
+				"Common",
+				"Draconic",
+				"Thieves' cant"
+			],
+			"cr": "1",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Tarak makes three Dagger attacks."
+					]
+				},
+				{
+					"name": "Dagger",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} pour toucher, allonge 5 m, or portée 20/60 m,, une cible. {@h}5 ({@dégât 1d4 + 3}) piercingdgts."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Cunning Action",
+					"entries": [
+						"Tarak takes the {@action Dash}, {@action Disengage}, or {@action Hide} action."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"attachedItems": [
+				"dagger|phb"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR",
+				"TC"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW",
+				"RW",
+				"THW"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Varnoth",
+			"isNpc": true,
+			"isNamedCreature": true,
+			"source": "DoSI",
+			"page": 47,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"human"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				11
+			],
+			"hp": {
+				"average": 39,
+				"formula": "6d8 + 12"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 16,
+			"dex": 13,
+			"con": 14,
+			"int": 10,
+			"wis": 11,
+			"cha": 10,
+			"skill": {
+				"athletics": "+5",
+				"history": "+2",
+				"perception": "+2",
+				"religion": "+2"
+			},
+			"passive": 12,
+			"languages": [
+				"Common"
+			],
+			"cr": "2",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Varnoth makes three Shortsword attacks."
+					]
+				},
+				{
+					"name": "Shortsword",
+					"entries": [
+						"{@atk mw} {@hit 5} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d6 + 3}) piercingdgts."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"attachedItems": [
+				"shortsword|phb"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C"
+			],
+			"damageTags": [
+				"P"
+			],
+			"miscTags": [
+				"MLW",
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true
+		},
+		{
+			"name": "Violet Fungus",
+			"source": "DoSI",
+			"page": 48,
+			"referenceSources": [
+				"BMT",
+				"PaBTSO"
+			],
+			"_copy": {
+				"name": "Violet Fungus",
+				"source": "MM",
+				"_mod": {
+					"trait": [
+						{
+							"mode": "replaceArr",
+							"replace": "False Appearance",
+							"items": {
+								"name": "False Appearance",
+								"type": "entries",
+								"entries": [
+									"If the violet fungus is motionless at the start of combat, it has advantage on its initiative roll. Moreover, if a creature hasn't observed the fungus move or act, that creature must succeed on a {@dc 18} Intelligence ({@skill Investigation}) check to discern that the violet fungus isn't ordinary fungus."
+								]
+							}
+						}
+					]
+				}
+			},
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}

@@ -1,0 +1,1648 @@
+{
+	"monster": [
+		{
+			"name": "Dream Eater",
+			"source": "MCV2DC",
+			"page": 3,
+			"size": [
+				"M"
+			],
+			"type": "aberration",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				15
+			],
+			"hp": {
+				"average": 77,
+				"formula": "14d8 + 14"
+			},
+			"speed": {
+				"walk": 0,
+				"fly": {
+					"number": 50,
+					"condition": "(hover)"
+				},
+				"canHover": true
+			},
+			"str": 15,
+			"dex": 20,
+			"con": 13,
+			"int": 12,
+			"wis": 16,
+			"cha": 21,
+			"senses": [
+				"blindsight 120 ft. (blind beyond this radius)"
+			],
+			"passive": 13,
+			"resist": [
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"psychic"
+			],
+			"conditionImmune": [
+				"blinded",
+				"charmed",
+				"frightened",
+				"grappled",
+				"paralyzed",
+				"petrified",
+				"restrained"
+			],
+			"languages": [
+				"Deep Speech",
+				"telepathy 120 ft."
+			],
+			"cr": "7",
+			"trait": [
+				{
+					"name": "Ghastly Visions",
+					"entries": [
+						"Each creature that starts its turn within 30 mètres of the dream eater doit faire a {@dd 16}Sagesse saving throw. On a failed save, la créature is {@condition effrayé} of the dream eater until the start of la créature's next turn. If une créature's saving throw is successful, la créature is immune to this dream eater's Ghastly Visions trait for the next 24 heures."
+					]
+				},
+				{
+					"name": "Mouvement incorporel",
+					"entries": [
+						"The dream eater can move through other creatures and objects comme si they were difficult terrain. It takes 5 ({@dégât 1d10}) forcedgts if it ends its turn inside an object."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The dream eater avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The dream eater makes two Ensnaring Shriek attacks."
+					]
+				},
+				{
+					"name": "Ensnaring Shriek",
+					"entries": [
+						"{@atk ms,rs} {@hit 8} pour toucher, allonge 15 m, or portée 60 m,, une cible. {@h}12 ({@dégât 2d6 + 5}) psychicdgts, and if la cible is a Medium or smaller creature, la cible doit réussir on a {@dd 16}Charisme saving throw or be pulled up to 15 mètres toward the dream eater."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Engulfing Nightmare",
+					"entries": [
+						"The dream eater targets one creature within 5 feet of itself. The target must succeed on a {@dc 16} Wisdom saving throw or be engulfed by the dream eater, as the dream eater envelops the creature in a miasma of its worst fears.",
+						"When the dream eater engulfs a target, the dream eater enters its space, and the target immediately takes 10 ({@damage 3d6}) psychic damage. An engulfed target is {@condition restrained} and {@condition blinded}, and it takes an additional 10 ({@damage 3d6}) psychic damage at the start of each of the dream eater's turns. When the dream eater moves, the engulfed target moves with it.",
+						"The dream eater can have only one target engulfed at a time. An engulfed target escapes at the start of its turn by making a {@dc 16} Wisdom saving throw. On a successful save, the target escapes; the target is no longer engulfed, and it enters a space of its choice within 5 feet of the dream eater. A creature within 15 feet of the dream eater also can use its action to attempt to free an engulfed target. Doing so requires the creature to use its action to make a {@dc 16} Charisma ({@skill Persuasion}) check to convince the engulfed target the nightmare isn't real, with the target escaping on a success. The creature making the check takes 10 ({@damage 3d6}) psychic damage, regardless of the check's success or failure, as its mind brushes against the nightmare."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Incorporeal Movement",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"B"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"DS",
+				"TP"
+			],
+			"damageTags": [
+				"O",
+				"Y"
+			],
+			"miscTags": [
+				"RCH"
+			],
+			"conditionInflict": [
+				"blinded",
+				"frightened",
+				"restrained"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Ember",
+			"isNamedCreature": true,
+			"source": "MCV2DC",
+			"page": 5,
+			"size": [
+				"H"
+			],
+			"type": {
+				"type": "dragon",
+				"tags": [
+					"adult chromatic"
+				]
+			},
+			"alignment": [
+				"C",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"special equipment"
+					]
+				}
+			],
+			"hp": {
+				"average": 270,
+				"formula": "20d12 + 140"
+			},
+			"speed": {
+				"walk": 40,
+				"climb": 40,
+				"fly": 80
+			},
+			"str": 28,
+			"dex": 10,
+			"con": 25,
+			"int": 17,
+			"wis": 14,
+			"cha": 22,
+			"save": {
+				"dex": "+7",
+				"con": "+14",
+				"wis": "+9",
+				"cha": "+13"
+			},
+			"skill": {
+				"perception": "+16",
+				"religion": "+10",
+				"stealth": "+14"
+			},
+			"senses": [
+				"blindsight 60 ft.",
+				"darkvision 120 ft."
+			],
+			"passive": 26,
+			"immune": [
+				"fire"
+			],
+			"languages": [
+				"Abyssal",
+				"Common",
+				"Draconic"
+			],
+			"cr": "22",
+			"trait": [
+				{
+					"name": "Calescent Aura",
+					"entries": [
+						"At the start of Ember's turn, Ember can force any number of creatures of his choice within 10 mètres of himself to make a {@dd 22}jet de sauvegarde Constitution. On a failed save, une créature takes 7 ({@dégât 2d6}) firedgts and is {@condition effrayé} of Ember until the start of its next turn."
+					]
+				},
+				{
+					"name": "Legendary Resistance (5/Day)",
+					"entries": [
+						"If Ember fails a saving throw, he can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Special Equipment",
+					"entries": [
+						"In battle, Ember dons magical plate armor custom-forged for his use. While wearing the armor, Ember adds hisCharisme modifier to his weapondgts rolls (included in the attack descriptions), and his AC can't be lower than 20."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Ember makes one Bite attack and two Claw attacks."
+					]
+				},
+				{
+					"name": "Morsure",
+					"entries": [
+						"{@atk mw} {@hit 16} pour toucher, allonge 10 m,, une cible. {@h}26 ({@dégât 2d10 + 15}) piercingdgts plus 13 ({@dégât 2d6 + 6}) firedgts."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 16} pour toucher, allonge 5 m,, une cible. {@h}22 ({@dégât 2d6 + 15}) slashingdgts."
+					]
+				},
+				{
+					"name": "Firestorm Breath {@recharge 5}",
+					"entries": [
+						"Ember exhales roiling flames and ash in a 90-foot cone. Each creature in that area doit faire a {@dd 22}Dextérité saving throw. On a failed save, une créature takes 56 ({@dégât 16d6}) firedgts and is pushed up to 30 mètres away from Ember and knocked {@condition à terre}. On a successful save, une créature takes half as muchdgts with no other effects. If une créature is reduced to 0touché points by this effect, la créature immediately dies, and its body is reduced to ash."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Alter Shape",
+					"entries": [
+						"Ember magically transforms into a vulture or a mage and retains his alignment, damage immunities, hit points, and Hit Dice, as well as his Intelligence, Wisdom, and Charisma scores. This transformation ends if Ember is reduced to 0 hit points or if he uses another bonus action to end it."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Pursuit",
+					"entries": [
+						"Ember moves up to 40 mètres in a straight line toward une créature he can see. This movement ignores opportunity attacks."
+					]
+				},
+				{
+					"name": "Searing Bite (Costs 2 Actions)",
+					"entries": [
+						"Ember makes one Bite attack. Si  attacktouchés, it deals an additional 7 ({@dégât 2d6}) firedgts."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"B",
+				"SD"
+			],
+			"actionTags": [
+				"Breath Weapon",
+				"Multiattack"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"F",
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"frightened",
+				"prone"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Forest Master",
+			"source": "MCV2DC",
+			"page": 6,
+			"size": [
+				"L"
+			],
+			"type": {
+				"type": "céleste",
+				"tags": [
+					"unicorn"
+				]
+			},
+			"alignment": [
+				"N",
+				"G"
+			],
+			"ac": [
+				{
+					"ac": 16,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 105,
+				"formula": "14d10 + 28"
+			},
+			"speed": {
+				"walk": 50
+			},
+			"str": 18,
+			"dex": 14,
+			"con": 15,
+			"int": 13,
+			"wis": 19,
+			"cha": 17,
+			"save": {
+				"int": "+4",
+				"wis": "+7"
+			},
+			"skill": {
+				"insight": "+7",
+				"nature": "+4",
+				"perception": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 17,
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"charmed",
+				"paralyzed",
+				"poisoned"
+			],
+			"languages": [
+				"Celestial",
+				"Elvish",
+				"Sylvan",
+				"telepathy 60 ft."
+			],
+			"cr": "8",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The Forest Master casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"will": [
+						"{@spell druidcraft}",
+						"{@spell fog cloud}",
+						"{@spell guidance}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell goodberry}",
+							"{@spell greater restoration}",
+							"{@spell pass without trace}",
+							"{@spell speak with plants}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Legendary Resistance (2/Day)",
+					"entries": [
+						"Si  Forest Master fails a saving throw, he can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Résistance à la magie",
+					"entries": [
+						"The Forest Master avantage aux jets de sauvegarde against spells and other magical effects."
+					]
+				},
+				{
+					"name": "Master of Beasts",
+					"entries": [
+						"The Forest Master can comprehend and communicate with any Beast, even if the Beast knows no languages."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The Forest Master makes either two Hooves attacks, two Moon Bolt attacks, or one of each."
+					]
+				},
+				{
+					"name": "Sabots",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 5 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Moon Bolt",
+					"entries": [
+						"{@atk rs} {@hit 7} pour toucher, portée 60 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) radiantdgts."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Erupting Briars {@recharge 4}",
+					"entries": [
+						"The Forest Master touches his horn to the earth and causes a 5-foot-tall wall of briars to erupt in a 90-foot line that is 10 feet wide. When the wall appears, each creature in its area is pushed into the nearest unoccupied space adjacent to the wall and must make a {@dc 15} Dexterity saving throw, taking 27 ({@damage 6d8}) piercing damage on a failed save or half as much damage on a successful one.",
+						"The wall of briars lasts until the start of the Forest Master's next turn. The wall blocks line of sight and counts as difficult terrain for all creatures except the Forest Master. The first time a creature enters the wall's area on a turn, that creature must succeed on a {@dc 15} Dexterity saving throw or take 13 ({@damage 3d8}) piercing damage."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Misty Escape",
+					"entries": [
+						"If the Forest Master takes damage from a melee attack, he, along with any equipment he is wearing or carrying, teleports to an unoccupied space within 30 feet that he can see."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Legendary Resistances",
+				"Magic Resistance"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"CE",
+				"E",
+				"S",
+				"TP"
+			],
+			"damageTags": [
+				"B",
+				"P",
+				"R"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Foresworn",
+			"source": "MCV2DC",
+			"page": 7,
+			"size": [
+				"M"
+			],
+			"type": "mort-vivant",
+			"alignment": [
+				"L",
+				"G"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 18,
+					"from": [
+						"{@item plate armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 82,
+				"formula": "11d8 + 33"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 20,
+			"dex": 14,
+			"con": 17,
+			"int": 12,
+			"wis": 18,
+			"cha": 10,
+			"save": {
+				"str": "+8",
+				"wis": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 14,
+			"resist": [
+				"necrotic",
+				{
+					"resist": [
+						"bludgeoning",
+						"piercing",
+						"slashing"
+					],
+					"note": "from nonmagical attacks",
+					"cond": true
+				}
+			],
+			"immune": [
+				"poison"
+			],
+			"conditionImmune": [
+				"exhaustion",
+				"frightened",
+				"grappled",
+				"paralyzed",
+				"petrified",
+				"poisoned",
+				"prone",
+				"restrained",
+				"unconscious"
+			],
+			"languages": [
+				"the languages it knew in life"
+			],
+			"cr": "6",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The foresworn casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 15}):"
+					],
+					"daily": {
+						"1": [
+							"{@spell wall of force}"
+						],
+						"2e": [
+							"{@spell command}",
+							"{@spell detect evil and good}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Duty-Bound",
+					"entries": [
+						"The foresworn is bound to enacting a singular duty it pledged itself to in life. While this duty is incomplete, lorsqueever the foresworn is destroyed, it re-forms at its previous location after 3 ({@dice 1d6}) days, with all itstouché points restored."
+					]
+				},
+				{
+					"name": "Mouvement incorporel",
+					"entries": [
+						"The foresworn can move through other creatures and objects comme si they were difficult terrain. It takes 5 ({@dégât 1d10}) forcedgts if it ends its turn inside an object."
+					]
+				},
+				{
+					"name": "Unusual Nature",
+					"entries": [
+						"The foresworn doesn't require air, food, drink, or sleep."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The foresworn makes three Spectral Polearm attacks."
+					]
+				},
+				{
+					"name": "Spectral Polearm",
+					"entries": [
+						"{@atk mw} {@hit 8} pour toucher, allonge 5 m,, une cible. {@h}12 ({@dégât 2d6 + 5}) forcedgts."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Phantasmic Battalion {@recharge 5}",
+					"entries": [
+						"The foresworn summons a battalion of ghostly soldiers to its aid. The ghostly soldiers fill a 10-foot-cube centered on the foresworn, move with the foresworn when the foresworn moves, and last until the start of the foresworn's next turn. While the ghostly soldiers are present, the area they occupy is considered difficult terrain for all creatures except the foresworn, and the foresworn's reach for melee weapon attacks increases by 10 feet."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Incorporeal Movement",
+				"Unusual Nature"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"LF"
+			],
+			"damageTags": [
+				"O"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"AOE",
+				"MW"
+			],
+			"conditionInflictSpell": [
+				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Irda Seeker",
+			"source": "MCV2DC",
+			"page": 8,
+			"size": [
+				"M"
+			],
+			"type": "géant",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				12
+			],
+			"hp": {
+				"average": 27,
+				"formula": "5d8 + 5"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 10,
+			"dex": 15,
+			"con": 12,
+			"int": 11,
+			"wis": 14,
+			"cha": 16,
+			"save": {
+				"dex": "+4",
+				"cha": "+5"
+			},
+			"skill": {
+				"insight": "+6",
+				"perception": "+6",
+				"stealth": "+4"
+			},
+			"senses": [
+				"darkvision 60 ft.",
+				"truesight 5 ft."
+			],
+			"passive": 16,
+			"languages": [
+				"Common",
+				"Giant",
+				"Sylvan"
+			],
+			"cr": "1",
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The seeker uses Augment Physicality, if available, and makes two Crystal Blade attacks."
+					]
+				},
+				{
+					"name": "Crystal Blade",
+					"entries": [
+						"{@atk mw} {@hit 4} pour toucher, allonge 5 m,, une cible. {@h}5 ({@dégât 1d6 + 2}) forcedgts, plus 7 ({@dégât 2d6}) forcedgts if the seeker is Large."
+					]
+				},
+				{
+					"name": "Augment Physicality (1/Day)",
+					"entries": [
+						"For 1 minute, the seeker magically heightens its physical ability and increases in size, along with anything it is wearing or carrying. While augmented, the seeker is Large, and makesForce andDextérité saving throws with advantage. Si  seeker lacks the room to become Large, it attains the maximum size possible in the space available."
+					]
+				},
+				{
+					"name": "Change Shape (1/Day)",
+					"entries": [
+						"The seeker magically transforms to look and feel like a Medium Humanoid it has seen. Any equipment the seeker is wearing or carrying isn't transformed, and the seeker's statistics don't change. The seeker reverts to its true form if the seeker is reduced to 0touché points or if the seeker uses an action to end the transformation."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Veil Walk {@recharge 4}",
+					"entries": [
+						"The seeker, along with any equipment it is wearing or carrying, turns {@condition invisible} and teleports to an unoccupied space it can see within 30 feet of itself. The seeker remains {@condition invisible} until the start of its next turn or until immediately after the seeker makes an attack roll, whichever comes first."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"senseTags": [
+				"D",
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Shapechanger"
+			],
+			"languageTags": [
+				"C",
+				"GI",
+				"S"
+			],
+			"damageTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Irda Veil Keeper",
+			"source": "MCV2DC",
+			"page": 9,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "géant",
+				"tags": [
+					"sorcerer"
+				]
+			},
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				13
+			],
+			"hp": {
+				"average": 49,
+				"formula": "9d8 + 9"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 9,
+			"dex": 16,
+			"con": 13,
+			"int": 14,
+			"wis": 17,
+			"cha": 19,
+			"save": {
+				"int": "+4",
+				"wis": "+5",
+				"cha": "+6"
+			},
+			"skill": {
+				"arcana": "+4",
+				"insight": "+7",
+				"perception": "+7"
+			},
+			"senses": [
+				"darkvision 60 ft.",
+				"truesight 5 ft."
+			],
+			"passive": 17,
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Giant",
+				"Sylvan"
+			],
+			"cr": "4",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"The veil keeper casts one of the following spells, requiring no material components and using Charisma as the spellcasting ability (spell save {@dc 14}):"
+					],
+					"will": [
+						"{@spell dancing lights}",
+						"{@spell minor illusion}"
+					],
+					"daily": {
+						"1": [
+							"{@spell hallucinatory terrain} (as an action)"
+						],
+						"2e": [
+							"{@spell invisibility}",
+							"{@spell major image}",
+							"{@spell phantasmal force}"
+						]
+					},
+					"ability": "cha",
+					"displayAs": "action"
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The veil keeper uses Augment Physicality, if available, and makes two Mirage Flare attacks."
+					]
+				},
+				{
+					"name": "Mirage Flare",
+					"entries": [
+						"{@atk ms,rs} {@hit 6} pour toucher, allonge 5 m, or portée 60 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) radiantdgts, and la cible doit réussir on a {@dd 14}Sagesse saving throw or be {@condition charmé} by the veil keeper until the start of the veil keeper's next turn. While {@condition charmé} in this way, une créature is {@conditionincapacité} as it is beset by hypnotic, illusory visions."
+					]
+				},
+				{
+					"name": "Augment Physicality (1/Day)",
+					"entries": [
+						"For 1 minute, the veil keeper magically obscures it location, heightens its physical ability, and increases in size, along with anything it is wearing or carrying. While the veil keeper is augmented, attack rolls against it have disadvantage, it is Large, and it makesForce andDextérité saving throws with advantage. Si  veil keeper lacks the room to become Large, it attains the maximum size possible in the space available. These augmentations end if the veil keeper is {@conditionincapacité}."
+					]
+				},
+				{
+					"name": "Change Shape (3/Day)",
+					"entries": [
+						"The veil keeper magically transforms to look and feel like a Medium Humanoid it has seen. Any equipment the veil keeper is wearing or carrying isn't transformed, and the veil keeper's statistics don't change. The veil keeper reverts to its true form if the veil keeper is reduced to 0touché points or if the veil keeper uses an action to end the transformation."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Obscuring Mist",
+					"entries": [
+						"If a creature that the veil keeper can see within 30 feet of itself is targeted by an attack, the veil keeper surrounds the creature with illusory mist, granting the creature {@quickref Cover||3||half cover} until the start of the veil keeper's next turn."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"senseTags": [
+				"D",
+				"U"
+			],
+			"actionTags": [
+				"Multiattack",
+				"Shapechanger"
+			],
+			"languageTags": [
+				"C",
+				"GI",
+				"S"
+			],
+			"damageTags": [
+				"R"
+			],
+			"damageTagsSpell": [
+				"Y"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"conditionInflict": [
+				"charmed",
+				"incapacitated"
+			],
+			"conditionInflictSpell": [
+				"invisible"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"intelligence"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Nevermind Gnome Inventor",
+			"source": "MCV2DC",
+			"page": 10,
+			"size": [
+				"S"
+			],
+			"type": "humanoïde",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 36,
+				"formula": "8d6 + 8"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"initiative": {
+				"advantageMode": "adv"
+			},
+			"str": 8,
+			"dex": 17,
+			"con": 13,
+			"int": 18,
+			"wis": 11,
+			"cha": 14,
+			"save": {
+				"dex": "+5",
+				"int": "+6"
+			},
+			"skill": {
+				"arcana": "+6",
+				"investigation": "+6",
+				"perception": "+2"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 12,
+			"languages": [
+				"Common",
+				"Gnomish"
+			],
+			"cr": "2",
+			"trait": [
+				{
+					"name": "Always Thinking Ahead",
+					"entries": [
+						"The inventor avantage on initiative rolls."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The inventor makes two Flying Fangtrap attacks. It can replace one of these attacks with Thunderscream Gadget if it's available."
+					]
+				},
+				{
+					"name": "Flying Fangtrap",
+					"entries": [
+						"{@atk mw,rw} {@hit 5} pour toucher, allonge 5 m, or portée 60 m,, une cible. {@h}8 ({@dégât 1d10 + 3}) piercingdgts, and la créature doit réussir on a {@dd 14}Dextérité saving throw or have its speed reduced to 0 until the start of the inventor's next turn."
+					]
+				},
+				{
+					"name": "Thunderscream Gadget {@recharge 5}",
+					"entries": [
+						"The inventor produces a gadget that emits a screeching wave of sound in a 30-foot cone originating from the inventor. Each creature in that area doit faire a {@dd 14}jet de sauvegarde Constitution, taking 10 ({@dégât 3d6}) thunderdgts on a failed save or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Flash Powder",
+					"entries": [
+						"If the inventor is damaged by a creature it can see within 15 feet of itself, the inventor retaliates by flinging brilliantly explosive powder at the creature. The creature must succeed on a {@dc 14} Dexterity saving throw or be {@condition blinded} until the end of its next turn."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"G"
+			],
+			"damageTags": [
+				"P",
+				"T"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RW"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Nevermind Gnome Mastermind",
+			"source": "MCV2DC",
+			"page": 11,
+			"size": [
+				"S"
+			],
+			"type": "humanoïde",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 15,
+					"from": [
+						"{@item leather armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 82,
+				"formula": "15d6 + 30"
+			},
+			"speed": {
+				"walk": 30,
+				"climb": 30
+			},
+			"initiative": {
+				"advantageMode": "adv"
+			},
+			"str": 9,
+			"dex": 18,
+			"con": 14,
+			"int": 20,
+			"wis": 11,
+			"cha": 15,
+			"save": {
+				"dex": "+7",
+				"con": "+5",
+				"int": "+8"
+			},
+			"skill": {
+				"arcana": "+8",
+				"investigation": "+8",
+				"perception": "+3"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 13,
+			"languages": [
+				"Common",
+				"Gnomish"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Always Thinking Ahead",
+					"entries": [
+						"The mastermind avantage on initiative rolls."
+					]
+				},
+				{
+					"name": "Spider Climb",
+					"entries": [
+						"The mastermind can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check. This trait doesn't function if the mastermind is grappling creatures in both of its clockwork claws."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The mastermind makes two Clockwork Claw attacks. The mastermind can replace one of these attacks with Generate Gadget if it's available."
+					]
+				},
+				{
+					"name": "Clockwork Claw",
+					"entries": [
+						"{@atk mw} {@hit 7} pour toucher, allonge 20 m,, une cible. {@h}11 ({@dégât 2d6 + 4}) piercingdgts, and if la cible is a Medium or smaller creature, la cible is {@condition agrippé} (escape {@dd 15}). Until this grapple ends, la cible takes 10 ({@dégât 3d6}) piercingdgts at the start of each of the mastermind's turns. The mastermind has two claws, each of which can grapple only une cible."
+					]
+				},
+				{
+					"name": "Generate Gadget {@recharge 5}",
+					"entries": [
+						"The mastermind quickly assembles a clockwork gadget, producing one of the following effects (the mastermind's choice):"
+					]
+				},
+				{
+					"name": "Chattergrab",
+					"entries": [
+						"Parts of this gadget look like gnashing metal teeth. This gadget hurtles toward une créature the mastermind can see within 60 mètres of itself. The creature doit réussir on a {@dd 16}Dextérité saving throw or take 31 ({@dégât 7d8}) piercingdgts and be {@conditionincapacité} until the start of the mastermind's next turn."
+					]
+				},
+				{
+					"name": "Phasmoball",
+					"entries": [
+						"The mastermind launches this gadget to a point the mastermind can see within 30 mètres of itself, where the gadget unleashes a cloud of mind-warping gases in a 10-foot-radius sphere. Each creature within the sphere doit réussir on a {@dd 16}Sagesse saving throw or take 11 ({@dégât 2d10}) psychicdgts and be {@condition effrayé} of the mastermind until the start of the mastermind's next turn."
+					]
+				},
+				{
+					"name": "Thunderscream",
+					"entries": [
+						"This gadget emits a screeching wave of sound in a 30-foot cone originating from the mastermind. Each creature in that area doit faire a {@dd 16}jet de sauvegarde Constitution, taking 21 ({@dégât 6d6}) thunderdgts on a failed save or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Spider Climb"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"G"
+			],
+			"damageTags": [
+				"P",
+				"T",
+				"Y"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"frightened",
+				"grappled",
+				"incapacitated"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Thanoi Hunter",
+			"source": "MCV2DC",
+			"page": 12,
+			"size": [
+				"M"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"A"
+			],
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"{@item hide armor|PHB}"
+					]
+				}
+			],
+			"hp": {
+				"average": 32,
+				"formula": "5d8 + 10"
+			},
+			"speed": {
+				"walk": 30,
+				"swim": 30
+			},
+			"str": 18,
+			"dex": 14,
+			"con": 15,
+			"int": 12,
+			"wis": 16,
+			"cha": 11,
+			"save": {
+				"str": "+6",
+				"con": "+4"
+			},
+			"skill": {
+				"athletics": "+6",
+				"perception": "+5",
+				"survival": "+5"
+			},
+			"passive": 15,
+			"immune": [
+				"cold"
+			],
+			"languages": [
+				"Aquan",
+				"Common"
+			],
+			"cr": "1",
+			"trait": [
+				{
+					"name": "Hold Breath",
+					"entries": [
+						"The hunter can hold its breath for up to 10 minutes."
+					]
+				},
+				{
+					"name": "Tactique de groupe",
+					"entries": [
+						"The hunter avantage on an attack roll against une créature if at least one of the hunter's allies is within 5 mètres of la créature and the ally isn't {@conditionincapacité}."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The hunter makes one Bone Harpoon attack and one Tusk attack."
+					]
+				},
+				{
+					"name": "Bone Harpoon",
+					"entries": [
+						"{@atk mw,rw} {@hit 6} pour toucher, allonge 10 m, or portée 20/60 m,, une cible. {@h}8 ({@dégât 1d8 + 4}) piercingdgts. {@hom}The harpoon returns to the hunter's hand."
+					]
+				},
+				{
+					"name": "Tusk",
+					"entries": [
+						"{@atk mw} {@hit 6} pour toucher, allonge 5 m,, une cible. {@h}6 ({@dégât 1d4 + 4}) slashingdgts."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Hold Breath",
+				"Pack Tactics"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"AQ",
+				"C"
+			],
+			"damageTags": [
+				"P",
+				"S"
+			],
+			"miscTags": [
+				"MW",
+				"RCH",
+				"RW"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Traag Draconian",
+			"source": "MCV2DC",
+			"page": 13,
+			"size": [
+				"L"
+			],
+			"type": "monstruosité",
+			"alignment": [
+				"C",
+				"E"
+			],
+			"alignmentPrefix": "typically ",
+			"ac": [
+				{
+					"ac": 14,
+					"from": [
+						"natural armor"
+					]
+				}
+			],
+			"hp": {
+				"average": 68,
+				"formula": "8d10 + 24"
+			},
+			"speed": {
+				"walk": 40
+			},
+			"str": 21,
+			"dex": 10,
+			"con": 17,
+			"int": 6,
+			"wis": 8,
+			"cha": 9,
+			"save": {
+				"str": "+8",
+				"con": "+6"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 9,
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Common",
+				"Draconic"
+			],
+			"cr": "5",
+			"trait": [
+				{
+					"name": "Blood Frenzy",
+					"entries": [
+						"The draconian avantage on melee attack rolls against any creature that doesn't have all itstouché points."
+					]
+				},
+				{
+					"name": "Controlled Fall",
+					"entries": [
+						"Si  draconian falls and isn't {@conditionincapacité}, it subtracts up to 50 mètres from the fall lorsque calculating the fall'sdgts."
+					]
+				},
+				{
+					"name": "Affres de la mort",
+					"entries": [
+						"Si  draconian is reduced to 0touché points, its body erupts into sludge that fills a 10-foot-radius sphere. Each creature within that area doit réussir on a {@dd 14}Dextérité saving throw or be covered in the sludge for 1 minute. While covered in the sludge, une créature's speed is halved. A creature can use its action to scrape the sludge off itself or another creature within 5 mètres of itself."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"The draconian makes two Claw attacks."
+					]
+				},
+				{
+					"name": "Griffe",
+					"entries": [
+						"{@atk mw} {@hit 8} pour toucher, allonge 10 m,, une cible. {@h}14 ({@dégât 2d8 + 5}) slashingdgts."
+					]
+				},
+				{
+					"name": "Flaming Carnage {@recharge 5}",
+					"entries": [
+						"The draconian indulges its rage, wreathing itself in fire and moving up to its speed. The draconian can enter creatures' spaces during this move. During this movement, lorsque the draconian enters une créature's space, la créature doit faire a {@dd 14}Dextérité saving throw. On a failed save, la créature takes 22 ({@dégât 4d10}) firedgts and is knocked {@condition à terre}. On a successful save, la créature takes half as muchdgts and is pushed to the nearest space out of the draconian's path. A creature can be affected by this draconian's Flaming Carnage only once during a turn."
+					]
+				}
+			],
+			"reaction": [
+				{
+					"name": "Violent Retaliation",
+					"entries": [
+						"If a creature within 10 feet of the draconian hits it with an attack, the draconian can make one Claw attack against that creature. If the Claw attack hits, it deals an additional 4 ({@damage 1d8}) slashing damage."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"traitTags": [
+				"Death Burst"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"F",
+				"S"
+			],
+			"miscTags": [
+				"AOE",
+				"MW",
+				"RCH"
+			],
+			"conditionInflict": [
+				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "Verminaard",
+			"isNamedCreature": true,
+			"source": "MCV2DC",
+			"page": 15,
+			"size": [
+				"M"
+			],
+			"type": {
+				"type": "humanoïde",
+				"tags": [
+					"cleric",
+					"human"
+				]
+			},
+			"alignment": [
+				"L",
+				"E"
+			],
+			"ac": [
+				{
+					"ac": 20,
+					"from": [
+						"{@item +2 plate armor}"
+					]
+				}
+			],
+			"hp": {
+				"average": 143,
+				"formula": "22d8 + 44"
+			},
+			"speed": {
+				"walk": 30
+			},
+			"str": 22,
+			"dex": 13,
+			"con": 15,
+			"int": 16,
+			"wis": 18,
+			"cha": 17,
+			"save": {
+				"wis": "+10",
+				"cha": "+9"
+			},
+			"skill": {
+				"perception": "+16",
+				"religion": "+9"
+			},
+			"senses": [
+				"darkvision 60 ft."
+			],
+			"passive": 26,
+			"immune": [
+				"fire"
+			],
+			"conditionImmune": [
+				"charmed",
+				"frightened"
+			],
+			"languages": [
+				"Abyssal",
+				"Common",
+				"Draconic"
+			],
+			"cr": "17",
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"type": "spellcasting",
+					"headerEntries": [
+						"Verminaard casts one of the following spells, requiring no material components and using Wisdom as the spellcasting ability (spell save {@dc 18}):"
+					],
+					"will": [
+						"{@spell light}",
+						"{@spell thaumaturgy}"
+					],
+					"daily": {
+						"2e": [
+							"{@spell bane}",
+							"{@spell fear}",
+							"{@spell freedom of movement}",
+							"{@spell greater restoration}",
+							"{@spell hold monster}",
+							"{@spell revivify}"
+						]
+					},
+					"ability": "wis",
+					"displayAs": "action"
+				}
+			],
+			"trait": [
+				{
+					"name": "Draconic Command",
+					"entries": [
+						"Whenever a Dragon or une créature with the Draconic Devotion trait within 30 mètres of Verminaard makes an attack roll, la créature can roll a {@dice d4} and add the number rolled to the attack roll."
+					]
+				},
+				{
+					"name": "Legendary Resistance (3/Day)",
+					"entries": [
+						"If Verminaard fails a saving throw, he can choose to succeed instead."
+					]
+				},
+				{
+					"name": "Special Equipment",
+					"entries": [
+						"Verminaard wears {@item +2 plate armor} and wields the mace {@item Nightbringer|MCV2DC}, which grants him vision dans le noir as well as immunity to firedgts and to the {@condition charmé} and {@condition effrayé} conditions (included above)."
+					]
+				}
+			],
+			"action": [
+				{
+					"name": "Multiattack",
+					"entries": [
+						"Verminaard makes two Nightbringer attacks and uses Malediction."
+					]
+				},
+				{
+					"name": "Nightbringer",
+					"entries": [
+						"{@atk mw} {@hit 15} pour toucher, allonge 5 m,, une cible. {@h}12 ({@dégât 1d6 + 9}) bludgeoningdgts plus 10 ({@dégât 4d4}) radiantdgts. If la cible is une créature, la cible doit réussir on a {@dd 20}jet de sauvegarde Constitution or be {@condition aveuglé} until the start of Verminaard's next turn."
+					]
+				},
+				{
+					"name": "Malediction",
+					"entries": [
+						"Verminaard utters an unholy word, causing profane fire to descend on une créature Verminaard can see within 60 mètres of himself. The creature doit faire a {@dd 18}Dextérité saving throw, taking 11 ({@dégât 2d10}) necroticdgts plus 11 ({@dégât 2d10}) radiantdgts on a failed save or half as muchdgts on a successful one."
+					]
+				}
+			],
+			"bonus": [
+				{
+					"name": "Dragon Queen's Favor (5/Day)",
+					"entries": [
+						"Verminaard or one creature he can see within 60 feet of himself magically regains 17 ({@dice 2d12 + 4}) hit points."
+					]
+				}
+			],
+			"legendary": [
+				{
+					"name": "Tactical Movement",
+					"entries": [
+						"Verminaard moves up to his speed or commands a mount he is riding to move up to its speed. This movement doesn't provoke opportunity attacks."
+					]
+				},
+				{
+					"name": "Fervent Strike (Costs 2 Actions)",
+					"entries": [
+						"Verminaard makes one Nightbringer attack. If this attacktouchés, it deals an additional 7 ({@dégât 2d6}) bludgeoningdgts."
+					]
+				},
+				{
+					"name": "Cast a Spell (Costs 3 Actions)",
+					"entries": [
+						"Verminaard uses Spellcasting."
+					]
+				}
+			],
+			"tokenCustom": true,
+			"attachedItems": [
+				"nightbringer|mcv2dc"
+			],
+			"traitTags": [
+				"Legendary Resistances"
+			],
+			"senseTags": [
+				"D"
+			],
+			"actionTags": [
+				"Multiattack"
+			],
+			"languageTags": [
+				"AB",
+				"C",
+				"DR"
+			],
+			"damageTags": [
+				"B",
+				"N",
+				"R"
+			],
+			"spellcastingTags": [
+				"O"
+			],
+			"miscTags": [
+				"MW"
+			],
+			"conditionInflict": [
+				"blinded"
+			],
+			"conditionInflictSpell": [
+				"frightened",
+				"paralyzed"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluff": true,
+			"hasFluffImages": true
+		}
+	]
+}
